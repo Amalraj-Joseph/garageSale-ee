@@ -1,0 +1,3 @@
+<server>
+    <logging consoleLogLevel="INFO" maxFileSize="50" maxFiles="3" traceFileName="trace.log" traceSpecification="*=info"/>
+</server>

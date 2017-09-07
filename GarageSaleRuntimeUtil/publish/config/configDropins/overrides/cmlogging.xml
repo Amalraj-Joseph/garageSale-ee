@@ -1,0 +1,3 @@
+<server>
+    <logging consoleLogLevel="INFO" maxFileSize="50" maxFiles="3" traceFileName="trace.log" traceSpecification="*=info:com.ibm.ws.webcontainer*=all:com.ibm.wsspi.webcontainer*=all:com.ibm.ws.webcontainer31*=all:HTTPChannel=all:TCPChannel=all:websockets=all:com.ibm.ws.jsf*=all:org.apache.myfaces*=all"/>
+</server>
