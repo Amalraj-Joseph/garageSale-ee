@@ -24,7 +24,8 @@
 		<feature>jpa-2.1</feature>
 		<feature>jaxrs-2.0</feature>
  		<!--  <feature>wsAtomicTransaction-1.2</feature>-->
-    </featureManager>
+    	<feature>logstashCollector-1.0</feature>
+	</featureManager>
 
 
     <!-- This template enables security. To get the full use of all the capabilities, a keystore and user registry are required. -->

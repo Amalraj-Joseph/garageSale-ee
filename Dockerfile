@@ -1,5 +1,7 @@
 FROM websphere-liberty:latest
-RUN installUtility install --acceptLicense logstashCollector-1.0
+#RUN installUtility install --acceptLicense logstashCollector-1.0
+
+RUN installUtility install --acceptLicense defaultServer
 
 COPY GarageSaleRuntimeUtil/target/wlp/usr/servers/garageSaleServer/apps/GarageSaleLibertyEAR.ear /config/apps/GarageSaleLibertyEAR.ear
 COPY GarageSaleRuntimeUtil/publish/servers/server.xml /config/server.xml
