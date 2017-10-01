@@ -105,6 +105,6 @@
     -->
     <applicationMonitor updateTrigger="mbean"/>
 
-   <enterpriseApplication id="GarageSaleLibertyEAR" location="GarageSaleLibertyEAR.ear" name="GarageSaleLibertyEAR">
+   <enterpriseApplication id="GarageSaleLibertyEAR7-LooseConfig" location="GarageSaleLibertyEAR.ear" name="GarageSaleLibertyEAR7-LooseConfig">
     </enterpriseApplication>
 </server>
