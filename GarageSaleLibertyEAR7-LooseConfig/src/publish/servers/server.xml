@@ -40,12 +40,14 @@
         basicRegistry element. Specify your own user name below in the name attribute of the user element. For the password,
         generate an encoded password using bin/securityUtility encode and add it in the password attribute of the user element.
         Then uncomment the user element. -->
-    <basicRegistry id="basic" realm="BasicRealm">
+    <!-- <basicRegistry id="basic" realm="BasicRealm"> -->
         <!-- <user name="yourUserName" password="" />  -->
-    </basicRegistry>
+    <!--  </basicRegistry> -->
 
     <!-- To allow access to this server from a remote client host="*" has been added to the following element -->
     <httpEndpoint host="*" httpPort="9080" httpsPort="9043" id="defaultHttpEndpoint"/>
+	<keyStore id="defaultKeyStore" password="{xor}Lz4sLCgwLTs=" />
+	<quickStartSecurity userName="admin" userPassword="{xor}Lz4sLCgwLTs="/>
 
     <!-- Automatically expand WAR files and EAR files -->
      <!-- Automatically expand WAR files and EAR files -->
@@ -77,7 +79,7 @@
 		<properties databaseName="TRADESS" driverType="4" password="{xor}NT4pPm1pLCkr" portNumber="50002" serverName="b06ipx03.rtp.raleigh.ibm.com" user="db2inst3"/>
 		<connectionManager id="jdbc/Sessions" maxPoolSize="200" minPoolSize="50"/>
 	</dataSource>
-	<httpSessionDatabase dataSourceRef="SessionDS" id="SessionDB"/>
+	<httpSessionDatabase dataSourceRef="SessionDS" id="SessionDB"  writeContents="ALL_SESSION_ATTRIBUTES" writeFrequency="END_OF_SERVLET_SERVICE"/>
     <httpSession cloneId="localhost_cloneID" storageRef="SessionDB"/>
 
     <webContainer deferServletLoad="false"/>
@@ -90,7 +92,7 @@
     	<!-- <logging consoleLogLevel="INFO" maxFileSize="50" maxFiles="3" traceFileName="wsocTrace.log" traceSpecification="*=info:com.ibm.ws.webcontainer.*=all:com.ibm.wsspi.webcontainer.*=all:com.ibm.ws.webcontainer31.*=all:com.ibm.ws.servlet31.*=all:com.ibm.ws.wsoc.*=all:JCDI=all:TCPChannel=all:HTTPChannel=all"/> -->
     	<!-- <logging consoleLogLevel="INFO" maxFileSize="50" maxFiles="3" traceFileName="metadataTrace.log" traceSpecification="*=info:context=all:jeeMetadataContext=all"/>-->
     	<!-- <logging consoleLogLevel="INFO" maxFileSize="50" maxFiles="3" traceFileName="ClassLoaderTrace.log" traceSpecification="*=info:ClassLoadingService=all"/>-->
-	<include location="${server.config.dir}/configDropins/defaults/cmlogging.xml" optional="true"/>
+	<!-- <include location="${server.config.dir}/configDropins/defaults/cmlogging.xml" optional="true"/> -->
 	<!--<keyStore id="defaultKeyStore" location="C:/opt/WAS85/wlp/usr/servers/myLibertyJEEServer/key.jks" password="Liberty" type="jks"/>-->
     	<transaction waitForRecovery="false"/>
 
@@ -106,5 +108,6 @@
     <applicationMonitor updateTrigger="mbean"/>
 
    <enterpriseApplication id="GarageSaleLibertyEAR7-LooseConfig" location="GarageSaleLibertyEAR.ear" name="GarageSaleLibertyEAR7-LooseConfig">
+           <classloader commonLibraryRef="thirdPartyLib"/>
     </enterpriseApplication>
 </server>

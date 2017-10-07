@@ -147,7 +147,6 @@
 			</releases>
 		</pluginRepository>
 	</pluginRepositories>
-
 	<dependencies>
 		<dependency>
 			<groupId>com.ibm.ws.svt.gs.garagesale-ee7</groupId>
