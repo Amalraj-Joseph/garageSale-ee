@@ -79,7 +79,7 @@
 		<properties databaseName="TRADESS" driverType="4" password="{xor}NT4pPm1pLCkr" portNumber="50002" serverName="b06ipx03.rtp.raleigh.ibm.com" user="db2inst3"/>
 		<connectionManager id="jdbc/Sessions" maxPoolSize="200" minPoolSize="50"/>
 	</dataSource>
-	<httpSessionDatabase dataSourceRef="SessionDS" id="SessionDB"/>
+	<httpSessionDatabase dataSourceRef="SessionDS" id="SessionDB"  writeContents="ALL_SESSION_ATTRIBUTES" writeFrequency="END_OF_SERVLET_SERVICE"/>
     <httpSession cloneId="localhost_cloneID" storageRef="SessionDB"/>
 
     <webContainer deferServletLoad="false"/>
