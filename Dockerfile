@@ -11,6 +11,5 @@ COPY GarageSaleRuntimeUtil/publish/config/configDropins /config/configDropins/
 COPY GarageSaleRuntimeUtil/publish/databaseDrivers/db2V9Drivers/db2jcc4.jar /opt/ibm/wlp/usr/shared/resources/db2drivers/db2jcc4.jar
 COPY GarageSaleRuntimeUtil/publish/databaseDrivers/db2V9Drivers/db2jcc_license_cu.jar /opt/ibm/wlp/usr/shared/resources/db2drivers/db2jcc_license_cu.jar
 COPY GarageSaleRuntimeUtil/publish/files/WASPersonaWebServicesHandlerFeature_1.0.0.201704030941.esa /gsResources/WASPersonaWebServicesHandlerFeature_1.0.0.201611170651.esa
-RUN /bin/bash -c 'ls /gsResources/'
 #RUN installUtility install --acceptLicense WASPersonaWebServicesHandlerFeature --from=/gsResources/WASPersonaWebServicesHandlerFeature_1.0.0.201611170651.esa
 RUN featureManager install /gsResources/WASPersonaWebServicesHandlerFeature_1.0.0.201611170651.esa --when-file-exists=replace --acceptLicense 
