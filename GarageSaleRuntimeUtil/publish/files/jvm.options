@@ -13,12 +13,12 @@
 
 -Xms1024m
 -Xmx1024m
--DGarageSaleCCManagerService.endPoint.Address=https://localhost:9043/CreditCardEJB/GarageSaleCCManagerService
--DGarageSaleStoreManagerService.endPoint.Address=https://localhost:9043/GarageSaleEJB/GarageSaleStoreManagerService
--DGarageSaleBankManagerService.endPoint.Address=https://localhost:9043/WSBankEJB/GarageSaleBankManagerService
--DGarageSaleProductShipService.endPoint.Address=https://localhost:9043/GSjsf20LibertyWeb
--DGarageSaleWebSocket.endPoint.Address=wss://localhost:9043/GSjsf20LibertyWeb
--DPersonaPMIMetrics.endPoint.Address=wss://localhost:9043/WASPersonaWebServicesPMIWeb
+-DGarageSaleCCManagerService.endPoint.Address=https://localhost:9443/CreditCardEJB/GarageSaleCCManagerService
+-DGarageSaleStoreManagerService.endPoint.Address=https://localhost:9443/GarageSaleEJB/GarageSaleStoreManagerService
+-DGarageSaleBankManagerService.endPoint.Address=https://localhost:9443/WSBankEJB/GarageSaleBankManagerService
+-DGarageSaleProductShipService.endPoint.Address=https://localhost:9443/GSjsf20LibertyWeb
+-DGarageSaleWebSocket.endPoint.Address=wss://localhost:9443/GSjsf20LibertyWeb
+-DPersonaPMIMetrics.endPoint.Address=wss://localhost:9443/WASPersonaWebServicesPMIWeb
 -DGarageSale.Product.Videos.Cache.Size=20
 -DGarageSale.Product.Videos.Dir.Location=c:\\opt\\videos
 -DGarageSale.Enable.Dashboard.Metrics=true

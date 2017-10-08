@@ -16,7 +16,7 @@ spec:
   - name: https
     protocol: TCP
     port: 443
-    targetPort: 9043
+    targetPort: 9443
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -35,7 +35,7 @@ spec:
         imagePullPolicy: IfNotPresent
         ports:
           - containerPort: 9080
-          - containerPort: 9043
+          - containerPort: 9443
         readinessProbe:
           httpGet:
             path: /
@@ -96,8 +96,8 @@ spec:
       - path: /GSjsf20LibertyWeb
         backend:
           serviceName: garagesale
-          servicePort: 9043
+          servicePort: 9443
       - path: /WASPersonaWebServicesPMIWeb
         backend:
           serviceName: garagesale
-          servicePort: 9043          
+          servicePort: 9443          
