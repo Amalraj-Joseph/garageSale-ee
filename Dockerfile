@@ -1,4 +1,4 @@
-FROM mycluster.icp:8500/admin/websphere-liberty:latest
+FROM websphere-liberty:latest
 #RUN installUtility install --acceptLicense logstashCollector-1.0
 
 RUN installUtility install --acceptLicense defaultServer
@@ -6,6 +6,7 @@ RUN installUtility install --acceptLicense defaultServer
 COPY GarageSaleRuntimeUtil/target/wlp/usr/servers/garageSaleServer/apps/GarageSaleLibertyEAR.ear /config/apps/GarageSaleLibertyEAR.ear
 COPY GarageSaleRuntimeUtil/publish/servers/server.db2.static.icp.xml /config/server.xml
 COPY GarageSaleRuntimeUtil/publish/files/jvm.options /config/jvm.options
+COPY GarageSaleRuntimeUtil/publish/files/bootstrap.properties /config/bootstrap.properties
 COPY GarageSaleRuntimeUtil/publish/jaxrsThirdPartyJars /opt/ibm/wlp/usr/shared/resources/jaxrsThirdPartyJars
 COPY GarageSaleRuntimeUtil/publish/config/configDropins /config/configDropins/
 COPY GarageSaleRuntimeUtil/publish/databaseDrivers/db2V9Drivers/db2jcc4.jar /opt/ibm/wlp/usr/shared/resources/db2drivers/db2jcc4.jar
