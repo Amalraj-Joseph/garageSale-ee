@@ -1,4 +1,4 @@
-FROM websphere-liberty:latest
+FROM mycluster.icp:8500/admin/websphere-liberty:latest
 #RUN installUtility install --acceptLicense logstashCollector-1.0
 
 RUN installUtility install --acceptLicense defaultServer
