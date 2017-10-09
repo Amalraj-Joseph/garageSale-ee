@@ -11,8 +11,8 @@
 # Uncomment the following line to enable verbose output for class loading
 #-verbose:class
 
--Xms512m
--Xmx512m
+-Xms1024m
+-Xmx1024m
 -DGarageSaleCCManagerService.endPoint.Address=https://localhost:9443/CreditCardEJB/GarageSaleCCManagerService
 -DGarageSaleStoreManagerService.endPoint.Address=https://localhost:9443/GarageSaleEJB/GarageSaleStoreManagerService
 -DGarageSaleBankManagerService.endPoint.Address=https://localhost:9443/WSBankEJB/GarageSaleBankManagerService

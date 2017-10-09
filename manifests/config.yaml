@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
       - name: garagesale
-        image: garagesale-ee7:latest
+        image: mycluster.icp:8500/admin/garagesale-ee7:latest
         imagePullPolicy: IfNotPresent
         ports:
           - containerPort: 9080
