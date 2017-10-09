@@ -214,22 +214,24 @@ public class JSFWebSocketsClientActions implements Serializable{
 	 * @return
 	 * @throws Exception
 	 */
-	public String personaPMIMetricsDashboard() throws Exception{
+	public void personaPMIMetricsDashboard() throws Exception{
 		String outCome="index1.jsf";
+		FacesContext facesContext= FacesContext.getCurrentInstance();
+		ExternalContext externalContext = facesContext.getExternalContext();
+		HttpServletResponse response = (HttpServletResponse)externalContext.getResponse();
+		
 		try{
-			FacesContext facesContext= FacesContext.getCurrentInstance();
-			ExternalContext externalContext = facesContext.getExternalContext();
-			HttpServletResponse response = (HttpServletResponse)externalContext.getResponse();
 			/*ServletContext servletContext = (ServletContext) externalContext.getContext();
 			ServletContext pmiWebAppContext = servletContext.getContext("/WASPersonaWebServicesPMIWeb");*/
 			String url = garageSaleCDIApplicationScopped.getWebModuleContextPath()+"/"+outCome;
-			response.sendRedirect(url);
-			return outCome;
-			
+			//response.sendRedirect(url);
+			externalContext.redirect(url);
 		}
 		catch(Exception e){
-			outCome="error";
-			return outCome;
+			outCome="error.jsf";
+			String url = garageSaleCDIApplicationScopped.getWebModuleContextPath()+"/"+outCome;
+			externalContext.redirect(url);
+			e.printStackTrace();
 		}
 	}
 	

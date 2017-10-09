@@ -100,21 +100,19 @@ public class PersonaPMIJSFActions implements Serializable{
 	 * @return
 	 * @throws Exception
 	 */
-	public String welcomePage() throws Exception{
+	public void welcomePage() throws Exception{
 		String outCome="facelets/welcomeUser.jsf";
 		FacesContext facesContext= FacesContext.getCurrentInstance();
 		ExternalContext externalContext = facesContext.getExternalContext();
-		HttpServletResponse response = (HttpServletResponse)externalContext.getResponse();
+		//HttpServletResponse response = (HttpServletResponse)externalContext.getResponse();
 		try{
 			String url = getParentWebModuleContextPath()+"/"+outCome;
-			response.sendRedirect(url);
-			return outCome;
+			externalContext.redirect(url);
 		}
 		catch(Exception e){
 			outCome="error.jsf";
 			String url = getParentWebModuleContextPath()+"/"+outCome;
-			response.sendRedirect(url);			
-			return outCome;
+			externalContext.redirect(url);			
 		}
 	}
 	
