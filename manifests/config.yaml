@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
       - name: garagesale
-        image: mycluster.icp:8500/admin/garagesale-ee7:latest
+        image: garagesale-ee7:latest
         imagePullPolicy: IfNotPresent
         ports:
           - containerPort: 9080
@@ -88,6 +88,10 @@ metadata:
     ingress.kubernetes.io/session-cookie-name: "route"
     ingress.kubernetes.io/session-cookie-hash: "sha1"
     ingress.kubernetes.io/secure-backends: "true"
+    nginx.org/proxy-connect-timeout: "300s"
+    nginx.org/proxy-read-timeout: "300s"
+    nginx.org/client-max-body-size: "10m"
+    nginx.org/keepalive: "50"
 spec:
   rules:
   - host: 
