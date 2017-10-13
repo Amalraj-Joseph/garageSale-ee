@@ -84,7 +84,7 @@
 		<connectionManager id="jdbc/Sessions" maxPoolSize="200" minPoolSize="50"/>
 	</dataSource>
 	<httpSessionDatabase dataSourceRef="SessionDS" id="SessionDB"   writeContents="ALL_SESSION_ATTRIBUTES" writeFrequency="END_OF_SERVLET_SERVICE"/>
-    <httpSession cloneId="localhost_cloneID" storageRef="SessionDB"/>
+    <httpSession cloneId="${env.HOSTNAME}" storageRef="SessionDB"/>
 
     <webContainer deferServletLoad="false"/>
 
