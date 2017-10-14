@@ -88,10 +88,11 @@ metadata:
     ingress.kubernetes.io/session-cookie-name: "route"
     ingress.kubernetes.io/session-cookie-hash: "sha1"
     ingress.kubernetes.io/secure-backends: "true"
-    nginx.org/proxy-connect-timeout: "300s"
-    nginx.org/proxy-read-timeout: "300s"
-    nginx.org/client-max-body-size: "10m"
-    nginx.org/keepalive: "50"
+    ingress.kubernetes.io/proxy-connect-timeout: "300s"
+    ingress.kubernetes.io/proxy-read-timeout: "300s"
+    ingress.kubernetes.io/proxy-send-timeout: "300s"
+    ingress.kubernetes.io/proxy-body-size: "10m"
+    ingress.kubernetes.io/upstream-keepalive-connections: "50"
 spec:
   rules:
   - host: 
