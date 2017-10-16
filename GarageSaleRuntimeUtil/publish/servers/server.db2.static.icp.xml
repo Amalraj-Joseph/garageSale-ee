@@ -51,9 +51,15 @@
 	<quickStartSecurity userName="admin" userPassword="{xor}Lz4sLCgwLTs="/> -->
 
     <!-- To allow access to this server from a remote client host="*" has been added to the following element -->
-    <httpEndpoint host="*" httpPort="9080" httpsPort="9443" id="defaultHttpEndpoint"/>
+    <httpEndpoint host="*" httpPort="9080" httpsPort="9443" id="defaultHttpEndpoint">
+      <tcpOptions soReuseAddr="true" />
+    </httpEndpoint>
+    <!--Tuning Parameters -->
 
-    <!-- Automatically expand WAR files and EAR files -->
+    <httpOptions persistTimeout="1200s" readTimeout="1200s" writeTimeout="1200s" maxKeepAliveRequests="10" />
+    <tcpOptions inactivityTimeout="1200s" />
+    <executor name="LargeThreadPool" id="default" coreThreads="40" maxThreads="400" keepAlive="120s" stealPolicy="STRICT" rejectedWorkPolicy="CALLER_RUNS" /> 
+
      <!-- Automatically expand WAR files and EAR files -->
     <applicationManager autoExpand="true"/>
 
@@ -69,26 +75,26 @@
 	
 	<dataSource id="jdbc/gsdb" jdbcDriverRef="GSDBProvider" jndiName="jdbc/gsdb" type="javax.sql.XADataSource">
 		<properties databaseName="GSDB" driverType="4" password="{xor}NT4pPmxoLCkr" portNumber="50000" serverName="ciicpgsdb2.rtp.raleigh.ibm.com" user="db2inst1"/>
-		<connectionManager id="jdbc/gsdb" maxPoolSize="300" minPoolSize="50"/>
+		<connectionManager id="jdbc/gsdb" maxPoolSize="700" minPoolSize="200" connectionTimeout="1200s"/>
 	</dataSource>
 	<dataSource id="jdbc/ccdb" jdbcDriverRef="GSDBProvider" jndiName="jdbc/ccdb" type="javax.sql.XADataSource">
 		<properties databaseName="CCDB" driverType="4" password="{xor}NT4pPmxoLCkr" portNumber="50000" serverName="ciicpgsdb2.rtp.raleigh.ibm.com" user="db2inst1"/>
-		<connectionManager id="jdbc/ccdb" maxPoolSize="200" minPoolSize="50"/>
+		<connectionManager id="jdbc/ccdb" maxPoolSize="300" minPoolSize="75" connectionTimeout="1200s"/>
 	</dataSource>
 	<dataSource id="jdbc/wsbankdb" jdbcDriverRef="GSDBProvider" jndiName="jdbc/wsbankdb" type="javax.sql.XADataSource">
 		<properties databaseName="WSBANKDB" driverType="4" password="{xor}NT4pPmxoLCkr" portNumber="50000" serverName="ciicpgsdb2.rtp.raleigh.ibm.com" user="db2inst1"/>
-		<connectionManager id="jdbc/wsbankdb" maxPoolSize="200" minPoolSize="50"/>
+		<connectionManager id="jdbc/wsbankdb" maxPoolSize="300" minPoolSize="75" connectionTimeout="1200s"/>
 	</dataSource>
 	<dataSource id="SessionDS" jdbcDriverRef="GSDBProvider" jndiName="jdbc/Sessions" type="javax.sql.XADataSource">
 		<properties databaseName="TRADESS" driverType="4" password="{xor}NT4pPmxoLCkr" portNumber="50000" serverName="ciicpgssdb2.rtp.raleigh.ibm.com" user="db2inst1"/>
-		<connectionManager id="jdbc/Sessions" maxPoolSize="200" minPoolSize="50"/>
+		<connectionManager id="jdbc/Sessions" maxPoolSize="800" minPoolSize="150" connectionTimeout="1200s"/>
 	</dataSource>
 	<httpSessionDatabase dataSourceRef="SessionDS" id="SessionDB"   writeContents="ALL_SESSION_ATTRIBUTES" writeFrequency="END_OF_SERVLET_SERVICE"/>
     <httpSession cloneId="${env.HOSTNAME}" storageRef="SessionDB"/>
 
     <webContainer deferServletLoad="false"/>
 
-   <transaction/>
+   <transaction  totalTranlifetimeTimeout="1200s" clientInactivityTimeout="1200s"/>
 
    <authData id="GSDataSourceAuthData" password="{xor}NT4pPmxoLCkr" user="db2inst1"/>
 	
