@@ -184,14 +184,15 @@ public class GarageSaleDashboardEndPoint{
     	else if(dashboardType!=null && dashboardType.equals("webSocketsMetrics")){
     		webSocketsQueue.remove(session);
     	}
-       	try {
+		currentSession=null;
+       	/*try {
     		if(session!=null){
-    			session.close();
+    			//session.close();
     		}
     		currentSession=null;
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
+		}*/
     	
     	logger.log(Level.FINE, "Connection closed.");    	
     }

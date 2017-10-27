@@ -66,7 +66,7 @@ public class GarageSaleUploadVideoClientEndpoint {
 		//currentSession=null;
     	try {
     		if(session!=null){
-    			session.close();
+    			//session.close();
             	GarageSaleWebSocketsUtil.updateCounters(garageSaleDashboardApplicationScoppedBean, DASHBOARD_MAP_KEY, "onClose",session.getOpenSessions().size());
     		}
     		currentSession=null;

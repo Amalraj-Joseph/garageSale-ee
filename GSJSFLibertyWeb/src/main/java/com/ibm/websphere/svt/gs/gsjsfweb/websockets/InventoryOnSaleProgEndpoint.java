@@ -129,7 +129,7 @@ public class InventoryOnSaleProgEndpoint extends Endpoint{
 			try {
 				GarageSaleWebSocketsUtil.updateCounters(garageSaleDashboardApplicationScoppedBean, INVENTORY_MAP_KEY, "onClose",session.getOpenSessions().size());
 	    		if(session!=null){
-	    			session.close();
+	    			//session.close();
 	    	       	sessionsQueue.remove(session);
 	    		}
 	    		currentSession=null;

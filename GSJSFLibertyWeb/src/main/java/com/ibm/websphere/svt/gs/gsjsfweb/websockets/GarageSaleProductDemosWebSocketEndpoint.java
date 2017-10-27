@@ -175,14 +175,15 @@ public class GarageSaleProductDemosWebSocketEndpoint {
     	String methodName="onClose";
     	logger.logp(Level.FINE, className, methodName, "Inside onClose");
     	GarageSaleWebSocketsUtil.updateCounters(garageSaleDashboardApplicationScoppedBean, PRODUCT_DEMO_VIDEOS_MAP_KEY+"-"+requestType, "onClose",session.getOpenSessions().size());
-    	try {
+		currentSession=null;
+    	/*try {
     		if(session!=null){
-    			session.close();
+    			//session.close();
     		}
     		currentSession=null;
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
+		}*/
     	
     }
 

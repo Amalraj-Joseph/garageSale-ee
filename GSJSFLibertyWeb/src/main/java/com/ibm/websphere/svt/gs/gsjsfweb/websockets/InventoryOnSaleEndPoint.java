@@ -143,14 +143,15 @@ public class InventoryOnSaleEndPoint{
     	logger.logp(Level.FINE, className, methodName, "Inside onClose");
 			GarageSaleWebSocketsUtil.updateCounters(garageSaleDashboardApplicationScoppedBean, INVENTORY_MAP_KEY, "onClose",session.getOpenSessions().size());
 	       	sessionsQueue.remove(session);
-	    	try {
+    		currentSession=null;
+	    	/*try {
 	    		if(session!=null){
-	    			session.close();
+	    			//session.close();
 	    		}
 	    		currentSession=null;
 			} catch (IOException e) {
 				e.printStackTrace();
-			}
+			}*/
 			
 
      }

@@ -116,16 +116,17 @@ public class PersonaWebServicesPMIWebSocketEndpoint {
     	String methodName="onClose";
     	logger.logp(Level.FINE, className, methodName, "Inside onClose");
     	/* Remove this connection from the queue */
-    	try {
+		currentSession=null;
+    	/*try {
     		if(session!=null){
-    			session.close();
+    			//session.close();
     	    	sessionsQueue.remove(session);
     			
     		}
     		currentSession=null;
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
+		}*/
     	logger.log(Level.FINE, "Connection closed.");    	
     }
 
