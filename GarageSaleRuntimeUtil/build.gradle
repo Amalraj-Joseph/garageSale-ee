@@ -1,0 +1,55 @@
+apply plugin: 'liberty'
+
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            name = 'Sonatype Nexus Snapshots'
+            url = 'https://oss.sonatype.org/content/repositories/snapshots/'
+        }
+    }
+    dependencies {
+        classpath 'net.wasdev.wlp.gradle.plugins:liberty-gradle-plugin:2.1.1-SNAPSHOT'
+        
+    }
+}
+
+description = 'GarageSaleRuntime'
+dependencies {
+  compile project(':GarageSaleLibertyEAR')
+  libertyRuntime group: 'com.ibm.websphere.appserver.runtime', name: 'wlp-javaee7', version: '17.0.0.4'
+}
+
+liberty {
+    server {
+        name = "garageSaleServer"
+        configFile = file('publish/servers/server-gradle.xml')
+        jvmOptionsFile = file('publish/files/jvm.options')
+        configDirectory = file('publish/config')
+        looseApplication = true
+        stripVersion = true
+        //apps = [ear]
+        stripVersion = true
+        	features {
+            	name = ["${projectDir}/publish/files/WASPersonaWebServicesHandlerFeature_1.0.0.201704030941.esa"]
+            	acceptLicense = true
+        	}
+    }
+}
+
+task copyDB2Jars(type: Copy) {
+    from 'publish/databaseDrivers/db2V9Drivers'
+    into "${buildDir}/wlp/usr/shared/resources/db2drivers"
+} 
+
+task copyJaxRSThirdPartyJars(type: Copy) {
+    from 'publish/jaxrsThirdPartyJars'
+    into "${buildDir}/wlp/usr/shared/resources/jaxrsThirdPartyJars"
+}
+
+task copyMyEAR(type: Copy) {
+	from '../GarageSaleLibertyEAR/build/libs/GarageSaleLibertyEAR.ear'
+	into "${buildDir}/wlp/usr/servers/garageSaleServer/apps"
+}
+
+libertyCreate.finalizedBy 'copyMyEAR', 'copyDB2Jars', 'copyJaxRSThirdPartyJars'

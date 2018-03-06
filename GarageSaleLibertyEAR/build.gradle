@@ -1,0 +1,28 @@
+apply plugin: 'ear'
+
+description = ''
+dependencies {
+  earlib project(path: ':CreditCardDBJPA', configuration:'archives')
+  deploy project(':CreditCardEJB')
+  earlib project(path: ':WSBankDBJPA', configuration:'archives')
+  deploy project(':WSBankEJB')
+  earlib project(path: ':GarageSaleWSClient', configuration:'archives')
+  earlib project(path: ':WASPersonaWebServicesHandlerAPI', configuration:'archives')
+  earlib project(path: ':GarageSaleDBJPA', configuration:'archives')
+  deploy project(':GarageSaleEJB')
+  //deploy project(':ProdReviewTaxShipRateEJB')
+  deploy project(path:':WASPersonaWebServicesPMIWeb', configuration:'archives')
+  deploy project(path:':GSjsf20LibertyWeb', configuration:'archives')
+}
+
+archivesBaseName = 'GarageSaleLibertyEAR'
+
+ear {
+  
+   manifest {
+      attributes 'Implementation-Title': 'GarageSaleLibertyEAR 7'
+   }
+   appDirName 'src/main/app'
+   libDirName 'lib'
+   archiveName="$baseName.$extension"
+}

@@ -6,3 +6,6 @@
 .project
 .factorypath
 /.settings/
+.*.swp
+.DS_Store
+.metadata

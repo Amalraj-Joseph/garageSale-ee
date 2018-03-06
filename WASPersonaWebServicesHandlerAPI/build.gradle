@@ -1,0 +1,10 @@
+
+description = ''
+dependencies {
+    compileOnly group: 'com.ibm.websphere.appserver.api', name: 'com.ibm.websphere.appserver.api.json', version:'1.0.16'
+}
+
+jar{
+	archiveName="$baseName.$extension"
+}
+

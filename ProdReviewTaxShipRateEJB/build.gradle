@@ -1,0 +1,12 @@
+
+description = ''
+dependencies {
+    compileOnly group: 'org.eclipse.persistence', name: 'javax.persistence', version:'2.1.1'
+    compileOnly group: 'javax.ejb', name: 'javax.ejb-api', version:'3.2'
+    compileOnly group: 'javax.ws.rs', name: 'javax.ws.rs-api', version:'2.0'
+}
+
+jar{
+	archiveName="$baseName.$extension"
+}
+

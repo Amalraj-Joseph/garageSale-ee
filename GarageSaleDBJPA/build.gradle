@@ -1,0 +1,9 @@
+
+description = ''
+dependencies {
+    compileOnly group: 'org.eclipse.persistence', name: 'javax.persistence', version:'2.1.1'
+}
+
+jar{
+	archiveName="$baseName.$extension"
+}

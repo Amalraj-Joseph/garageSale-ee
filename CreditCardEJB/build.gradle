@@ -1,0 +1,11 @@
+description = ''
+dependencies {
+    compileOnly group: 'javax.ejb', name: 'javax.ejb-api', version:'3.2'
+    compileOnly group: 'org.eclipse.persistence', name: 'javax.persistence', version:'2.1.1'
+	compileOnly project(':CreditCardDBJPA')
+}
+
+jar{
+	archiveName="$baseName.$extension"
+}
+

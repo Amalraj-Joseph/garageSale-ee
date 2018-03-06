@@ -1,0 +1,16 @@
+apply plugin: 'war'
+
+description = ''
+dependencies {
+    providedCompile group: 'javax.faces', name: 'jsf-api', version:'2.1'
+    providedCompile group: 'com.ibm.websphere.appserver.api', name: 'com.ibm.websphere.appserver.api.json', version:'1.0.16'
+    providedCompile group: 'javax.websocket', name: 'javax.websocket-all', version:'1.1'
+    providedCompile group: 'javax.websocket', name: 'javax.websocket-client-api', version:'1.1'
+    providedCompile group: 'org.eclipse.jetty.websocket', name: 'javax-websocket-server-impl', version:'9.4.4.v20170414'
+    providedCompile group: 'javax.enterprise.concurrent', name: 'javax.enterprise.concurrent-api', version:'1.0'
+  providedCompile project(':WASPersonaWebServicesHandlerAPI')
+}
+
+war{
+	archiveName = baseName + '.' + extension
+}

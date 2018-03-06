@@ -1,0 +1,28 @@
+rootProject.name = 'garageSale-ee7'
+include ':WSBankDBJPA'
+include ':WSBankEJB'
+include ':CreditCardDBJPA'
+include ':CreditCardEJB'
+include ':GarageSaleWSClient'
+include ':WASPersonaWebServicesHandlerAPI'
+include ':GarageSaleDBJPA'
+include ':GarageSaleEJB'
+include ':ProdReviewTaxShipRateEJB'
+include ':WASPersonaWebServicesPMIWeb'
+include ':GSjsf20LibertyWeb'
+include ':GarageSaleLibertyEAR'
+include ':GarageSaleRuntimeUtil'
+
+project(':WSBankDBJPA').projectDir = "$rootDir/WSBankDBJPA" as File
+project(':WSBankEJB').projectDir = "$rootDir/WSBankEJB" as File
+project(':CreditCardDBJPA').projectDir = "$rootDir/CreditCardDBJPA" as File
+project(':CreditCardEJB').projectDir = "$rootDir/CreditCardEJB" as File
+project(':GarageSaleWSClient').projectDir = "$rootDir/GarageSaleWSClient" as File
+project(':WASPersonaWebServicesHandlerAPI').projectDir = "$rootDir/WASPersonaWebServicesHandlerAPI" as File
+project(':GarageSaleDBJPA').projectDir = "$rootDir/GarageSaleDBJPA" as File
+project(':GarageSaleEJB').projectDir = "$rootDir/GarageSaleEJB" as File
+project(':ProdReviewTaxShipRateEJB').projectDir = "$rootDir/ProdReviewTaxShipRateEJB" as File
+project(':WASPersonaWebServicesPMIWeb').projectDir = "$rootDir/WASPersonaWebServicesPMIWeb" as File
+project(':GSjsf20LibertyWeb').projectDir = "$rootDir/GSJSFLibertyWeb" as File
+project(':GarageSaleLibertyEAR').projectDir = "$rootDir/GarageSaleLibertyEAR" as File
+project(':GarageSaleRuntimeUtil').projectDir = "$rootDir/GarageSaleRuntimeUtil" as File
