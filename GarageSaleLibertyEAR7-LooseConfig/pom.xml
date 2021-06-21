@@ -36,7 +36,7 @@
 					<assemblyArtifact>
 						<groupId>com.ibm.websphere.appserver.runtime</groupId>
 						<artifactId>wlp-javaee7</artifactId>
-						<version>17.0.0.4</version>
+						<version>21.0.0.5</version>
 						<type>zip</type>
 					</assemblyArtifact>
 					<appsDirectory>apps</appsDirectory>
