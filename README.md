@@ -1,2 +1,2 @@
-# garageSale-ee7
-GarageSale EE7 - Liberty Profile
+# garageSale-ee8
+GarageSale EE8 - Liberty Profile

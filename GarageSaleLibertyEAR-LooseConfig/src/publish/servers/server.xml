@@ -11,20 +11,21 @@
 		<feature>monitor-1.0</feature>
 		<feature>appSecurity-2.0</feature>
 		<feature>sessionDatabase-1.0</feature>
-        <feature>jdbc-4.1</feature>
+        <feature>jdbc-4.2</feature>
     	<feature>concurrent-1.0</feature>
 		<!-- <feature>osgiConsole-1.0</feature> -->
 		<feature>usr:WASPersonaWebServicesHandlerFeature</feature>
 		<feature>websocket-1.1</feature>
     	<feature>el-3.0</feature>
-		<feature>beanValidation-1.1</feature>
-		<feature>cdi-1.2</feature>
-		<feature>jsf-2.2</feature>
+		<feature>beanValidation-2.0</feature>
+		<feature>cdi-2.0</feature>
+		<feature>jsf-2.3</feature>
 		<feature>ejbLite-3.2</feature>
-		<feature>jpa-2.1</feature>
-		<feature>jaxrs-2.0</feature>
+		<feature>jpa-2.2</feature>
+		<feature>jaxrs-2.1</feature>
  		<!--  <feature>wsAtomicTransaction-1.2</feature>-->
-    </featureManager>
+    	<feature>json-1.0</feature>
+	</featureManager>
 
 
     <!-- This template enables security. To get the full use of all the capabilities, a keystore and user registry are required. -->
@@ -64,19 +65,19 @@
     </library>
 	
 	<dataSource id="jdbc/gsdb" jdbcDriverRef="GSDBProvider" jndiName="jdbc/gsdb" type="javax.sql.XADataSource">
-		<properties databaseName="GSDB" driverType="4" password="{xor}NT4pPm1pLCkr" portNumber="50002" serverName="b06ipx03.rtp.raleigh.ibm.com" user="db2inst3"/>
+		<properties databaseName="GSDB" driverType="4" password="{xor}MzorMjpuMW1xbW9tbg5u" portNumber="50000" serverName="jaggsdevdb2-1.fyre.ibm.com" user="db2inst1"/>
 		<connectionManager id="jdbc/gsdb" maxPoolSize="300" minPoolSize="50"/>
 	</dataSource>
 	<dataSource id="jdbc/ccdb" jdbcDriverRef="GSDBProvider" jndiName="jdbc/ccdb" type="javax.sql.XADataSource">
-		<properties databaseName="CCDB" driverType="4" password="{xor}NT4pPm1pLCkr" portNumber="50002" serverName="b06ipx03.rtp.raleigh.ibm.com" user="db2inst3"/>
+		<properties databaseName="CCDB" driverType="4" password="{xor}MzorMjpuMW1xbW9tbg5u" portNumber="50000" serverName="jaggsdevdb2-1.fyre.ibm.com" user="db2inst1"/>
 		<connectionManager id="jdbc/ccdb" maxPoolSize="200" minPoolSize="50"/>
 	</dataSource>
 	<dataSource id="jdbc/wsbankdb" jdbcDriverRef="GSDBProvider" jndiName="jdbc/wsbankdb" type="javax.sql.XADataSource">
-		<properties databaseName="WSBANKDB" driverType="4" password="{xor}NT4pPm1pLCkr" portNumber="50002" serverName="b06ipx03.rtp.raleigh.ibm.com" user="db2inst3"/>
+		<properties databaseName="WSBANKDB" driverType="4" password="{xor}MzorMjpuMW1xbW9tbg5u" portNumber="50000" serverName="jaggsdevdb2-1.fyre.ibm.com" user="db2inst1"/>
 		<connectionManager id="jdbc/wsbankdb" maxPoolSize="200" minPoolSize="50"/>
 	</dataSource>
 	<dataSource id="SessionDS" jdbcDriverRef="GSDBProvider" jndiName="jdbc/Sessions" type="javax.sql.XADataSource">
-		<properties databaseName="TRADESS" driverType="4" password="{xor}NT4pPm1pLCkr" portNumber="50002" serverName="b06ipx03.rtp.raleigh.ibm.com" user="db2inst3"/>
+		<properties databaseName="TRADESS" driverType="4" password="{xor}MzorMjpuMW1xbW9tbg5u" portNumber="50000" serverName="jaggsdevdb2-1.fyre.ibm.com" user="db2inst1"/>
 		<connectionManager id="jdbc/Sessions" maxPoolSize="200" minPoolSize="50"/>
 	</dataSource>
 	<httpSessionDatabase dataSourceRef="SessionDS" id="SessionDB"  writeContents="ALL_SESSION_ATTRIBUTES" writeFrequency="END_OF_SERVLET_SERVICE"/>
@@ -86,7 +87,7 @@
 
    <transaction/>
 
-   <authData id="GSDataSourceAuthData" password="{xor}NT4pPm5qLCkr" user="db2inst3"/>
+   <authData id="GSDataSourceAuthData" password="{xor}MzorMjpuMW1xbW9tbg5u" user="db2inst1"/>
 	
     	<webContainer deferServletLoad="false" invokeFlushAfterService="false"/>	
     	<!-- <logging consoleLogLevel="INFO" maxFileSize="50" maxFiles="3" traceFileName="wsocTrace.log" traceSpecification="*=info:com.ibm.ws.webcontainer.*=all:com.ibm.wsspi.webcontainer.*=all:com.ibm.ws.webcontainer31.*=all:com.ibm.ws.servlet31.*=all:com.ibm.ws.wsoc.*=all:JCDI=all:TCPChannel=all:HTTPChannel=all"/> -->
@@ -107,7 +108,7 @@
     -->
     <applicationMonitor updateTrigger="mbean"/>
 
-   <enterpriseApplication id="GarageSaleLibertyEAR7-LooseConfig" location="GarageSaleLibertyEAR.ear" name="GarageSaleLibertyEAR7-LooseConfig">
+   <enterpriseApplication id="GarageSaleLibertyEAR8-LooseConfig" location="GarageSaleLibertyEAR.ear" name="GarageSaleLibertyEAR8-LooseConfig">
            <classloader commonLibraryRef="thirdPartyLib"/>
     </enterpriseApplication>
 </server>

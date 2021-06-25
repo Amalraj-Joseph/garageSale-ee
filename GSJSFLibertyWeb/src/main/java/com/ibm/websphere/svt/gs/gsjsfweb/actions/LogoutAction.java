@@ -1,6 +1,8 @@
 package com.ibm.websphere.svt.gs.gsjsfweb.actions;
 
 import java.io.IOException;
+
+
 import java.io.Serializable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -14,6 +16,8 @@ import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpServletMapping;
+
 
 import com.ibm.websphere.svt.gs.gsjsfweb.utils.GarageSaleLargeSessionUtil;
 
@@ -62,6 +66,23 @@ public class LogoutAction implements Serializable{
 			e.printStackTrace();
 		}
 		
+		// Added for Servlet 4.0
+/* 	
+		HttpServletMapping mapping = request.getHttpServletMapping();
+		String mappingS = mapping.getMappingMatch().name();
+		String value = mapping.getMatchValue();
+		String pattern = mapping.getPattern();
+		String servletName = mapping.getServletName();
+		
+		System.out.println("logging out and printing Servlet 4.0 mapping values: ");
+		System.out.println("-- mapping.getMappingMatch().name() = "+mappingS);
+		System.out.println("-- mapping.getMatchValue() = "+value);
+		System.out.println("-- mapping.getPattern() = "+pattern);
+		System.out.println("-- mapping.getServletName() = "+servletName);
+		System.out.println("end of printing Servlet 4.0 mapping values");	
+*/			
+		// End of Added for Servlet 4.0
+
 		return null;
 		//return LOGOUT_OUTCOME;
 	}

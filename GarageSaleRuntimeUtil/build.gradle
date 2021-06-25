@@ -17,7 +17,7 @@ buildscript {
 description = 'GarageSaleRuntime'
 dependencies {
   compile project(':GarageSaleLibertyEAR')
-  libertyRuntime group: 'com.ibm.websphere.appserver.runtime', name: 'wlp-javaee7', version: '17.0.0.4'
+  libertyRuntime group: 'com.ibm.websphere.appserver.runtime', name: 'wlp-javaee8', version: '21.0.0.5'
 }
 
 liberty {
