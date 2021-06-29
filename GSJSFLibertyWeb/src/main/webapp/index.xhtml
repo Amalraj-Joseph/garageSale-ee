@@ -3,6 +3,11 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:portlet="http://java.sun.com/portlet_2_0">
+	
+	<f:metadata>
+    	<f:importConstants type="java.util.Locale"/>
+	</f:metadata>
+	
 	<ui:define name="title">GarageSale Login Panel</ui:define>
 	<ui:define name="navBar"></ui:define>
 	<ui:define name="leftBar">
@@ -51,6 +56,14 @@
 			<h:commandButton id="loginButton" styleClass="commandButton"
 				type="submit" value="Login" action="#{pc_Index.login}">
 			</h:commandButton>
+			
+			<br/>
+            Current local time : 
+            <h:outputText value="#{myDateTimeBean.localTime}">
+             <f:convertDateTime type="localTime" timeStyle="short" locale="#{Locale.US}"/>
+            </h:outputText>
+            <br/>
+
 		</h:form>
 		<!-- end main content area -->
 	</ui:define>

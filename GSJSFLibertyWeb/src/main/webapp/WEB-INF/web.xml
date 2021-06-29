@@ -16,6 +16,14 @@ Default is server.</description>
 		<param-value>server</param-value>
 	</context-param>
 	<context-param>
+     <param-name>javax.faces.ENABLE_CDI_RESOLVER_CHAIN</param-name>
+     <param-value>true</param-value>
+    </context-param>   
+    <context-param>
+     <param-name>javax.faces.ENABLE_WEBSOCKET_ENDPOINT</param-name>
+     <param-value>true</param-value>
+    </context-param>
+	<context-param>
 		<param-name>org.apache.myfaces.NUMBER_OF_VIEWS_IN_SESSION</param-name>
 		<param-value>250</param-value>
 	</context-param>

@@ -11,20 +11,21 @@
 		<feature>monitor-1.0</feature>
 		<feature>appSecurity-2.0</feature>
 		<feature>sessionDatabase-1.0</feature>
-        <feature>jdbc-4.1</feature>
+        <feature>jdbc-4.2</feature>
     	<feature>concurrent-1.0</feature>
 		<!-- <feature>osgiConsole-1.0</feature> -->
 		<feature>usr:WASPersonaWebServicesHandlerFeature</feature>
 		<feature>websocket-1.1</feature>
     	<feature>el-3.0</feature>
-		<feature>beanValidation-1.1</feature>
-		<feature>cdi-1.2</feature>
-		<feature>jsf-2.2</feature>
+		<feature>beanValidation-2.0</feature>
+		<feature>cdi-2.0</feature>
+		<feature>jsf-2.3</feature>
 		<feature>ejbLite-3.2</feature>
-		<feature>jpa-2.1</feature>
-		<feature>jaxrs-2.0</feature>
+		<feature>jpa-2.2</feature>
+		<feature>jaxrs-2.1</feature>
  		<!--  <feature>wsAtomicTransaction-1.2</feature>-->
-    </featureManager>
+    	<feature>json-1.0</feature>
+	</featureManager>
 
 
     <!-- This template enables security. To get the full use of all the capabilities, a keystore and user registry are required. -->
@@ -86,12 +87,12 @@
 
    <transaction/>
 
-   <authData id="GSDataSourceAuthData" password="{xor}NT4pPm5qLCkr" user="db2inst3"/>
+   <authData id="GSDataSourceAuthData" password="{xor}MzorMjpuMW1xbW9tbg5u" user="db2inst1"/>
 	
     	<webContainer deferServletLoad="false" invokeFlushAfterService="false"/>	
     	<!-- <logging consoleLogLevel="INFO" maxFileSize="50" maxFiles="3" traceFileName="wsocTrace.log" traceSpecification="*=info:com.ibm.ws.webcontainer.*=all:com.ibm.wsspi.webcontainer.*=all:com.ibm.ws.webcontainer31.*=all:com.ibm.ws.servlet31.*=all:com.ibm.ws.wsoc.*=all:JCDI=all:TCPChannel=all:HTTPChannel=all"/> -->
     	<!-- <logging consoleLogLevel="INFO" maxFileSize="50" maxFiles="3" traceFileName="metadataTrace.log" traceSpecification="*=info:context=all:jeeMetadataContext=all"/>-->
-    	<!-- <logging consoleLogLevel="INFO" maxFileSize="50" maxFiles="3" traceFileName="ClassLoaderTrace.log" traceSpecification="*=info:ClassLoadingService=all"/>-->
+    	<!-- <logging consoleLogLevel="INFO" maxFileSize="50" maxFiles="3" traceFileName="ClassLoaderTrace.log" traceSpecification="*=info:ClassLoadingService=all"/> -->
 	<!-- <include location="${server.config.dir}/configDropins/defaults/cmlogging.xml" optional="true"/> -->
 	<!--<keyStore id="defaultKeyStore" location="C:/opt/WAS85/wlp/usr/servers/myLibertyJEEServer/key.jks" password="Liberty" type="jks"/>-->
     	<transaction waitForRecovery="false"/>
@@ -106,8 +107,8 @@
     <keyStore password=""/>
     -->
     <applicationMonitor updateTrigger="mbean"/>
-
-   <enterpriseApplication id="GarageSaleLibertyEAR7-LooseConfig" location="GarageSaleLibertyEAR.ear" name="GarageSaleLibertyEAR7-LooseConfig">
-           <classloader commonLibraryRef="thirdPartyLib"/>
+   <enterpriseApplication id="GarageSaleLibertyEAR8-LooseConfig" location="GarageSaleLibertyEAR.ear" name="GarageSaleLibertyEAR8-LooseConfig">
+           <classloader commonLibraryRef="thirdPartyLib" apiTypeVisibility="spec,ibm-api,api,stable,third-party"/>
     </enterpriseApplication>
+
 </server>

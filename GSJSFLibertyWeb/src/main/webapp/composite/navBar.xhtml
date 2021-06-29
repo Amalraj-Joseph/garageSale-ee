@@ -54,6 +54,20 @@
 				action="#{jsfWebSocketsClientActions.personaPMIMetricsDashboard}">
 			</h:commandLink>
 		</h:panelGrid>
+		<h:panelGrid id="box5" columns="4" border="3">
+			<h:commandLink value="ee8_bv20 Info" id="ee8_bv20InfoLink"
+				action="#{ee8_bv20Info.gotoee8_bv20Info}">
+			</h:commandLink>
+			<h:commandLink value="ee8_cdi20 Info" id="ee8_cdi20InfoLink"
+				action="#{ee8_cdi20Info.gotoee8_cdi20Info}">
+			</h:commandLink>	
+			<h:commandLink value="ee8_jsf23 Info" id="ee8_jsf23InfoLink"
+				action="#{ee8_jsf23Info.gotoee8_jsf23Info}">
+			</h:commandLink>	
+			<h:commandLink value="ee8_servlet40 Info" id="ee8_servlet40InfoLink"
+				action="#{ee8_servlet40Info.gotoee8_servlet40Info}">
+			</h:commandLink>			
+		</h:panelGrid>		
 		<h:commandButton type="submit" value="Logout" styleClass="commandExButton" id="logoutButton" action="#{logout.logout}">
 		</h:commandButton>
 		
