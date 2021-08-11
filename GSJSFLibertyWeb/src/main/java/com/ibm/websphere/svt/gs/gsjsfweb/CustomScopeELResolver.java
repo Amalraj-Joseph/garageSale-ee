@@ -9,16 +9,16 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import javax.el.ELContext;
-import javax.el.ELException;
-import javax.el.ELResolver;
-import javax.el.PropertyNotFoundException;
-import javax.el.PropertyNotWritableException;
-import javax.faces.application.Application;
-import javax.faces.context.FacesContext;
-import javax.faces.event.PostConstructCustomScopeEvent;
-import javax.faces.event.PreDestroyCustomScopeEvent;
-import javax.faces.event.ScopeContext;
+import jakarta.el.ELContext;
+import jakarta.el.ELException;
+import jakarta.el.ELResolver;
+import jakarta.el.PropertyNotFoundException;
+import jakarta.el.PropertyNotWritableException;
+import jakarta.faces.application.Application;
+import jakarta.faces.context.FacesContext;
+import jakarta.faces.event.PostConstructCustomScopeEvent;
+import jakarta.faces.event.PreDestroyCustomScopeEvent;
+import jakarta.faces.event.ScopeContext;
 
 
 /**
@@ -30,7 +30,7 @@ public class CustomScopeELResolver extends ELResolver {
     private static final String SCOPE_NAME = "customScope";
 	
 	/* (non-Javadoc)
-	 * @see javax.el.ELResolver#getCommonPropertyType(javax.el.ELContext, java.lang.Object)
+	 * @see jakarta.el.ELResolver#getCommonPropertyType(jakarta.el.ELContext, java.lang.Object)
 	 */
 	@Override
 	public Class<?> getCommonPropertyType(ELContext context, Object base) {
@@ -41,7 +41,7 @@ public class CustomScopeELResolver extends ELResolver {
 	}
 
 	/* (non-Javadoc)
-	 * @see javax.el.ELResolver#getFeatureDescriptors(javax.el.ELContext, java.lang.Object)
+	 * @see jakarta.el.ELResolver#getFeatureDescriptors(jakarta.el.ELContext, java.lang.Object)
 	 */
 	@Override
 	public Iterator<FeatureDescriptor> getFeatureDescriptors(ELContext context,
@@ -50,7 +50,7 @@ public class CustomScopeELResolver extends ELResolver {
 	}
 
 	/* (non-Javadoc)
-	 * @see javax.el.ELResolver#getType(javax.el.ELContext, java.lang.Object, java.lang.Object)
+	 * @see jakarta.el.ELResolver#getType(jakarta.el.ELContext, java.lang.Object, java.lang.Object)
 	 */
 	@Override
 	public Class<?> getType(ELContext context, Object base, Object property)
@@ -59,7 +59,7 @@ public class CustomScopeELResolver extends ELResolver {
 	}
 
 	/* (non-Javadoc)
-	 * @see javax.el.ELResolver#getValue(javax.el.ELContext, java.lang.Object, java.lang.Object)
+	 * @see jakarta.el.ELResolver#getValue(jakarta.el.ELContext, java.lang.Object, java.lang.Object)
 	 */
 	@Override
 	public Object getValue(ELContext elContext, Object base, Object property)
@@ -86,7 +86,7 @@ public class CustomScopeELResolver extends ELResolver {
 	}
 
 	/* (non-Javadoc)
-	 * @see javax.el.ELResolver#isReadOnly(javax.el.ELContext, java.lang.Object, java.lang.Object)
+	 * @see jakarta.el.ELResolver#isReadOnly(jakarta.el.ELContext, java.lang.Object, java.lang.Object)
 	 */
 	@Override
 	public boolean isReadOnly(ELContext context, Object base, Object property)
@@ -95,7 +95,7 @@ public class CustomScopeELResolver extends ELResolver {
 	}
 
 	/* (non-Javadoc)
-	 * @see javax.el.ELResolver#setValue(javax.el.ELContext, java.lang.Object, java.lang.Object, java.lang.Object)
+	 * @see jakarta.el.ELResolver#setValue(jakarta.el.ELContext, java.lang.Object, java.lang.Object, java.lang.Object)
 	 */
 	@Override
 	public void setValue(ELContext context, Object base, Object property,

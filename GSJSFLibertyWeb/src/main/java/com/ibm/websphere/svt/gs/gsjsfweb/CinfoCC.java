@@ -4,9 +4,9 @@ import java.io.Serializable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
-import javax.faces.context.FacesContext;
+import jakarta.faces.bean.ManagedBean;
+import jakarta.faces.bean.SessionScoped;
+import jakarta.faces.context.FacesContext;
 
 import com.ibm.websphere.svt.gs.cinfocc.CInfo;
 import com.ibm.websphere.svt.gs.gsdb.jaxws.client.CustomerInfoWrapper;

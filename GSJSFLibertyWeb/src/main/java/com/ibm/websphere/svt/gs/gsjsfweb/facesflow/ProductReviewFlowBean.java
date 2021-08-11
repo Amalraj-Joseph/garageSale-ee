@@ -5,8 +5,8 @@ package com.ibm.websphere.svt.gs.gsjsfweb.facesflow;
 
 import java.io.Serializable;
 
-import javax.faces.flow.FlowScoped;
-import javax.inject.Named;
+import jakarta.faces.flow.FlowScoped;
+import jakarta.inject.Named;
 
 /**
  * @author Administrator

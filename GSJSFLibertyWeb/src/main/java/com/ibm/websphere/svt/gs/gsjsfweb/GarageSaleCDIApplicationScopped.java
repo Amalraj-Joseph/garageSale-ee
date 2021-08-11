@@ -2,8 +2,8 @@ package com.ibm.websphere.svt.gs.gsjsfweb;
 
 import java.io.Serializable;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Named;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Named;
 
 @Named
 @ApplicationScoped

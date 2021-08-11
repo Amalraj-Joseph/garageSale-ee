@@ -1,7 +1,7 @@
 package com.ibm.websphere.svt.gs.ccdb.entities;
 
 import java.io.Serializable;
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 /**
  * The primary key class for the CCHISTORY database table.

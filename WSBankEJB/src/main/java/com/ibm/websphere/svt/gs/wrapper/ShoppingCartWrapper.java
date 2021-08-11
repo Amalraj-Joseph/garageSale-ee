@@ -3,7 +3,7 @@ package com.ibm.websphere.svt.gs.wrapper;
 import java.io.Serializable;
 import java.util.Vector;
 
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlType;
 
 @XmlType(name="ShoppingCartWrapper", namespace="http://wrapper.gs.svt.websphere.ibm.com")
 public class ShoppingCartWrapper implements Serializable {

@@ -5,9 +5,9 @@ package com.ibm.websphere.svt.gs.gsjsfweb.websockets;
 
 import java.io.Serializable;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
+import jakarta.faces.bean.ManagedBean;
+import jakarta.faces.bean.ManagedProperty;
+import jakarta.faces.bean.RequestScoped;
 
 /**
  * @author JAGRAJ

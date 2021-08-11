@@ -5,23 +5,23 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.el.ELContext;
-import javax.el.ExpressionFactory;
-import javax.el.ValueExpression;
-import javax.faces.application.Application;
-import javax.faces.application.ResourceDependency;
-import javax.faces.component.FacesComponent;
-import javax.faces.component.UIInput;
-import javax.faces.component.html.HtmlInputText;
-import javax.faces.context.FacesContext;
-import javax.faces.event.AbortProcessingException;
-import javax.faces.event.ComponentSystemEvent;
-import javax.faces.event.ListenerFor;
-import javax.faces.event.PostAddToViewEvent;
+import jakarta.el.ELContext;
+import jakarta.el.ExpressionFactory;
+import jakarta.el.ValueExpression;
+import jakarta.faces.application.Application;
+import jakarta.faces.application.ResourceDependency;
+import jakarta.faces.component.FacesComponent;
+import jakarta.faces.component.UIInput;
+import jakarta.faces.component.html.HtmlInputText;
+import jakarta.faces.context.FacesContext;
+import jakarta.faces.event.AbortProcessingException;
+import jakarta.faces.event.ComponentSystemEvent;
+import jakarta.faces.event.ListenerFor;
+import jakarta.faces.event.PostAddToViewEvent;
 
 @FacesComponent(value = "cinfocc")
 @ListenerFor(systemEventClass = PostAddToViewEvent.class)
-@ResourceDependency(name = "jsf.js", library = "javax.faces", target = "body")
+@ResourceDependency(name = "jsf.js", library = "jakarta.faces", target = "body")
 public class CInfoUI extends UIInput {
 	
 	
@@ -44,7 +44,7 @@ public class CInfoUI extends UIInput {
     	logger.logp(Level.FINE, className, methodName, "working on event : " + event.toString() );
     	
     	Map<String, String> requestParameterMap = getFacesContext().getExternalContext().getRequestParameterMap();
-    	String exec = requestParameterMap.get("javax.faces.source");
+    	String exec = requestParameterMap.get("jakarta.faces.source");
     	logger.logp(Level.FINE, className, methodName, "Found the request string : " + exec);
     	
     	if((getClientId()+ "_update").equals(exec)) {

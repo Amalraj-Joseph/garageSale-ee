@@ -1,7 +1,7 @@
 package com.ibm.websphere.svt.gs.gsjsfweb.websockets;
 
-import javax.ejb.LocalBean;
-import javax.ejb.Stateless;
+import jakarta.ejb.LocalBean;
+import jakarta.ejb.Stateless;
 
 /**
  * Session Bean implementation class GarageSaleDashboardStatelessEJB

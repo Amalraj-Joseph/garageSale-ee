@@ -4,14 +4,14 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-import javax.ejb.EJB;
-import javax.ejb.LocalBean;
-import javax.ejb.Lock;
-import javax.ejb.LockType;
-import javax.ejb.Singleton;
-import javax.ejb.TransactionManagement;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+import jakarta.ejb.EJB;
+import jakarta.ejb.LocalBean;
+import jakarta.ejb.Lock;
+import jakarta.ejb.LockType;
+import jakarta.ejb.Singleton;
+import jakarta.ejb.TransactionManagement;
 
 import com.ibm.websphere.svt.gs.tax.entity.ShipRate;
 import com.ibm.websphere.svt.gs.tax.entity.TaxRate;
@@ -21,7 +21,7 @@ import com.ibm.websphere.svt.gs.tax.entity.TaxRate;
  */
 @Singleton
 @LocalBean
-@TransactionManagement(javax.ejb.TransactionManagementType.CONTAINER)
+@TransactionManagement(jakarta.ejb.TransactionManagementType.CONTAINER)
 public class TaxAndShipSingletonSessionBean {
 	
 	private static String componentName = "com.ibm.websphere.svt.gs.tax.session";

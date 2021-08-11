@@ -5,24 +5,24 @@
 		<feature>jndi-1.0</feature>
 		<feature>localConnector-1.0</feature>
 		<feature>ssl-1.0</feature>
-		<feature>jaxws-2.2</feature>
-		<feature>jaxb-2.2</feature>
-		<feature>managedBeans-1.0</feature>
+		<feature>xmlWS-3.0</feature>
+		<feature>xmlBinding-3.0</feature>
+		<feature>managedBeans-2.0</feature>
 		<feature>monitor-1.0</feature>
-		<feature>appSecurity-2.0</feature>
+		<feature>appSecurity-4.0</feature>
 		<feature>sessionDatabase-1.0</feature>
         <feature>jdbc-4.2</feature>
-    	<feature>concurrent-1.0</feature>
+    	<feature>concurrent-2.0</feature>
 		<!-- <feature>osgiConsole-1.0</feature> -->
 		<feature>usr:WASPersonaWebServicesHandlerFeature</feature>
-		<feature>websocket-1.1</feature>
-    	<feature>el-3.0</feature>
-		<feature>beanValidation-2.0</feature>
-		<feature>cdi-2.0</feature>
-		<feature>jsf-2.3</feature>
-		<feature>ejbLite-3.2</feature>
-		<feature>jpa-2.2</feature>
-		<feature>jaxrs-2.1</feature>
+		<feature>websocket-2.0</feature>
+    	<feature>expressionLanguage-4.0</feature>
+		<feature>beanValidation-3.0</feature>
+		<feature>cdi-3.0</feature>
+		<feature>faces-3.0</feature>
+		<feature>enterpriseBeansLite-4.0</feature>
+		<feature>persistence-3.0</feature>
+		<feature>restfulWS-3.0</feature>
  		<!--  <feature>wsAtomicTransaction-1.2</feature>-->
     </featureManager>
 

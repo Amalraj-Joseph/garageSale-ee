@@ -12,18 +12,18 @@ import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.annotation.Resource;
-import javax.ejb.EJB;
-import javax.ejb.Local;
-import javax.ejb.LocalBean;
-import javax.ejb.SessionContext;
-import javax.ejb.Stateless;
-import javax.ejb.TransactionManagement;
-import javax.ejb.TransactionManagementType;
-import javax.jws.WebService;
+import jakarta.annotation.Resource;
+import jakarta.ejb.EJB;
+import jakarta.ejb.Local;
+import jakarta.ejb.LocalBean;
+import jakarta.ejb.SessionContext;
+import jakarta.ejb.Stateless;
+import jakarta.ejb.TransactionManagement;
+import jakarta.ejb.TransactionManagementType;
+import jakarta.jws.WebService;
 import javax.sql.DataSource;
-import javax.transaction.Status;
-import javax.transaction.UserTransaction;
+import jakarta.transaction.Status;
+import jakarta.transaction.UserTransaction;
 
 import com.ibm.websphere.svt.gs.cart.CartItem;
 import com.ibm.websphere.svt.gs.ccdb.jaxws.client.CCInfoWrapper;
@@ -78,7 +78,7 @@ public class GarageSaleStoreManager {
 	@Resource
 	private SessionContext mySessionCtx;
 	
-	@javax.annotation.Resource(lookup="java:module/GarageSaleEJBWSClientUtil")
+	@jakarta.annotation.Resource(lookup="java:module/GarageSaleEJBWSClientUtil")
 	private GarageSaleEJBWSClientUtil garageSaleEJBWSClientUtil;
 	
 	private UserTransaction ut;
@@ -119,7 +119,7 @@ public class GarageSaleStoreManager {
 	@EJB private MfgCategorySessionLocal mfgCategorySessionBean;
 	@EJB private SettingSessionLocal settingsSessionBean;
 
-	  @javax.annotation.PostConstruct
+	  @jakarta.annotation.PostConstruct
 	    public void init() {
 		  ccManager=garageSaleEJBWSClientUtil.getCcManager(); 
 		  bankManager=garageSaleEJBWSClientUtil.getBankManager();
@@ -512,7 +512,7 @@ public class GarageSaleStoreManager {
 
 /**	private boolean addInvoiceToShippingQueue(ShoppingCartWrapper shoppingCart){
 		String methodName = "addInvoiceToShippingQueue";
-		javax.jms.Connection conn = null;
+		jakarta.jms.Connection conn = null;
 		MessageProducer msgProducer = null;
 		Session sess = null;
 		try{

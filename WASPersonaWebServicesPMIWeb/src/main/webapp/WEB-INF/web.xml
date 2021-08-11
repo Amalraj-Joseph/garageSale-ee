@@ -7,7 +7,7 @@
 Valid values are 'server' (typically saved in HttpSession) and 'client' (typically
 saved as a hidden field in the form.
 Default is server.</description>
-		<param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+		<param-name>jakarta.faces.STATE_SAVING_METHOD</param-name>
 		<param-value>server</param-value>
 	</context-param>
 	<context-param>
@@ -15,14 +15,14 @@ Default is server.</description>
 		Comma-delimited list of context-relative resource paths under which the JSF implementation
 will look for application configuration resources, before loading a configuration resource
 named /WEB-INF/faces-config.xml (if such a resource exists).</description>
-		<param-name>javax.faces.CONFIG_FILES</param-name>
+		<param-name>jakarta.faces.CONFIG_FILES</param-name>
 		<param-value></param-value>
 	</context-param>
 	<context-param>
 		<description>
 		The default suffix for extension-mapped resources that contain JSF components.
 Default is '.jsp'.</description>
-		<param-name>javax.faces.DEFAULT_SUFFIX</param-name>
+		<param-name>jakarta.faces.DEFAULT_SUFFIX</param-name>
 		<param-value>.xhtml</param-value>
 	</context-param>
 	<context-param>
@@ -32,7 +32,7 @@ in the software development lifecycle.
 Valid values are 'Development', 'UnitTest', 'SystemTest' and 'Production'.
 Default is 'Production'.
 This parameter is not available in JSF 1.x.</description>
-		<param-name>javax.faces.PROJECT_STAGE</param-name>
+		<param-name>jakarta.faces.PROJECT_STAGE</param-name>
 		<param-value>Production</param-value>
 	</context-param>
 	<context-param>
@@ -64,7 +64,7 @@ This may disable custom JSF extensions, such as factories defined in the project
 	</context-param>
 	<servlet>
 		<servlet-name>Faces Servlet</servlet-name>
-		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+		<servlet-class>jakarta.faces.webapp.FacesServlet</servlet-class>
 		<load-on-startup>-1</load-on-startup>
 		<enabled>true</enabled>
 		<async-supported>false</async-supported>

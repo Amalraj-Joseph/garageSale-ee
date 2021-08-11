@@ -5,19 +5,19 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.faces.application.ResourceDependencies;
-import javax.faces.application.ResourceDependency;
-import javax.faces.component.UIComponent;
-import javax.faces.context.FacesContext;
-import javax.faces.context.ResponseWriter;
-import javax.faces.render.FacesRenderer;
-import javax.faces.render.Renderer;
+import jakarta.faces.application.ResourceDependencies;
+import jakarta.faces.application.ResourceDependency;
+import jakarta.faces.component.UIComponent;
+import jakarta.faces.context.FacesContext;
+import jakarta.faces.context.ResponseWriter;
+import jakarta.faces.render.FacesRenderer;
+import jakarta.faces.render.Renderer;
 
 
-@FacesRenderer(rendererType = "cinfocc", componentFamily = "javax.faces.Input")
+@FacesRenderer(rendererType = "cinfocc", componentFamily = "jakarta.faces.Input")
 @ResourceDependencies({
 	@ResourceDependency(name = "cinfo.css", library = "org.was.svt", target = "head"),
-    @ResourceDependency(name = "jsf.js", library = "javax.faces", target = "body")})
+    @ResourceDependency(name = "jsf.js", library = "jakarta.faces", target = "body")})
 public class CInfoRenderer extends Renderer {
 	private static String componentName = "com.ibm.websphere.svt.gs.cinfocc";
 	private static Logger logger = Logger.getLogger(componentName);

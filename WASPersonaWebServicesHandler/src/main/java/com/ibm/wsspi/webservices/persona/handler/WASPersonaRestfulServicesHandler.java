@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 import com.ibm.wsspi.webservices.handler.GlobalHandlerMessageContext;
 import com.ibm.wsspi.webservices.handler.Handler;

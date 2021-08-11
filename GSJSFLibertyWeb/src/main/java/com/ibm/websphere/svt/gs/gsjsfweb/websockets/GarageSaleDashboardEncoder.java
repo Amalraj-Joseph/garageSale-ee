@@ -6,9 +6,9 @@ package com.ibm.websphere.svt.gs.gsjsfweb.websockets;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.websocket.EncodeException;
-import javax.websocket.Encoder;
-import javax.websocket.EndpointConfig;
+import jakarta.websocket.EncodeException;
+import jakarta.websocket.Encoder;
+import jakarta.websocket.EndpointConfig;
 
 import com.ibm.json.java.JSONObject;
 
@@ -23,19 +23,19 @@ public class GarageSaleDashboardEncoder implements Encoder.Text<GarageSaleDashbo
 	private static String className = GarageSaleDashboardEncoder.class.getName();
 
 	/** 
-     * @see javax.websocket.Encoder#init(javax.websocket.EndpointConfig)
+     * @see jakarta.websocket.Encoder#init(jakarta.websocket.EndpointConfig)
      */
     public void init(EndpointConfig config) {
     }
  
     /** 
-     * @see javax.websocket.Encoder#destroy()
+     * @see jakarta.websocket.Encoder#destroy()
      */
     public void destroy() {
     }
  
     /**
-     * @see javax.websocket.Encoder.Text#encode(java.lang.Object)
+     * @see jakarta.websocket.Encoder.Text#encode(java.lang.Object)
      */
     public String encode(GarageSaleDashboardBean garageSaleDashboardBean) throws EncodeException {
     	String methodName="encode";

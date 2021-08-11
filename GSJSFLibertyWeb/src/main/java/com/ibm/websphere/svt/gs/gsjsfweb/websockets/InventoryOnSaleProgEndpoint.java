@@ -10,14 +10,14 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.annotation.Resource;
-import javax.enterprise.concurrent.ManagedScheduledExecutorService;
-import javax.inject.Inject;
-import javax.websocket.CloseReason;
-import javax.websocket.Endpoint;
-import javax.websocket.EndpointConfig;
-import javax.websocket.MessageHandler;
-import javax.websocket.Session;
+import jakarta.annotation.Resource;
+import jakarta.enterprise.concurrent.ManagedScheduledExecutorService;
+import jakarta.inject.Inject;
+import jakarta.websocket.CloseReason;
+import jakarta.websocket.Endpoint;
+import jakarta.websocket.EndpointConfig;
+import jakarta.websocket.MessageHandler;
+import jakarta.websocket.Session;
 
 /**
  * @author JAGRAJ

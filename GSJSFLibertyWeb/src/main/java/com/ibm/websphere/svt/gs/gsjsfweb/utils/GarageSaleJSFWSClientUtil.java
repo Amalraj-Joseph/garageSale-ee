@@ -6,8 +6,8 @@ package com.ibm.websphere.svt.gs.gsjsfweb.utils;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.annotation.ManagedBean;
-import javax.interceptor.Interceptors;
+import jakarta.annotation.ManagedBean;
+import jakarta.interceptor.Interceptors;
 
 import com.ibm.websphere.svt.gs.ccdb.jaxws.client.GarageSaleCCManagerLocal;
 import com.ibm.websphere.svt.gs.gsdb.jaxws.client.GarageSaleStoreManagerLocal;

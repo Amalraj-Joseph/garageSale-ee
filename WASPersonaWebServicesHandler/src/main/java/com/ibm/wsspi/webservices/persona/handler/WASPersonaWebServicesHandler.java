@@ -39,14 +39,14 @@ public class WASPersonaWebServicesHandler implements Handler, WASPersonaWebServi
     	logger.logp(Level.FINE, className, methodName, "Entered into handleMessage method");
 		
 		String key = 
-				messageContext.getProperty(javax.xml.ws.handler.MessageContext.WSDL_SERVICE).toString()+","+messageContext.getProperty(javax.xml.ws.handler.MessageContext.WSDL_OPERATION).toString();
+				messageContext.getProperty(jakarta.xml.ws.handler.MessageContext.WSDL_SERVICE).toString()+","+messageContext.getProperty(jakarta.xml.ws.handler.MessageContext.WSDL_OPERATION).toString();
 		
 		if(jaxWSOperationsDictionary !=null){
 			WASPersonaWebServicesPMIDataBean currentDataBean=jaxWSOperationsDictionary.get(key);
 			if(currentDataBean==null){
 				currentDataBean = new WASPersonaWebServicesPMIDataBean();
-				currentDataBean.setServiceName(getFormattedString(messageContext.getProperty(javax.xml.ws.handler.MessageContext.WSDL_SERVICE).toString(), "}"));
-				currentDataBean.setOperationName(getFormattedString(messageContext.getProperty(javax.xml.ws.handler.MessageContext.WSDL_OPERATION).toString(), "}"));
+				currentDataBean.setServiceName(getFormattedString(messageContext.getProperty(jakarta.xml.ws.handler.MessageContext.WSDL_SERVICE).toString(), "}"));
+				currentDataBean.setOperationName(getFormattedString(messageContext.getProperty(jakarta.xml.ws.handler.MessageContext.WSDL_OPERATION).toString(), "}"));
 				currentDataBean.setAtomicLong(new AtomicLong());
 				currentDataBean.setCurrentCount(currentDataBean.getAtomicLong().incrementAndGet());
 				currentDataBean.setServiceType("JAX-WS");

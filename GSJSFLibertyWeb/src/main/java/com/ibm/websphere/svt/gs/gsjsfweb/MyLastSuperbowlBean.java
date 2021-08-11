@@ -2,10 +2,10 @@ package com.ibm.websphere.svt.gs.gsjsfweb;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import javax.validation.constraints.Past;
+import jakarta.validation.constraints.Past;
 
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Named;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Named;
 
 @Named
 @RequestScoped

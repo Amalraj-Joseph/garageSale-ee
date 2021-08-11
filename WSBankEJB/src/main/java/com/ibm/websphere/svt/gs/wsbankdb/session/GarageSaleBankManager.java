@@ -11,14 +11,14 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.annotation.Resource;
-import javax.ejb.EJB;
-import javax.ejb.Local;
-import javax.ejb.LocalBean;
-import javax.ejb.Stateless;
-import javax.ejb.TransactionManagement;
-import javax.ejb.TransactionManagementType;
-import javax.jws.WebService;
+import jakarta.annotation.Resource;
+import jakarta.ejb.EJB;
+import jakarta.ejb.Local;
+import jakarta.ejb.LocalBean;
+import jakarta.ejb.Stateless;
+import jakarta.ejb.TransactionManagement;
+import jakarta.ejb.TransactionManagementType;
+import jakarta.jws.WebService;
 import javax.sql.DataSource;
 
 import com.ibm.websphere.svt.gs.wrapper.TransactionHistoryWrapper;

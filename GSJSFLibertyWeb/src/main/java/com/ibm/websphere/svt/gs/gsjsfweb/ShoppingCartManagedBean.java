@@ -12,11 +12,11 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-import javax.faces.bean.CustomScoped;
-import javax.faces.bean.ManagedBean;
-import javax.faces.context.FacesContext;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+import jakarta.faces.bean.CustomScoped;
+import jakarta.faces.bean.ManagedBean;
+import jakarta.faces.context.FacesContext;
 
 import com.ibm.websphere.svt.gs.cart.beans.CartItemWrapper;
 

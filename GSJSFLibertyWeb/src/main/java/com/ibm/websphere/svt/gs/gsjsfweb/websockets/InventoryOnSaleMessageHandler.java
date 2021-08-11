@@ -7,9 +7,9 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.websocket.EndpointConfig;
-import javax.websocket.MessageHandler;
-import javax.websocket.Session;
+import jakarta.websocket.EndpointConfig;
+import jakarta.websocket.MessageHandler;
+import jakarta.websocket.Session;
 
 import com.ibm.json.java.JSONArray;
 import com.ibm.websphere.svt.gs.inventory.InventoryOnSaleWrapper;

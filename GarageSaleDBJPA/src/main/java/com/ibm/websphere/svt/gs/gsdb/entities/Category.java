@@ -2,10 +2,10 @@ package com.ibm.websphere.svt.gs.gsdb.entities;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.NamedQuery;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.NamedQuery;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**

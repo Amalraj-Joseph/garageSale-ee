@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
       - name: garagesale
-        image: garagesale-ee8:latest
+        image: garagesale-ee9:latest
         imagePullPolicy: IfNotPresent
         ports:
           - containerPort: 9080

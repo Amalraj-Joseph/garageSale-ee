@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
-import javax.transaction.UserTransaction;
+import jakarta.transaction.UserTransaction;
 
 /**
  * @author JAGRAJ

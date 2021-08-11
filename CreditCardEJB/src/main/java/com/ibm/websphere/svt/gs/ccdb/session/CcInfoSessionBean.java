@@ -1,13 +1,13 @@
 package com.ibm.websphere.svt.gs.ccdb.session;
 
-import javax.annotation.Resource;
-import javax.ejb.Local;
-import javax.ejb.LocalBean;
-import javax.ejb.Stateless;
-import javax.ejb.TransactionManagement;
-import javax.ejb.TransactionManagementType;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import jakarta.annotation.Resource;
+import jakarta.ejb.Local;
+import jakarta.ejb.LocalBean;
+import jakarta.ejb.Stateless;
+import jakarta.ejb.TransactionManagement;
+import jakarta.ejb.TransactionManagementType;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import javax.sql.DataSource;
 
 import com.ibm.websphere.svt.gs.ccdb.entities.CcInfo;

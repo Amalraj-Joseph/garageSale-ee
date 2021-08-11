@@ -1,8 +1,8 @@
 package com.ibm.websphere.persona.pmi.jsfweb;
 
-import javax.annotation.Resource;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import jakarta.annotation.Resource;
+import jakarta.faces.bean.ManagedBean;
+import jakarta.faces.bean.RequestScoped;
 
 import com.ibm.wsspi.webservices.persona.api.WASPersonaRestfulServicesPMIService;
 import com.ibm.wsspi.webservices.persona.api.WASPersonaWebServicesPMIService;

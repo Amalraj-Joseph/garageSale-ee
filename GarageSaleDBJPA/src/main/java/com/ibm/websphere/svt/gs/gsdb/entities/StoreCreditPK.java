@@ -1,8 +1,8 @@
 package com.ibm.websphere.svt.gs.gsdb.entities;
 
 import java.io.Serializable;
-import javax.persistence.*;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.persistence.*;
+import jakarta.xml.bind.annotation.XmlType;
 
 /**
  * The primary key class for the STORECREDIT database table.

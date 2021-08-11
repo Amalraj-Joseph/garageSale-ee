@@ -2,8 +2,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
   <parent>
-  	<groupId>com.ibm.ws.svt.gs.garagesale-ee8</groupId>
-  	<artifactId>garageSale-ee8</artifactId>
+  	<groupId>com.ibm.ws.svt.gs.garagesale-ee9</groupId>
+  	<artifactId>garageSale-ee9</artifactId>
   	<version>1.0-SNAPSHOT</version>
   </parent>
 	<artifactId>GarageSaleRuntimeUtil</artifactId>
@@ -29,7 +29,7 @@
 
 	<dependencies>
 		<dependency>
-	  		<groupId>com.ibm.ws.svt.gs.garagesale-ee8</groupId>
+	  		<groupId>com.ibm.ws.svt.gs.garagesale-ee9</groupId>
 			<artifactId>GarageSaleLibertyEAR</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<type>ear</type>
@@ -40,27 +40,31 @@
 		<plugins>
 			<!-- Enable liberty-maven-plugin -->
 			<plugin>
-				<groupId>net.wasdev.wlp.maven.plugins</groupId>
+				<groupId>io.openliberty.tools</groupId>
 				<artifactId>liberty-maven-plugin</artifactId>
-				<version>2.1.2</version>
+				<version>3.3.5-M2</version>
 				<extensions>true</extensions>
 				<!-- Specify configuration, executions for liberty-maven-plugin -->
 
 				<configuration>
 					<serverName>garageSaleServer</serverName>
-					<assemblyArtifact>
-						<groupId>com.ibm.websphere.appserver.runtime</groupId>
-						<artifactId>wlp-javaee8</artifactId>
-						<version>21.0.0.5</version>
+					<!-- <runtimeArtifact>
+						<groupId>io.openliberty.beta</groupId>
+						<artifactId>openliberty-runtime</artifactId>
+						<version>21.0.0.9-beta</version>
 						<type>zip</type>
-					</assemblyArtifact>
+					</runtimeArtifact> -->
+					<installDirectory>C:/MyData/LibertyInstalls/wlp</installDirectory>
 					<appsDirectory>apps</appsDirectory>
 					<stripVersion>true</stripVersion>
-					<assemblyInstallDirectory>${project.build.directory}</assemblyInstallDirectory>
-					<configFile>publish/servers/server.xml</configFile>
+					<!--<installDirectory>${project.build.directory}</installDirectory>-->
+					<serverXmlFile>publish/servers/server.xml</serverXmlFile>
+					<deployPackages>dependencies</deployPackages>
 					<jvmOptionsFile>publish/files/jvm.options</jvmOptionsFile>
 					<configDirectory>publish/config</configDirectory>					
 					<skipTestServer>true</skipTestServer>
+					<!--  <runtimeInstallDirectory>${project.build.directory}</runtimeInstallDirectory>-->
+					<looseApplication>false</looseApplication>
 				</configuration>
 				<executions>
 					<execution>
@@ -71,7 +75,7 @@
 						</goals>
 						<configuration>
 							<features>
-								<feature>${project.basedir}/publish/files/WASPersonaWebServicesHandlerFeature_1.0.0.201704030941.esa</feature>
+								<feature>${project.basedir}/publish/files/WASPersonaWebServicesHandlerFeature_1.0.0.202109211027.esa</feature>
 								<acceptLicense>true</acceptLicense>
 							</features>
 						</configuration>

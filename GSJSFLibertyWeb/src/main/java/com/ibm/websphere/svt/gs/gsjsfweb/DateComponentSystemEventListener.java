@@ -9,17 +9,17 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.faces.application.FacesMessage;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
-import javax.faces.component.UIComponent;
-import javax.faces.context.ExternalContext;
-import javax.faces.context.FacesContext;
-import javax.faces.event.ComponentSystemEvent;
-import javax.faces.event.ComponentSystemEventListener;
-import javax.faces.event.ListenerFor;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.faces.application.FacesMessage;
+import jakarta.faces.bean.ManagedBean;
+import jakarta.faces.bean.ManagedProperty;
+import jakarta.faces.bean.RequestScoped;
+import jakarta.faces.component.UIComponent;
+import jakarta.faces.context.ExternalContext;
+import jakarta.faces.context.FacesContext;
+import jakarta.faces.event.ComponentSystemEvent;
+import jakarta.faces.event.ComponentSystemEventListener;
+import jakarta.faces.event.ListenerFor;
+import jakarta.servlet.http.HttpServletRequest;
 
 
 /**
@@ -29,7 +29,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @RequestScoped
 @ManagedBean(name="dateComponentSystemEventListener")
-@ListenerFor(systemEventClass=javax.faces.event.PostValidateEvent.class)
+@ListenerFor(systemEventClass=jakarta.faces.event.PostValidateEvent.class)
 public class DateComponentSystemEventListener implements
 		ComponentSystemEventListener {
 
@@ -66,7 +66,7 @@ public class DateComponentSystemEventListener implements
     }
 	
 	/* (non-Javadoc)
-	 * @see javax.faces.event.ComponentSystemEventListener#processEvent(javax.faces.event.ComponentSystemEvent)
+	 * @see jakarta.faces.event.ComponentSystemEventListener#processEvent(jakarta.faces.event.ComponentSystemEvent)
 	 */
 	
 	@Override

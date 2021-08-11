@@ -3,7 +3,7 @@
  */
 package com.ibm.websphere.svt.gs.wsbankdb.session.view;
 
-import javax.jws.WebService;
+import jakarta.jws.WebService;
 
 import com.ibm.websphere.svt.gs.wrapper.TransactionHistoryWrapper;
 

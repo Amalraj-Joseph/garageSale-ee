@@ -5,7 +5,7 @@ package com.ibm.websphere.svt.gs.gsdb.session.view;
 
 import java.util.Vector;
 
-import javax.jws.WebService;
+import jakarta.jws.WebService;
 
 import com.ibm.websphere.svt.gs.cart.CartItem;
 import com.ibm.websphere.svt.gs.ccdb.jaxws.client.CCInfoWrapper;

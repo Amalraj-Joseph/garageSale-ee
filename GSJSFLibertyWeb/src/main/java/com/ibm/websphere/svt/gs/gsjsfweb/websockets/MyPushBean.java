@@ -1,14 +1,14 @@
 package com.ibm.websphere.svt.gs.gsjsfweb.websockets;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Named;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Named;
 import java.io.Serializable;
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.Calendar;
-import javax.faces.push.Push;
-import javax.faces.push.PushContext;
+import jakarta.faces.push.Push;
+import jakarta.faces.push.PushContext;
 import java.util.concurrent.locks.*;
 
 
