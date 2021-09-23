@@ -1,10 +1,10 @@
 package com.ibm.websphere.svt.gs.gsjsfweb.snowday;
 
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.inject.Named;
-import javax.enterprise.event.Event;
-import javax.inject.Inject;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.inject.Named;
+import jakarta.enterprise.event.Event;
+import jakarta.inject.Inject;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 

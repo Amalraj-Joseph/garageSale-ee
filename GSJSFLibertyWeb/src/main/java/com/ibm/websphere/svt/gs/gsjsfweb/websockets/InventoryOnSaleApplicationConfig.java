@@ -6,9 +6,9 @@ package com.ibm.websphere.svt.gs.gsjsfweb.websockets;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.websocket.Endpoint;
-import javax.websocket.server.ServerApplicationConfig;
-import javax.websocket.server.ServerEndpointConfig;
+import jakarta.websocket.Endpoint;
+import jakarta.websocket.server.ServerApplicationConfig;
+import jakarta.websocket.server.ServerEndpointConfig;
 
 /**
  * @author JAGRAJ

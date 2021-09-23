@@ -6,10 +6,10 @@ package pagecode;
 
 //import com.ibm.faces.component.html.HtmlScriptCollector;
 
-import javax.faces.component.html.HtmlOutputText;
+import jakarta.faces.component.html.HtmlOutputText;
 //import com.ibm.faces.component.html.HtmlOutputLinkEx;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import jakarta.faces.bean.ManagedBean;
+import jakarta.faces.bean.RequestScoped;
 
 @ManagedBean(name="pc_Logout")
 @RequestScoped

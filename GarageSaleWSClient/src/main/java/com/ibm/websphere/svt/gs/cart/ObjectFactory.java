@@ -5,7 +5,7 @@
 
 package com.ibm.websphere.svt.gs.cart;
 
-import javax.xml.bind.annotation.XmlRegistry;
+import jakarta.xml.bind.annotation.XmlRegistry;
 
 
 

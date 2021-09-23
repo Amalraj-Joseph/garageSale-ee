@@ -4,12 +4,12 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.ejb.LocalBean;
-import javax.ejb.Stateless;
-import javax.ejb.TransactionManagement;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
+import jakarta.ejb.LocalBean;
+import jakarta.ejb.Stateless;
+import jakarta.ejb.TransactionManagement;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.Query;
 
 import com.ibm.websphere.svt.gs.tax.entity.Inventory;
 
@@ -18,7 +18,7 @@ import com.ibm.websphere.svt.gs.tax.entity.Inventory;
  */
 @Stateless
 @LocalBean
-@TransactionManagement(javax.ejb.TransactionManagementType.CONTAINER)
+@TransactionManagement(jakarta.ejb.TransactionManagementType.CONTAINER)
 public class InventorySession {
 
     /**
@@ -39,7 +39,7 @@ public class InventorySession {
 	/**
 	 * ejbStart
 	 */
-	@javax.annotation.PostConstruct
+	@jakarta.annotation.PostConstruct
 	protected void ejbStart() {
 
 	}
@@ -49,7 +49,7 @@ public class InventorySession {
 	 * 
 	 * Closes Managers that were injected.
 	 */
-	@javax.annotation.PreDestroy
+	@jakarta.annotation.PreDestroy
 	protected void ejbFinish() {
 
 		/*if (prodReviewManager != null) {

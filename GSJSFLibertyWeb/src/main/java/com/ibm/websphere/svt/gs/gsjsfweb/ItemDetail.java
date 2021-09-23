@@ -3,14 +3,14 @@ package com.ibm.websphere.svt.gs.gsjsfweb;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.annotation.PostConstruct;
-import javax.el.ELContext;
-import javax.el.ExpressionFactory;
-import javax.el.ValueExpression;
-import javax.enterprise.context.RequestScoped;
-import javax.faces.application.Application;
-import javax.faces.context.FacesContext;
-import javax.inject.Named;
+import jakarta.annotation.PostConstruct;
+import jakarta.el.ELContext;
+import jakarta.el.ExpressionFactory;
+import jakarta.el.ValueExpression;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.faces.application.Application;
+import jakarta.faces.context.FacesContext;
+import jakarta.inject.Named;
 
 import com.ibm.websphere.svt.gs.gsdb.jaxws.client.GarageSaleStoreManagerLocal;
 import com.ibm.websphere.svt.gs.gsdb.jaxws.client.InventoryWrapper;
@@ -39,7 +39,7 @@ public class ItemDetail implements java.io.Serializable {
 	private String itemName;
 	private String itemImageName=null;
 	private float itemUnitPrice;
-	@javax.annotation.Resource(lookup="java:module/GarageSaleJSFWSClientUtil")
+	@jakarta.annotation.Resource(lookup="java:module/GarageSaleJSFWSClientUtil")
 	private GarageSaleJSFWSClientUtil garageSaleJSFWSClientUtil;
 
 	

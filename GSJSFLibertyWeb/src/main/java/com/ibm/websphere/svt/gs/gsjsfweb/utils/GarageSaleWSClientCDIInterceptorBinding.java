@@ -9,7 +9,7 @@ import static java.lang.annotation.ElementType.METHOD;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
-import javax.interceptor.InterceptorBinding;
+import jakarta.interceptor.InterceptorBinding;
 
 /**
  * @author Administrator

@@ -8,7 +8,7 @@ package com.ibm.websphere.svt.gs.wrapper;
 
 import java.io.Serializable;
 
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlType;
 
 /**
  * @author Administrator

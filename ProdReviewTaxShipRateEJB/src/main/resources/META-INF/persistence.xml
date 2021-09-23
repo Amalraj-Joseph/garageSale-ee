@@ -6,7 +6,7 @@
 		<class>com.ibm.websphere.svt.gs.tax.entity.Inventory</class>
 		<class>com.ibm.websphere.svt.gs.tax.entity.ProdReview</class>
 		<class>com.ibm.websphere.svt.gs.tax.entity.ShipRate</class>
-		<class>com.ibm.websphere.svt.gs.tax.entity.TaxRate</class>
+		<class>com.ibm.websphere.svt.gs.tax.entity.TaxRate</class>		
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<properties>
 			<property name="openjpa.ConnectionFactoryProperties" value="PrintParameters=true"/>

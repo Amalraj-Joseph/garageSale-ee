@@ -2,9 +2,9 @@ package com.ibm.websphere.svt.gs.gsjsfweb.snowday.client;
 
 import com.ibm.websphere.svt.gs.gsjsfweb.snowday.SnowDayEvent;
 
-import javax.ejb.Stateless;
-import javax.enterprise.event.Observes;
-import javax.enterprise.event.ObservesAsync;
+import jakarta.ejb.Stateless;
+import jakarta.enterprise.event.Observes;
+import jakarta.enterprise.event.ObservesAsync;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 

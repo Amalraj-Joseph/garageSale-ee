@@ -1,8 +1,8 @@
 package com.ibm.websphere.svt.gs.gsjsfweb.websockets;
 
-import javax.websocket.Endpoint;
-import javax.websocket.EndpointConfig;
-import javax.websocket.Session;
+import jakarta.websocket.Endpoint;
+import jakarta.websocket.EndpointConfig;
+import jakarta.websocket.Session;
 
 public class FakeEndpoint extends Endpoint {
     

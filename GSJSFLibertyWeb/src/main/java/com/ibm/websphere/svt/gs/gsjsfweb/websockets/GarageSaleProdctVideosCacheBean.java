@@ -7,8 +7,8 @@ import java.io.Serializable;
 import java.nio.ByteBuffer;
 import java.util.concurrent.ConcurrentHashMap;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Named;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Named;
 
 /**
  * @author JAGRAJ

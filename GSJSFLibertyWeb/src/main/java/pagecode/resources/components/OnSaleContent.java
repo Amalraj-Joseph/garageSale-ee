@@ -4,8 +4,8 @@
 package pagecode.resources.components;
 
 import pagecode.PageCodeBase;
-import javax.faces.component.html.HtmlOutputText;
-import javax.faces.component.html.HtmlForm;
+import jakarta.faces.component.html.HtmlOutputText;
+import jakarta.faces.component.html.HtmlForm;
 
 /**
  * @author JAGRAJ

@@ -3,9 +3,9 @@
  */
 package pagecode;
 
-import javax.faces.component.html.HtmlOutputText;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import jakarta.faces.component.html.HtmlOutputText;
+import jakarta.faces.bean.ManagedBean;
+import jakarta.faces.bean.RequestScoped;
 
 @ManagedBean(name="pc_ShowItem")
 @RequestScoped

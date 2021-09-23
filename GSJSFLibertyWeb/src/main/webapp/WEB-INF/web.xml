@@ -3,7 +3,7 @@
 	<display-name>GSjsf20LibertyWeb</display-name>
 	<distributable/>
 	<context-param>
-		<param-name>javax.faces.FACELETS_LIBRARIES</param-name>
+		<param-name>jakarta.faces.FACELETS_LIBRARIES</param-name>
 		<param-value>/WEB-INF/cinfo.taglib.xml</param-value>
 	</context-param>
 	<context-param>
@@ -12,15 +12,15 @@
 Valid values are 'server' (typically saved in HttpSession) and 'client' (typically
 saved as a hidden field in the form.
 Default is server.</description>
-		<param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+		<param-name>jakarta.faces.STATE_SAVING_METHOD</param-name>
 		<param-value>server</param-value>
 	</context-param>
 	<context-param>
-     <param-name>javax.faces.ENABLE_CDI_RESOLVER_CHAIN</param-name>
+     <param-name>jakarta.faces.ENABLE_CDI_RESOLVER_CHAIN</param-name>
      <param-value>true</param-value>
     </context-param>   
     <context-param>
-     <param-name>javax.faces.ENABLE_WEBSOCKET_ENDPOINT</param-name>
+     <param-name>jakarta.faces.ENABLE_WEBSOCKET_ENDPOINT</param-name>
      <param-value>true</param-value>
     </context-param>
 	<context-param>
@@ -36,7 +36,7 @@ Default is server.</description>
 		<description>
 		The default suffix for extension-mapped resources that contain JSF components.
 Default is '.jsp'.</description>
-		<param-name>javax.faces.DEFAULT_SUFFIX</param-name>
+		<param-name>jakarta.faces.DEFAULT_SUFFIX</param-name>
 		<param-value>.xhtml</param-value>
 	</context-param>
 	<context-param>
@@ -46,7 +46,7 @@ in the software development lifecycle.
 Valid values are 'Development', 'UnitTest', 'SystemTest' and 'Production'.
 Default is 'Production'.
 This parameter is not available in JSF 1.x.</description>
-		<param-name>javax.faces.PROJECT_STAGE</param-name>
+		<param-name>jakarta.faces.PROJECT_STAGE</param-name>
 		<param-value>Production</param-value>
 	</context-param>
 	<context-param>
@@ -74,7 +74,7 @@ This may disable custom JSF extensions, such as factories defined in the project
 	</context-param>
 	<servlet>
 		<servlet-name>Faces Servlet</servlet-name>
-		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+		<servlet-class>jakarta.faces.webapp.FacesServlet</servlet-class>
 		<load-on-startup>-1</load-on-startup>
 		<enabled>true</enabled>
 		<!-- This false is the default, but we are to disable it for now -->
@@ -90,7 +90,7 @@ This may disable custom JSF extensions, such as factories defined in the project
                 <location>/error.xhtml</location>
         </error-page>
  		<error-page>
-        	<exception-type>javax.faces.application.ViewExpiredException</exception-type>
+        	<exception-type>jakarta.faces.application.ViewExpiredException</exception-type>
         	<location>/error.xhtml</location>
     	</error-page>
         <!-- Define an error handler for java.lang.Throwable -->

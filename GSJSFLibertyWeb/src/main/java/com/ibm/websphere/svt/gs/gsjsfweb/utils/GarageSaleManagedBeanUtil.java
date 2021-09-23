@@ -13,17 +13,19 @@ import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.el.ELContext;
-import javax.el.ExpressionFactory;
-import javax.el.ValueExpression;
-import javax.faces.application.Application;
-import javax.faces.application.FacesMessage;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
-import javax.faces.context.FacesContext;
-import javax.inject.Inject;
-import javax.ws.rs.core.MediaType;
+import jakarta.el.ELContext;
+import jakarta.el.ExpressionFactory;
+import jakarta.el.ValueExpression;
+import jakarta.faces.application.Application;
+import jakarta.faces.application.FacesMessage;
+import jakarta.faces.bean.ManagedBean;
+import jakarta.faces.bean.ManagedProperty;
+import jakarta.faces.bean.RequestScoped;
+import jakarta.faces.context.FacesContext;
+import jakarta.inject.Inject;
+import jakarta.ws.rs.core.HttpHeaders;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
 
 import org.apache.wink.client.ClientConfig;
 import org.apache.wink.client.EntityType;
@@ -370,7 +372,7 @@ public class GarageSaleManagedBeanUtil implements Serializable{
 		Resource resource = client.resource(uri);
 		resource.contentType(MediaType.APPLICATION_XML);
 		resource.accept(MediaType.APPLICATION_XML);
-		ShipRate shipRate  = resource.get(new EntityType<ShipRate>() {});	
+		ShipRate shipRate  = resource.get(new EntityType<ShipRate>() {});
 		return shipRate;
 	}
 	

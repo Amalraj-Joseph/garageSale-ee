@@ -5,10 +5,10 @@
 
 package com.ibm.websphere.svt.gs.gsdb.session.view.jaxws;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlType;
 
 @XmlRootElement(name = "resetBankDB", namespace = "http://view.session.gsdb.gs.svt.websphere.ibm.com/")
 @XmlAccessorType(XmlAccessType.FIELD)

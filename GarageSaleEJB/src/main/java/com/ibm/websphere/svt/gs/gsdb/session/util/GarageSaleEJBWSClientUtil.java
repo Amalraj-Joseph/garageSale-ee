@@ -6,9 +6,9 @@ package com.ibm.websphere.svt.gs.gsdb.session.util;
 import java.util.Map;
 import java.util.logging.Logger;
 
-import javax.annotation.ManagedBean;
-import javax.xml.ws.BindingProvider;
-import javax.xml.ws.WebServiceRef;
+import jakarta.annotation.ManagedBean;
+import jakarta.xml.ws.BindingProvider;
+import jakarta.xml.ws.WebServiceRef;
 
 import com.ibm.websphere.svt.gs.ccdb.jaxws.client.GarageSaleCCManagerLocal;
 import com.ibm.websphere.svt.gs.ccdb.jaxws.client.GarageSaleCCManagerService;

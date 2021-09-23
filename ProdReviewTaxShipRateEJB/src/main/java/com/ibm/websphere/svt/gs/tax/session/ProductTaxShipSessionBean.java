@@ -4,11 +4,18 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.ejb.EJB;
-import javax.ejb.Local;
-import javax.ejb.Remote;
-import javax.ejb.Stateless;
-import javax.ejb.TransactionManagement;
+import jakarta.ejb.EJB;
+import jakarta.ejb.Local;
+import jakarta.ejb.Remote;
+import jakarta.ejb.Stateless;
+import jakarta.ejb.TransactionManagement;
+import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.PUT;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.QueryParam;
+import jakarta.ws.rs.core.MediaType;
 
 import com.ibm.websphere.svt.gs.tax.entity.ProdReview;
 import com.ibm.websphere.svt.gs.tax.entity.ShipRate;
@@ -17,11 +24,12 @@ import com.ibm.websphere.svt.gs.tax.entity.TaxRate;
 /**
  * Session Bean implementation class ProductTaxShipSessionBean
  */
+@Path("/productTaxShipService")
 @Stateless
 @Local(ProductTaxShipSessionBeanLocal.class)
 @Remote(ProductTaxShipSessionBeanRemote.class)
-@TransactionManagement(javax.ejb.TransactionManagementType.CONTAINER)
-public class ProductTaxShipSessionBean {
+@TransactionManagement(jakarta.ejb.TransactionManagementType.CONTAINER)
+public class ProductTaxShipSessionBean implements ProductTaxShipSessionBeanLocal{
 
 	@EJB 
 	private ProdReviewSession prodReviewSession;
@@ -43,18 +51,30 @@ public class ProductTaxShipSessionBean {
     /**
      * 
      */
+	@GET
+	@Path("getAllStatesTaxInfo")
+	@Produces(MediaType.APPLICATION_XML)
+	@Consumes(MediaType.APPLICATION_XML)
 	public List<TaxRate> getAllStatesTaxInfo() throws Exception {
 		String methodName="getAllStatesTaxInfo";
 		logger.logp(Level.FINE, className, methodName, "Getting All States Tax Info");
 		return taxAndShipRateSingletonBean.getTaxRateList();
 	}
 	
+	@GET
+	@Path("getAllProductsShippingInfo")
+	@Produces(MediaType.APPLICATION_XML)
+	@Consumes(MediaType.APPLICATION_XML)
 	public List<ShipRate> getAllProductsShippingInfo() throws Exception {
 		String methodName="getAllProductsShippingInfo";
 		logger.logp(Level.FINE, className, methodName, "Getting All Products Shipping Info");
 		return taxAndShipRateSingletonBean.getShipRateList();
 	}
-
+    
+	@PUT
+	@Path("saveProductReview")
+	@Produces(MediaType.APPLICATION_XML)
+	@Consumes(MediaType.APPLICATION_XML)
 	public void saveProductReview(ProdReview prodReview) throws Exception {
 		String methodName="saveProductReview";
 		logger.logp(Level.FINE, className, methodName, "Persist Product review into the Database.");
@@ -66,7 +86,11 @@ public class ProductTaxShipSessionBean {
 	 * @return
 	 * @throws Exception
 	 */
-	public ShipRate getShipRateByItemID(String itemID) throws Exception {
+	@GET
+	@Path("getShipRateByItemID")
+	@Produces(MediaType.APPLICATION_XML)
+	@Consumes(MediaType.APPLICATION_XML)
+	public ShipRate getShipRateByItemID(@QueryParam("itemID")String itemID) throws Exception {
 		String methodName ="getShipRateByItemID";
 		ShipRate shipRate=null;
 		try{

@@ -1,18 +1,16 @@
 Manifest-Version: 1.0
+Bundle-Activator: com.ibm.wsspi.webservices.persona.handler.WASPersona
+ WebServicesHandlerActivator
 Bundle-ManifestVersion: 2
-Bundle-Name: WASPersonaWebServicesHandler
-Bundle-SymbolicName: WASPersonaWebServicesHandler
-Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: com.ibm.wsspi.webservices.persona.handler.WASPersonaWe
- bServicesHandlerActivator
-Import-Package: com.ibm.json.java;version="1.0.0",
- com.ibm.json.xml;version="1.0.0",
- com.ibm.wsspi.webservices.handler;version="1.0.0",
- javax.servlet;version="2.6.0",
- javax.servlet.http;version="2.6.0",
- org.osgi.framework
+Bundle-Name: WASPersonaWebServicesHandler Jakarta
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: com.ibm.wsspi.webservices.persona.api,
- com.ibm.wsspi.webservices.persona.handler;uses:="com.ibm.wsspi.webservi
- ces.handler,org.osgi.framework,com.ibm.wsspi.webservices.persona.api"
+Bundle-SymbolicName: WASPersonaWebServicesHandler.jakarta
+Bundle-Version: 1.0.0.qualifier
+Export-Package: com.ibm.wsspi.webservices.persona.api,com.ibm.wsspi.we
+ bservices.persona.handler;uses:="com.ibm.wsspi.webservices.handler,or
+ g.osgi.framework,com.ibm.wsspi.webservices.persona.api"
+Import-Package: com.ibm.json.java;version="1.0.0",com.ibm.json.xml;ver
+ sion="1.0.0",com.ibm.wsspi.webservices.handler;version="1.0.0",jakart
+ a.servlet;version="[5.0,6)",jakarta.servlet.http;version="[5.0,6)",or
+ g.osgi.framework
 

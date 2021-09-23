@@ -3,12 +3,12 @@ package com.ibm.websphere.svt.gs.gsjsfweb;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.annotation.PostConstruct;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
-import javax.faces.context.FacesContext;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+import jakarta.annotation.PostConstruct;
+import jakarta.faces.bean.ManagedBean;
+import jakarta.faces.bean.ViewScoped;
+import jakarta.faces.context.FacesContext;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 
 import com.ibm.websphere.svt.gs.cinfocc.CInfo;
 import com.ibm.websphere.svt.gs.gsdb.jaxws.client.CustomerInfoWrapper;

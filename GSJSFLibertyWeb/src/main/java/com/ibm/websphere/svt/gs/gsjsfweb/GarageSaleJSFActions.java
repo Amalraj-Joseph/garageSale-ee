@@ -10,22 +10,22 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.el.ELContext;
-import javax.el.ExpressionFactory;
-import javax.el.ValueExpression;
-import javax.faces.application.Application;
-import javax.faces.application.FacesMessage;
-import javax.faces.application.Resource;
-import javax.faces.application.ResourceHandler;
-import javax.faces.application.ViewExpiredException;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
-import javax.faces.context.FacesContext;
-import javax.faces.model.DataModel;
-import javax.faces.model.ListDataModel;
-import javax.inject.Inject;
-import javax.xml.ws.WebServiceRef;
+import jakarta.el.ELContext;
+import jakarta.el.ExpressionFactory;
+import jakarta.el.ValueExpression;
+import jakarta.faces.application.Application;
+import jakarta.faces.application.FacesMessage;
+import jakarta.faces.application.Resource;
+import jakarta.faces.application.ResourceHandler;
+import jakarta.faces.application.ViewExpiredException;
+import jakarta.faces.bean.ManagedBean;
+import jakarta.faces.bean.ManagedProperty;
+import jakarta.faces.bean.RequestScoped;
+import jakarta.faces.context.FacesContext;
+import jakarta.faces.model.DataModel;
+import jakarta.faces.model.ListDataModel;
+import jakarta.inject.Inject;
+import jakarta.xml.ws.WebServiceRef;
 
 import com.ibm.websphere.svt.gs.cart.beans.CartItemWrapper;
 import com.ibm.websphere.svt.gs.gsdb.jaxws.client.CartItem;
@@ -60,7 +60,7 @@ public class GarageSaleJSFActions implements Serializable{
 	private static Logger logger = Logger.getLogger(componentName);
 	private static String className = GarageSaleJSFActions.class.getName();
 	private static String FOUNDNULL = "foundNull";	
-	/*@javax.annotation.Resource(lookup="java:module/GarageSaleJSFWSClientUtil")
+	/*@jakarta.annotation.Resource(lookup="java:module/GarageSaleJSFWSClientUtil")
 	private GarageSaleJSFWSClientUtil garageSaleJSFWSClientUtil;*/
 	
 	@Inject
@@ -70,7 +70,7 @@ public class GarageSaleJSFActions implements Serializable{
 	private GarageSaleStoreManagerLocal garageSaleStoreManager;
 	  
 	
-	@javax.annotation.PostConstruct
+	@jakarta.annotation.PostConstruct
 	    public void init() {
 	        garageSaleStoreManager=garageSaleCDIWSClientUtil.injectStoreManagerEndPoint(garageSaleStoreManager); 
 	    }

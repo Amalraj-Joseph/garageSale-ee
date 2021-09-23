@@ -5,7 +5,7 @@ package com.ibm.websphere.svt.gs.ccdb.session.view;
 
 import java.util.List;
 
-import javax.jws.WebService;
+import jakarta.jws.WebService;
 
 import com.ibm.websphere.svt.cc.wrapper.CCInfoWrapper;
 import com.ibm.websphere.svt.gs.ccdb.entities.CcAuthInfo;

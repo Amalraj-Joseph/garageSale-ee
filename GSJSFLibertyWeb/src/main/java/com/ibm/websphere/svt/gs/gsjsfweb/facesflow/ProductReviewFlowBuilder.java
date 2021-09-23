@@ -5,11 +5,11 @@ package com.ibm.websphere.svt.gs.gsjsfweb.facesflow;
 
 import java.io.Serializable;
 
-import javax.enterprise.inject.Produces;
-import javax.faces.flow.Flow;
-import javax.faces.flow.builder.FlowBuilder;
-import javax.faces.flow.builder.FlowBuilderParameter;
-import javax.faces.flow.builder.FlowDefinition;
+import jakarta.enterprise.inject.Produces;
+import jakarta.faces.flow.Flow;
+import jakarta.faces.flow.builder.FlowBuilder;
+import jakarta.faces.flow.builder.FlowBuilderParameter;
+import jakarta.faces.flow.builder.FlowDefinition;
 
 /**
  * @author Administrator
