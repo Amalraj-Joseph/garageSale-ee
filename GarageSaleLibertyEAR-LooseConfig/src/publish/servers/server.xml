@@ -92,7 +92,7 @@
     	<webContainer deferServletLoad="false" invokeFlushAfterService="false"/>	
     	<!-- <logging consoleLogLevel="INFO" maxFileSize="50" maxFiles="3" traceFileName="wsocTrace.log" traceSpecification="*=info:com.ibm.ws.webcontainer.*=all:com.ibm.wsspi.webcontainer.*=all:com.ibm.ws.webcontainer31.*=all:com.ibm.ws.servlet31.*=all:com.ibm.ws.wsoc.*=all:JCDI=all:TCPChannel=all:HTTPChannel=all"/> -->
     	<!-- <logging consoleLogLevel="INFO" maxFileSize="50" maxFiles="3" traceFileName="metadataTrace.log" traceSpecification="*=info:context=all:jeeMetadataContext=all"/>-->
-    	<!-- <logging consoleLogLevel="INFO" maxFileSize="50" maxFiles="3" traceFileName="ClassLoaderTrace.log" traceSpecification="*=info:ClassLoadingService=all"/>-->
+    	<!-- <logging consoleLogLevel="INFO" maxFileSize="50" maxFiles="3" traceFileName="ClassLoaderTrace.log" traceSpecification="*=info:ClassLoadingService=all"/> -->
 	<!-- <include location="${server.config.dir}/configDropins/defaults/cmlogging.xml" optional="true"/> -->
 	<!--<keyStore id="defaultKeyStore" location="C:/opt/WAS85/wlp/usr/servers/myLibertyJEEServer/key.jks" password="Liberty" type="jks"/>-->
     	<transaction waitForRecovery="false"/>
@@ -107,8 +107,8 @@
     <keyStore password=""/>
     -->
     <applicationMonitor updateTrigger="mbean"/>
-
    <enterpriseApplication id="GarageSaleLibertyEAR8-LooseConfig" location="GarageSaleLibertyEAR.ear" name="GarageSaleLibertyEAR8-LooseConfig">
-           <classloader commonLibraryRef="thirdPartyLib"/>
+           <classloader commonLibraryRef="thirdPartyLib" />
     </enterpriseApplication>
+
 </server>

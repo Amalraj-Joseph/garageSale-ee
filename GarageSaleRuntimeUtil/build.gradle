@@ -31,7 +31,7 @@ liberty {
         //apps = [ear]
         stripVersion = true
         	features {
-            	name = ["${projectDir}/publish/files/WASPersonaWebServicesHandlerFeature_1.0.0.201704030941.esa"]
+            	name = ["${projectDir}/publish/files/WASPersonaWebServicesHandlerFeature_1.0.0.202109211027.esa"]
             	acceptLicense = true
         	}
     }

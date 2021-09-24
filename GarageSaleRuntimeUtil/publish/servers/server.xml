@@ -108,7 +108,7 @@
     -->
     <applicationMonitor updateTrigger="mbean"/>
    <enterpriseApplication id="GarageSaleLibertyEAR8-LooseConfig" location="GarageSaleLibertyEAR.ear" name="GarageSaleLibertyEAR8-LooseConfig">
-           <classloader commonLibraryRef="thirdPartyLib" apiTypeVisibility="spec,ibm-api,api,stable,third-party"/>
+           <classloader commonLibraryRef="thirdPartyLib" />
     </enterpriseApplication>
 
 </server>
