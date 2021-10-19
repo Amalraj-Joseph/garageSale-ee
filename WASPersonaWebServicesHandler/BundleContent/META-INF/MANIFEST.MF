@@ -4,7 +4,7 @@ Export-Package: com.ibm.wsspi.webservices.persona.api,com.ibm.wsspi.we
  bservices.persona.handler;uses:="com.ibm.wsspi.webservices.handler,or
  g.osgi.framework,com.ibm.wsspi.webservices.persona.api"
 Bundle-Name: WASPersonaWebServicesHandler
-Bundle-Version: 1.0.0.202109211027
+Bundle-Version: 1.0.0.202110181027
 Bundle-ManifestVersion: 2
 Bundle-Activator: com.ibm.wsspi.webservices.persona.handler.WASPersona
  WebServicesHandlerActivator
@@ -12,7 +12,7 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.7,
  JavaSE-1.8
 Import-Package: com.ibm.json.java;version="1.0.0",
  com.ibm.json.xml;version="1.0.0",
- com.ibm.wsspi.webservices.handler;version="1.0.0",
+ com.ibm.wsspi.webservices.handler;version="10.0.0",
  jakarta.servlet;version="5.0.0",
  jakarta.servlet.http;version="5.0.0",
  jakarta.xml.ws;version="3.0.0",
