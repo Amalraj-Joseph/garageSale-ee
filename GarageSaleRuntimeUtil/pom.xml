@@ -42,7 +42,7 @@
 			<plugin>
 				<groupId>io.openliberty.tools</groupId>
 				<artifactId>liberty-maven-plugin</artifactId>
-				<version>3.3.5-M2</version>
+				<version>3.4</version>
 				<extensions>true</extensions>
 				<!-- Specify configuration, executions for liberty-maven-plugin -->
 
@@ -75,7 +75,7 @@
 						</goals>
 						<configuration>
 							<features>
-								<feature>${project.basedir}/publish/files/WASPersonaWebServicesHandlerFeature_1.0.0.202109211027.esa</feature>
+								<feature>${project.basedir}/publish/files/WASPersonaWebServicesHandlerFeature_1.0.0.202110181027.esa</feature>
 								<acceptLicense>true</acceptLicense>
 							</features>
 						</configuration>
