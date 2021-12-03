@@ -1,3 +1,4 @@
+package dojo.util.doh.robot;
 import java.security.*;
 import java.applet.Applet;
 import java.awt.*;

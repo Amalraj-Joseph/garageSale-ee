@@ -1,16 +1,18 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-  <parent>
-  	<groupId>com.ibm.ws.svt.gs.garagesale-ee9</groupId>
-  	<artifactId>garageSale-ee9</artifactId>
-  	<version>1.0-SNAPSHOT</version>
-  </parent>
+	<parent>
+		<groupId>com.ibm.ws.svt.gs.garagesale-ee9</groupId>
+		<artifactId>garageSale-ee9</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
 	<artifactId>GarageSaleRuntimeUtil</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>liberty-assembly</packaging>
 	<name>GarageSaleRuntime</name>
-
+	<properties>
+		<!--<liberty.install.dir>C:\MyData\OpenLibertyInstalls\wlp</liberty.install.dir>-->
+		<liberty.install.dir>C:\MyData\LibertyInstalls\wlp</liberty.install.dir>
+	</properties>
 	<pluginRepositories>
 		<!-- Configure Sonatype OSS Maven snapshots repository (for liberty-maven-plugin 
 			V2.0-SNAPSHOT) -->
@@ -26,15 +28,34 @@
 			</releases>
 		</pluginRepository>
 	</pluginRepositories>
+	<!--
+	<dependencyManagement>
+
+		<dependencies>
+			<dependency>
+				<groupId>com.ibm.ws.svt.gs.garagesale-ee9</groupId>
+				<artifactId>GarageSaleLibertyEAR</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+				<type>ear</type>
+			</dependency>-->
+	<!--<dependency>
+				<groupId>com.ibm.ws.svt.gs.garagesale-ee9</groupId>
+				<artifactId>WASPersonaWebServicesBOM</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+				<type>pom</type>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>-->
 
 	<dependencies>
 		<dependency>
-	  		<groupId>com.ibm.ws.svt.gs.garagesale-ee9</groupId>
+			<groupId>com.ibm.ws.svt.gs.garagesale-ee9</groupId>
 			<artifactId>GarageSaleLibertyEAR</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<type>ear</type>
 		</dependency>
 	</dependencies>
+
 
 	<build>
 		<plugins>
@@ -42,11 +63,18 @@
 			<plugin>
 				<groupId>io.openliberty.tools</groupId>
 				<artifactId>liberty-maven-plugin</artifactId>
-				<version>3.4</version>
+				<version>3.5.2-SNAPSHOT</version>
 				<extensions>true</extensions>
 				<!-- Specify configuration, executions for liberty-maven-plugin -->
 
 				<configuration>
+					<copyDependencies>
+						<dependency>
+							<groupId>com.ibm.db2</groupId>
+							<artifactId>jcc</artifactId>
+							<version>11.5.4.0</version>
+						</dependency>
+					</copyDependencies>
 					<serverName>garageSaleServer</serverName>
 					<!-- <runtimeArtifact>
 						<groupId>io.openliberty.beta</groupId>
@@ -54,18 +82,23 @@
 						<version>21.0.0.9-beta</version>
 						<type>zip</type>
 					</runtimeArtifact> -->
-					<installDirectory>C:/MyData/LibertyInstalls/wlp</installDirectory>
+					<installDirectory>${liberty.install.dir}</installDirectory>
 					<appsDirectory>apps</appsDirectory>
 					<stripVersion>true</stripVersion>
 					<!--<installDirectory>${project.build.directory}</installDirectory>-->
 					<serverXmlFile>publish/servers/server.xml</serverXmlFile>
 					<deployPackages>dependencies</deployPackages>
 					<jvmOptionsFile>publish/files/jvm.options</jvmOptionsFile>
-					<configDirectory>publish/config</configDirectory>					
+					<configDirectory>publish/config</configDirectory>
 					<skipTestServer>true</skipTestServer>
 					<!--  <runtimeInstallDirectory>${project.build.directory}</runtimeInstallDirectory>-->
-					<looseApplication>false</looseApplication>
+					<looseApplication>true</looseApplication>
+					<features>
+						<feature>${project.basedir}/publish/files/WASPersonaWebServicesHandlerFeature_1.0.0.202110181027.esa</feature>
+						<acceptLicense>true</acceptLicense>
+					</features>
 				</configuration>
+				<!-- 
 				<executions>
 					<execution>
 						<id>install-feature</id>
@@ -79,8 +112,15 @@
 								<acceptLicense>true</acceptLicense>
 							</features>
 						</configuration>
-					</execution>
-				</executions>
+					</execution>-->
+				<!--<execution>
+						<id>prepare-feature</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>prepare-feature</goal>
+						</goals>
+					</execution>-->
+				<!--</executions>-->
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -94,7 +134,8 @@
 							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${project.build.directory}/wlp/usr/shared/resources/db2drivers</outputDirectory>
+							<!-- <outputDirectory>${project.build.directory}/wlp/usr/shared/resources/db2drivers</outputDirectory> -->
+							<outputDirectory>${liberty.install.dir}/usr/shared/resources/db2drivers</outputDirectory>
 							<resources>
 								<resource>
 									<directory>publish/databaseDrivers/db2V9Drivers</directory>
@@ -112,7 +153,7 @@
 							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${project.build.directory}/wlp/usr/shared/resources/jaxrsThirdPartyJars</outputDirectory>
+							<outputDirectory>${liberty.install.dir}/usr/shared/resources/jaxrsThirdPartyJars</outputDirectory>
 							<resources>
 								<resource>
 									<directory>publish/jaxrsThirdPartyJars</directory>

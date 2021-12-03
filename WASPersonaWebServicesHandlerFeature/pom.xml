@@ -1,0 +1,52 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.ibm.ws.svt.gs.garagesale-ee9</groupId>
+		<artifactId>garageSale-ee9</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>WASPersonaWebServicesHandlerFeature</artifactId>
+	<packaging>esa</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<!--
+	<properties>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
+	</properties>
+	-->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.aries</groupId>
+				<artifactId>esa-maven-plugin</artifactId>
+				<version>1.0.2</version>
+				<extensions>true</extensions>
+				<configuration>
+					<subsystemManifestFile>${basedir}/src/main/resources/OSGI-INF/SUBSYSTEM.MF</subsystemManifestFile>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<distributionManagement>
+		<repository>
+			<id>central</id>
+			<name>artifactory-dal10-01-node-12.swg-devops.com-releases</name>
+			<url>https://na.artifactory.swg-devops.com/artifactory/hyc-wassvt-team-maven-virtual</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>artifactory-dal10-01-node-12.swg-devops.com-snapshots</name>
+			<url>https://na.artifactory.swg-devops.com/artifactory/hyc-wassvt-team-maven-virtual</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.ibm.ws.svt.gs.garagesale-ee9</groupId>
+			<artifactId>WASPersonaWebServicesHandler</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+
+</project>

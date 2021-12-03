@@ -14,7 +14,10 @@
 	<module>
 		<ejb>GarageSaleEJB.jar</ejb>
 	</module>
-	<!-- <module> <ejb>ProdReviewTaxShipRateEJB.jar</ejb> </module> -->
+	  
+	<!--<module>
+		<ejb>ProdReviewTaxShipRateEJB.jar</ejb>
+	</module>-->
 	<module>
 		<web>
 			<web-uri>WASPersonaWebServicesPMIWeb.war</web-uri>
