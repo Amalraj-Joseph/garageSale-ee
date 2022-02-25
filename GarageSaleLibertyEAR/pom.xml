@@ -1,6 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.ibm.ws.svt.gs.garagesale-ee9</groupId>
@@ -15,11 +13,13 @@
 		<plugins>
 			<plugin>
 				<artifactId>maven-ear-plugin</artifactId>
-				<version>2.10</version>
+				<version>3.2.0</version>
 				<configuration>
-					<fileName>${project.artifactId}</fileName>
-					<fileNameMapping>no-version</fileNameMapping>
-					<version>7</version>
+					<!--<Name>${project.artifactId}</fileName>-->
+					<finalName>${project.artifactId}</finalName>
+					<!-- This property is dprecated-->
+					<!--<fileNameMapping>no-version</filefileNameMapping>-->
+					<outputFileNameMapping>@{artifactId}@.@{extension}@</outputFileNameMapping>
 					<defaultLibBundleDir>lib</defaultLibBundleDir>
 				</configuration>
 			</plugin>
@@ -87,11 +87,13 @@
 			<version>0.0.1-SNAPSHOT</version>
 			<type>war</type>
 		</dependency>
+		<!--
 		<dependency>
 			<groupId>svtMessageApp</groupId>
 			<artifactId>svtMessageApp</artifactId>
 			<version>2.0.1</version>
 			<type>war</type>
 		</dependency>
+		-->
 	</dependencies>
 </project>
