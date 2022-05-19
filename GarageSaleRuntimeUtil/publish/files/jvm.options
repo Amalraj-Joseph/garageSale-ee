@@ -13,6 +13,15 @@
 
 -Xms1024m
 -Xmx1024m
+#-Dcom.sun.jndi.ldap.object.disableEndpointIdentification=true
+#-verbose:gc
+#-Xdump:heap
+#-Xaggressive
+#-Xverbosegclog:/logs/verbosegc.log,1,1000000
+#-verbose:sizes
+
+#GarageSale WebServices Endpoint addresses.
+
 -DGarageSaleCCManagerService.endPoint.Address=https://localhost:9443/CreditCardEJB/GarageSaleCCManagerService
 -DGarageSaleStoreManagerService.endPoint.Address=https://localhost:9443/GarageSaleEJB/GarageSaleStoreManagerService
 -DGarageSaleBankManagerService.endPoint.Address=https://localhost:9443/WSBankEJB/GarageSaleBankManagerService
@@ -25,3 +34,4 @@
 -DGarageSale.Enable.WebSockets.Concurrency=true
 -DWSAT_ROLLBACK_CC=false
 -DWSAT_ROLLBACK_WSBANK=false
+
