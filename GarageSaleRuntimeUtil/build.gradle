@@ -9,29 +9,31 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'net.wasdev.wlp.gradle.plugins:liberty-gradle-plugin:2.1.1-SNAPSHOT'
-        
+        classpath 'io.openliberty.tools:liberty-gradle-plugin:3.3.1'
     }
 }
 
 description = 'GarageSaleRuntime'
+def libertyInstallDir = "C:\\MyData\\LibertyInstalls\\wlp"
+
 dependencies {
-  compile project(':GarageSaleLibertyEAR')
-  libertyRuntime group: 'com.ibm.websphere.appserver.runtime', name: 'wlp-javaee8', version: '21.0.0.5'
+  //libertyApp project(':GarageSaleLibertyEAR')
+  libertyApp project(path: ':GarageSaleLibertyEAR', configuration: 'archives')
+  libertyRuntime group: 'com.ibm.websphere.appserver.runtime', name: 'wlp-jakartaee9', version: '22.0.0.5'
 }
 
 liberty {
+    installDir="${libertyInstallDir}"
     server {
         name = "garageSaleServer"
-        configFile = file('publish/servers/server-gradle.xml')
+        serverXmlFile = file('publish/servers/server.xml')
         jvmOptionsFile = file('publish/files/jvm.options')
         configDirectory = file('publish/config')
-        looseApplication = true
+        looseApplication = false
         stripVersion = true
-        //apps = [ear]
         stripVersion = true
         	features {
-            	name = ["${projectDir}/publish/files/WASPersonaWebServicesHandlerFeature_1.0.0.202109211027.esa"]
+            	name = ["${projectDir}/publish/files/WASPersonaWebServicesHandlerFeature_1.0.0.202110181027.esa"]
             	acceptLicense = true
         	}
     }
@@ -52,4 +54,8 @@ task copyMyEAR(type: Copy) {
 	into "${buildDir}/wlp/usr/servers/garageSaleServer/apps"
 }
 
-libertyCreate.finalizedBy 'copyMyEAR', 'copyDB2Jars', 'copyJaxRSThirdPartyJars'
+//libertyCreate.finalizedBy 'copyMyEAR', 'copyDB2Jars', 'copyJaxRSThirdPartyJars'
+libertyCreate.finalizedBy 'copyDB2Jars', 'copyJaxRSThirdPartyJars'
+deploy.dependsOn ':GarageSaleLibertyEAR:ear'
+build.dependsOn 'deploy'
+
