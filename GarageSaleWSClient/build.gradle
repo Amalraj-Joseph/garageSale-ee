@@ -1,6 +1,12 @@
 
 description = ''
 
+dependencies {
+    compileOnly group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version:'3.0.1'
+    compileOnly group: 'jakarta.xml.ws', name: 'jakarta.xml.ws-api', version:'3.0.1'
+}
+
+
 jar{
 	archiveName="$baseName.$extension"
 }
