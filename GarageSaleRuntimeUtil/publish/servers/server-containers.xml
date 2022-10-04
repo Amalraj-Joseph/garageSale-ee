@@ -1,0 +1,148 @@
+<server description="GarageSale">
+
+	<!-- Enable features -->
+	<featureManager>
+		<feature>jndi-1.0</feature>
+		<feature>localConnector-1.0</feature>
+		<feature>ssl-1.0</feature>
+		<feature>microProfile-5.0</feature>
+		<feature>xmlWS-3.0</feature>
+		<feature>xmlBinding-3.0</feature>
+		<feature>managedBeans-2.0</feature>
+		<feature>monitor-1.0</feature>
+		<feature>appSecurity-4.0</feature>
+		<feature>sessionDatabase-1.0</feature>
+		<feature>jdbc-4.2</feature>
+		<feature>concurrent-2.0</feature>
+		<!-- <feature>osgiConsole-1.0</feature> -->
+		<feature>usr:WASPersonaWebServicesHandlerFeature</feature>
+		<feature>websocket-2.0</feature>
+		<feature>expressionLanguage-4.0</feature>
+		<feature>beanValidation-3.0</feature>
+		<feature>cdi-3.0</feature>
+		<feature>faces-3.0</feature>
+		<feature>enterpriseBeansLite-4.0</feature>
+		<feature>persistence-3.0</feature>
+		<feature>restfulWS-3.0</feature>
+		<!-- <feature>wsAtomicTransaction-1.2</feature> -->
+		<feature>json-1.0</feature>
+	</featureManager>
+
+
+
+	<!-- To allow access to this server from a remote client host="*" has been 
+		added to the following element -->
+	<httpEndpoint host="*" httpPort="9080" httpsPort="9443"
+		id="defaultHttpEndpoint" />
+	<mpMetrics authentication="false" />
+
+	<ssl id="LDAPSSLSettings" keyStoreRef="ldaptruststore"
+		trustStoreRef="ldaptruststore" />
+	<keyStore id="ldaptruststore"
+		location="/config/trustStore.jks" type="JKS" password="passw0rd" />
+
+	<ldapRegistry host="isdsldap11.fyre.ibm.com"
+		baseDN="o=ibm,c=us" port="9636" ldapType="IBM Tivoli Directory Server"
+		id="LDAP_tdirsrv" sslEnabled="true" name="o=ldap1"
+		sslRef="LDAPSSLSettings">
+		<failoverServers name="isdsldapsvt backup">
+			<server host="isdsldap21.fyre.ibm.com" port="9636" />
+			<server host="isdsldap31.fyre.ibm.com" port="9636" />
+		</failoverServers>
+	</ldapRegistry>
+
+	<!-- Automatically expand WAR files and EAR files -->
+	<!-- Automatically expand WAR files and EAR files -->
+	<applicationManager autoExpand="true" />
+
+	<authData id="GSDataSourceAuthData"
+		password="${env.DBPass}" user="${env.DBPass}" />
+
+
+	<jdbcDriver id="GSDBProvider" libraryRef="DB2JCC4LIB" />
+	<library filesetRef="db2jcc4" id="DB2JCC4LIB">
+	</library>
+	<fileset dir="${shared.resource.dir}/db2drivers" id="db2jcc4"
+		includes="db2jcc4.jar db2jcc_license_cu.jar" />
+
+	<library id="thirdPartyLib">
+		<fileset dir="${shared.resource.dir}/jaxrsThirdPartyJars"
+			includes="*.jar" scanInterval="5s" />
+	</library>
+
+	<dataSource id="jdbc/gsdb" jdbcDriverRef="GSDBProvider"
+		jndiName="jdbc/gsdb" type="javax.sql.XADataSource">
+		<properties databaseName="${env.GSDB_NAME}" driverType="4"
+			password="${env.GSDB_PASSWORD}" portNumber="${env.GSDB_PORT}"
+			serverName="${env.GSDB_SERVER_NAME}" user="${env.GSDB_USER}" />
+		<connectionManager id="jdbc/gsdb" maxPoolSize="300"
+			minPoolSize="50" />
+	</dataSource>
+	<dataSource id="jdbc/ccdb" jdbcDriverRef="GSDBProvider"
+		jndiName="jdbc/ccdb" type="javax.sql.XADataSource">
+		<properties databaseName="${env.CCDB_NAME}" driverType="4"
+			password="${env.CCDB_PASSWORD}" portNumber="${env.CCDB_PORT}"
+			serverName="${env.CCDB_SERVER_NAME}" user="${env.CCDB_USER}" />
+		<connectionManager id="jdbc/ccdb" maxPoolSize="200"
+			minPoolSize="50" />
+	</dataSource>
+	<dataSource id="jdbc/wsbankdb" jdbcDriverRef="GSDBProvider"
+		jndiName="jdbc/wsbankdb" type="javax.sql.XADataSource">
+		<properties databaseName="${env.WSBANKDB_NAME}" driverType="4"
+			password="${env.WSBANKDB_PASSWORD}" portNumber="${env.WSBANKDB_PORT}"
+			serverName="${env.WSBANKDB_SERVER_NAME}" user="${env.WSBANKDB_USER}" />
+		<connectionManager id="jdbc/wsbankdb"
+			maxPoolSize="200" minPoolSize="50" />
+	</dataSource>
+	<dataSource id="SessionDS" jdbcDriverRef="GSDBProvider"
+		jndiName="jdbc/Sessions" type="javax.sql.XADataSource">
+		<properties databaseName="${env.SESSIONDB_NAME}" driverType="4"
+			password="${env.SESSIONDB_PASSWORD}" portNumber="${env.SESSIONDB_PORT}"
+			serverName="${env.SESSIONDB_SERVER_NAME}" user="${env.SESSIONDB_USER}" />
+		<connectionManager id="jdbc/sessions"
+			maxPoolSize="200" minPoolSize="50" />
+	</dataSource>
+	<httpSessionDatabase dataSourceRef="SessionDS"
+		id="SessionDB" writeContents="ALL_SESSION_ATTRIBUTES"
+		writeFrequency="END_OF_SERVLET_SERVICE" />
+	<httpSession cloneId="localhost_cloneID"
+		storageRef="SessionDB" />
+
+	<webContainer deferServletLoad="false" />
+
+	<transaction />
+
+	<webContainer deferServletLoad="false"
+		invokeFlushAfterService="false" />
+
+	<!-- <logging consoleLogLevel="INFO" maxFileSize="50" maxFiles="3" traceFileName="wsocTrace.log" 
+		traceSpecification="*=info:com.ibm.ws.webcontainer.*=all:com.ibm.wsspi.webcontainer.*=all:com.ibm.ws.webcontainer31.*=all:com.ibm.ws.servlet31.*=all:com.ibm.ws.wsoc.*=all:JCDI=all:TCPChannel=all:HTTPChannel=all"/> -->
+	<!-- <logging consoleLogLevel="INFO" maxFileSize="50" maxFiles="3" traceFileName="metadataTrace.log" 
+		traceSpecification="*=info:context=all:jeeMetadataContext=all"/> -->
+	<!-- <logging consoleLogLevel="INFO" maxFileSize="50" maxFiles="3" traceFileName="ClassLoaderTrace.log" 
+		traceSpecification="*=info:ClassLoadingService=all"/> -->
+	<!-- <include location="${server.config.dir}/configDropins/defaults/cmlogging.xml" 
+		optional="true"/> -->
+	<!--<keyStore id="defaultKeyStore" location="C:/opt/WAS85/wlp/usr/servers/myLibertyJEEServer/key.jks" 
+		password="Liberty" type="jks"/> -->
+	<transaction waitForRecovery="false" />
+
+
+	<!-- This template enables security. To get the full use of all the capabilities, 
+		a keystore and user registry are required. -->
+
+	<!-- For the keystore, default keys are generated and stored in a keystore. 
+		To provide the keystore password, generate an encoded password using bin/securityUtility 
+		encode and add it below in the password attribute of the keyStore element. 
+		Then uncomment the keyStore element. -->
+	<!-- <keyStore password=""/> -->
+	<applicationMonitor updateTrigger="mbean" />
+
+	<enterpriseApplication
+		id="GarageSaleLibertyEAR8-LooseConfig"
+		location="${server.config.dir}/apps/GarageSaleLibertyEAR.ear"
+		name="GarageSaleLibertyEAR8-LooseConfig">
+		<classloader commonLibraryRef="thirdPartyLib" />
+	</enterpriseApplication>
+
+</server>
