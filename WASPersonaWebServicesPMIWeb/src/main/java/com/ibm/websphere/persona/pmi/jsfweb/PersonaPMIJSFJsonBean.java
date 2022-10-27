@@ -5,14 +5,14 @@ package com.ibm.websphere.persona.pmi.jsfweb;
 
 import java.io.Serializable;
 
-import jakarta.faces.bean.ManagedBean;
-import jakarta.faces.bean.RequestScoped;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Named;
 
 /**
  * @author JAGRAJ
  *
  */
-@ManagedBean(name="personaPMIJSFJsonBean")
+@Named("personaPMIJSFJsonBean")
 @RequestScoped
 public class PersonaPMIJSFJsonBean implements Serializable{
 

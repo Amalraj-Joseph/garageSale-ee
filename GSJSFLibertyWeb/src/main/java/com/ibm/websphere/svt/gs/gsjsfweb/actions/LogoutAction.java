@@ -1,27 +1,23 @@
 package com.ibm.websphere.svt.gs.gsjsfweb.actions;
 
 import java.io.IOException;
-
-
 import java.io.Serializable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import com.ibm.websphere.svt.gs.gsjsfweb.utils.GarageSaleLargeSessionUtil;
+
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
-import jakarta.faces.bean.ManagedBean;
-import jakarta.faces.bean.RequestScoped;
+import jakarta.enterprise.context.RequestScoped;
 import jakarta.faces.context.ExternalContext;
 import jakarta.faces.context.FacesContext;
+import jakarta.inject.Named;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import jakarta.servlet.http.HttpServletMapping;
 
-
-import com.ibm.websphere.svt.gs.gsjsfweb.utils.GarageSaleLargeSessionUtil;
-
-@ManagedBean(name="logout")
+@Named("logout")
 @RequestScoped
 public class LogoutAction implements Serializable{
 	

@@ -6,19 +6,22 @@ package com.ibm.websphere.svt.gs.gsjsfweb;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import jakarta.faces.bean.ManagedBean;
-import jakarta.faces.bean.ManagedProperty;
-import jakarta.faces.bean.RequestScoped;
+import jakarta.enterprise.context.RequestScoped;
 import jakarta.faces.context.FacesContext;
 import jakarta.faces.context.Flash;
 import jakarta.faces.model.DataModel;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 
 /**
  * @author root
  *
  */
-@ManagedBean(name="categoriesBean")
+//@Named(name="categoriesBean")
+//@RequestScoped
+@Named
 @RequestScoped
+
 public class CategoriesBean {
 	/**
 	 * @return the garageSaleJSFActions
@@ -42,7 +45,8 @@ public class CategoriesBean {
 	private transient DataModel categoriesDataModel=null;
 	@SuppressWarnings("rawtypes")
 	private transient DataModel tempCategoriesDataModel=null;
-	@ManagedProperty(name="garageSaleJSFActions",value="#{garageSaleJSFActions}")
+	//@ManagedProperty(name="garageSaleJSFActions",value="#{garageSaleJSFActions}")
+	@Inject
     private GarageSaleJSFActions garageSaleJSFActions;
 
 

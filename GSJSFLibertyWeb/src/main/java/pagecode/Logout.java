@@ -4,14 +4,14 @@
 package pagecode;
 
 
+import jakarta.enterprise.context.RequestScoped;
+
 //import com.ibm.faces.component.html.HtmlScriptCollector;
 
 import jakarta.faces.component.html.HtmlOutputText;
-//import com.ibm.faces.component.html.HtmlOutputLinkEx;
-import jakarta.faces.bean.ManagedBean;
-import jakarta.faces.bean.RequestScoped;
+import jakarta.inject.Named;
 
-@ManagedBean(name="pc_Logout")
+@Named("pc_Logout")
 @RequestScoped
 /**
  * @author Administrator

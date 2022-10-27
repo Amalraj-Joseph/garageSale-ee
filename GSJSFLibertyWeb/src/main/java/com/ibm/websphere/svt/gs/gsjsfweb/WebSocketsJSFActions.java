@@ -11,28 +11,28 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import jakarta.faces.bean.ManagedBean;
-import jakarta.faces.bean.ManagedProperty;
-import jakarta.faces.bean.RequestScoped;
+import com.ibm.websphere.svt.gs.gsjsfweb.websockets.GarageSaleProdctVideosCacheBean;
+import com.ibm.websphere.svt.gs.gsjsfweb.websockets.GarageSaleUploadVideoClientEndpoint;
+import com.ibm.websphere.svt.gs.gsjsfweb.websockets.GarageSaleWebSocketsUtil;
+import com.ibm.websphere.svt.gs.gsjsfweb.websockets.ProductUploadManagedBean;
+
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.faces.annotation.ManagedProperty;
 import jakarta.faces.context.ExternalContext;
 import jakarta.faces.context.FacesContext;
 import jakarta.inject.Inject;
+import jakarta.inject.Named;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.websocket.ContainerProvider;
 import jakarta.websocket.Session;
 import jakarta.websocket.WebSocketContainer;
 
-import com.ibm.websphere.svt.gs.gsjsfweb.websockets.GarageSaleProdctVideosCacheBean;
-import com.ibm.websphere.svt.gs.gsjsfweb.websockets.GarageSaleUploadVideoClientEndpoint;
-import com.ibm.websphere.svt.gs.gsjsfweb.websockets.GarageSaleWebSocketsUtil;
-import com.ibm.websphere.svt.gs.gsjsfweb.websockets.ProductUploadManagedBean;
-
 /**
  * @author JAGRAJ
  *
  */
-@ManagedBean(name="webSocketsJSFActions")
+@Named("webSocketsJSFActions")
 @RequestScoped
 public class WebSocketsJSFActions implements Serializable{
 
@@ -54,7 +54,8 @@ public class WebSocketsJSFActions implements Serializable{
 	@Inject
 	private GarageSaleProdctVideosCacheBean garageSaleProdctVideosCacheBean;
 	
-	@ManagedProperty(name="productUploadManagedBean",value="#{productUploadManagedBean}")
+	//@ManagedProperty(name="productUploadManagedBean",value="#{productUploadManagedBean}")
+	@Inject
 	private ProductUploadManagedBean productUploadManagedBean;
 	
 	

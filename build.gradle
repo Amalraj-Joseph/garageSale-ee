@@ -1,7 +1,7 @@
 allprojects  {
   apply plugin: 'maven-publish'
 
-  group = 'com.ibm.ws.svt.gs.garagesale-ee9'
+  group = 'com.ibm.ws.svt.gs.garagesale-ee10'
 version = '1.0-SNAPSHOT'
 }
 

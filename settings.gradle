@@ -1,4 +1,4 @@
-rootProject.name = 'garageSale-ee9'
+rootProject.name = 'garageSale-ee10'
 include ':WSBankDBJPA'
 include ':WSBankEJB'
 include ':CreditCardDBJPA'
