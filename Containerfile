@@ -48,6 +48,7 @@ COPY --chown=1001:0 ./GarageSaleRuntimeUtil/publish/files/WASPersonaWebServicesH
 # Setting for the verbose option
 ARG VERBOSE=true
 ARG FULL_IMAGE=false
+ARG SKIP_FEATURE_INSTALL=false
 ARG OL=true
 
 # This script will add the requested XML snippets to enable Liberty features and grow image to be fit-for-purpose using featureUtility. 
