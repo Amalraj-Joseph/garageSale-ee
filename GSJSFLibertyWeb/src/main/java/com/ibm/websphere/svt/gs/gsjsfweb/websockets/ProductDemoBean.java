@@ -5,14 +5,16 @@ package com.ibm.websphere.svt.gs.gsjsfweb.websockets;
 
 import java.io.Serializable;
 
-import jakarta.faces.bean.ManagedBean;
-import jakarta.faces.bean.RequestScoped;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.faces.annotation.ManagedProperty;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 
 /**
  * @author JAGRAJ
  *
  */
-@ManagedBean(name="productDemoBean")
+@Named("productDemoBean")
 @RequestScoped
 public class ProductDemoBean implements Serializable{
 
@@ -21,7 +23,8 @@ public class ProductDemoBean implements Serializable{
 	 */
 	private static final long serialVersionUID = 1592552451432324686L;
 	
-	//@ManagedProperty("#{param.fileName}")
+	@Inject
+	@ManagedProperty("#{param.fileName}")
 	private String fileName;
 	private String readStatus;
 	/**

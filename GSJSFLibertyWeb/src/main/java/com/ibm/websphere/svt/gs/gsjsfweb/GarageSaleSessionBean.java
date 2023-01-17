@@ -7,21 +7,21 @@ import java.io.Serializable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import com.ibm.websphere.svt.gs.gsjsfweb.exceptions.GSJSF12WebException;
+
 import jakarta.el.ELContext;
 import jakarta.el.ExpressionFactory;
 import jakarta.el.ValueExpression;
+import jakarta.enterprise.context.SessionScoped;
 import jakarta.faces.application.Application;
-import jakarta.faces.bean.ManagedBean;
-import jakarta.faces.bean.SessionScoped;
 import jakarta.faces.context.FacesContext;
-
-import com.ibm.websphere.svt.gs.gsjsfweb.exceptions.GSJSF12WebException;
+import jakarta.inject.Named;
 
 /**
  * @author root
  *
  */
-@ManagedBean(name="garageSaleSessionBean")
+@Named("garageSaleSessionBean")
 @SessionScoped
 public class GarageSaleSessionBean implements Serializable{
 

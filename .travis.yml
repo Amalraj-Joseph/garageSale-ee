@@ -22,10 +22,10 @@ script:
 - docker build -t garagesale-ee -f Containerfile --build-arg REG_USER=$REG_USER --build-arg REG_PASSWORD=$REG_PASSWORD --build-arg OL=false .
 - tag=`git log --pretty=format:"%h" -1`
 - docker tag garagesale-ee $CONT_REGISTRY/garagesale/garagesale-ee:$tag
-- docker tag garagesale-ee $CONT_REGISTRY/garagesale/garagesale-ee:jdk17
-- docker tag garagesale-ee $CONT_REGISTRY/garagesale/garagesale-ee:latest
-- docker tag garagesale-ee $CONT_REGISTRY/garagesale/garagesale-ee:ga
+- docker tag garagesale-ee $CONT_REGISTRY/garagesale/garagesale-ee:ee10jdk17tol
+#- docker tag garagesale-ee $CONT_REGISTRY/garagesale/garagesale-ee:latest
+#- docker tag garagesale-ee $CONT_REGISTRY/garagesale/garagesale-ee:ga
 - docker push  $CONT_REGISTRY/garagesale/garagesale-ee:$tag
-- docker push  $CONT_REGISTRY/garagesale/garagesale-ee:latest
-- docker push  $CONT_REGISTRY/garagesale/garagesale-ee:jdk17
-- docker push  $CONT_REGISTRY/garagesale/garagesale-ee:ga
+#- docker push  $CONT_REGISTRY/garagesale/garagesale-ee:latest
+- docker push  $CONT_REGISTRY/garagesale/garagesale-ee:ee10jdk17tol
+#- docker push  $CONT_REGISTRY/garagesale/garagesale-ee:ga

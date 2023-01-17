@@ -9,16 +9,16 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import jakarta.enterprise.context.RequestScoped;
 import jakarta.faces.application.FacesMessage;
-import jakarta.faces.bean.ManagedBean;
-import jakarta.faces.bean.ManagedProperty;
-import jakarta.faces.bean.RequestScoped;
 import jakarta.faces.component.UIComponent;
 import jakarta.faces.context.ExternalContext;
 import jakarta.faces.context.FacesContext;
 import jakarta.faces.event.ComponentSystemEvent;
 import jakarta.faces.event.ComponentSystemEventListener;
 import jakarta.faces.event.ListenerFor;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 import jakarta.servlet.http.HttpServletRequest;
 
 
@@ -28,12 +28,13 @@ import jakarta.servlet.http.HttpServletRequest;
  */
 
 @RequestScoped
-@ManagedBean(name="dateComponentSystemEventListener")
+@Named("dateComponentSystemEventListener")
 @ListenerFor(systemEventClass=jakarta.faces.event.PostValidateEvent.class)
 public class DateComponentSystemEventListener implements
 		ComponentSystemEventListener {
 
-	@ManagedProperty(name="shoppingCartManagedBean",value="#{shoppingCartManagedBean}")
+	//@ManagedProperty(name="shoppingCartManagedBean",value="#{shoppingCartManagedBean}")
+	@Inject
 	private  ShoppingCartManagedBean shoppingCartManagedBean;
 	private static String componentName = "com.ibm.websphere.svt.gs.gsjsfweb";
 	private static Logger logger = Logger.getLogger(componentName);

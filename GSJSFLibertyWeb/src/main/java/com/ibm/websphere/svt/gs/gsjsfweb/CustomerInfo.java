@@ -3,20 +3,20 @@ package com.ibm.websphere.svt.gs.gsjsfweb;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import jakarta.annotation.PostConstruct;
-import jakarta.faces.bean.ManagedBean;
-import jakarta.faces.bean.ViewScoped;
-import jakarta.faces.context.FacesContext;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
-
 import com.ibm.websphere.svt.gs.cinfocc.CInfo;
 import com.ibm.websphere.svt.gs.gsdb.jaxws.client.CustomerInfoWrapper;
 import com.ibm.websphere.svt.gs.gsjsfweb.exceptions.GSJSF12WebException;
 import com.ibm.websphere.svt.gs.gsjsfweb.utils.GSJSFWebUtil;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.faces.context.FacesContext;
+import jakarta.faces.view.ViewScoped;
+import jakarta.inject.Named;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 
-@ManagedBean(name="customerInfo")
+
+@Named("customerInfo")
 @ViewScoped
 public class CustomerInfo implements java.io.Serializable {
 	

@@ -20,10 +20,10 @@ package com.ibm.websphere.svt.gs.gsjsfweb;
 
 import java.io.Serializable;
 
-import jakarta.faces.bean.ManagedBean;
-import jakarta.faces.bean.SessionScoped;
+import jakarta.enterprise.context.SessionScoped;
+import jakarta.inject.Named;
 
-@ManagedBean
+@Named
 @SessionScoped
 public class DojoBean implements Serializable {
 	

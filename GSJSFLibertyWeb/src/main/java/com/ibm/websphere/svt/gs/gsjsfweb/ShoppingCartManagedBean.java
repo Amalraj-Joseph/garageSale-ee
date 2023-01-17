@@ -9,24 +9,26 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import com.ibm.websphere.svt.gs.cart.beans.CartItemWrapper;
+import com.ibm.websphere.svt.gs.cdi.extensions.CDICustomScoped;
+import com.ibm.websphere.svt.gs.cdi.extensions.CDICustomScopedContext;
+
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
-import jakarta.faces.bean.CustomScoped;
-import jakarta.faces.bean.ManagedBean;
 import jakarta.faces.context.FacesContext;
-
-import com.ibm.websphere.svt.gs.cart.beans.CartItemWrapper;
+import jakarta.inject.Named;
 
 
 /**
  * @author root
  *
  */
-@ManagedBean(name="shoppingCartManagedBean")
-@CustomScoped(value="#{customScope}")
+@Named("shoppingCartManagedBean")
+@CDICustomScoped
 public class ShoppingCartManagedBean implements Serializable{
 	
 	private static final long serialVersionUID = 6400978223722041014L;
@@ -35,6 +37,8 @@ public class ShoppingCartManagedBean implements Serializable{
 	private static Logger logger = Logger.getLogger(componentName);
 	private static String className = ShoppingCartManagedBean.class.getName();
 	private ArrayList<CartItemWrapper> cartItemWrapperList;
+	private static final String SCOPE_NAME = "cdiCustomScope";
+
 	
 	public ShoppingCartManagedBean () {
 	} 
@@ -77,6 +81,8 @@ public class ShoppingCartManagedBean implements Serializable{
     public void postConstruct() {
     	String methodName="postConstruct";
         FacesContext ctx = FacesContext.getCurrentInstance();
+        //Map<String,Object> sessionMap = ctx.getExternalContext().getSessionMap();
+        //sessionMap.put(SCOPE_NAME, CDICustomScopedContext.getInstance());
         try{
     		DateFormat dateFormat= new SimpleDateFormat("yyyy-MM-dd");
 			//Date currentDate = new Date();
@@ -110,7 +116,11 @@ public class ShoppingCartManagedBean implements Serializable{
     	String methodName="destroyScope";
 		logger.logp(Level.FINE, className, methodName, "Destroy current scope");
         FacesContext ctx = FacesContext.getCurrentInstance();
-        CustomScopeELResolver.destroyScope(ctx);
+        //Map<String,Object> sessionMap = ctx.getExternalContext().getSessionMap();
+        //CDICustomScopedContext cdiCustomScopedContext = (CDICustomScopedContext) sessionMap.get(SCOPE_NAME);
+        CDICustomScopedContext cdiCustomScopedContext = CDICustomScopedContext.getInstance();
+        cdiCustomScopedContext.shutdown();
+        //sessionMap.remove(SCOPE_NAME);
         return null;
 
     }

@@ -15,7 +15,7 @@ import jakarta.inject.Named;
  */
 @Named
 @RequestScoped
-//@ManagedBean(name="productReviewBean")
+//@Named(name="productReviewBean")
 //@RequestScoped
 public class ProductReviewBean implements Serializable{
 	/**

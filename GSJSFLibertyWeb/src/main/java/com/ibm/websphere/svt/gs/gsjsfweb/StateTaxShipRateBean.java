@@ -15,7 +15,7 @@ import jakarta.inject.Named;
  */
 @Named
 @SessionScoped
-//@ManagedBean(name="stateTaxShipRateBean")
+//@Named(name="stateTaxShipRateBean")
 //@SessionScoped
 public class StateTaxShipRateBean implements Serializable{
 	
