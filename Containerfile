@@ -43,7 +43,7 @@ COPY  --chown=1001:0 ./GarageSaleRuntimeUtil/publish/jaxrsThirdPartyJars /opt/ib
 COPY  --chown=1001:0  ./GarageSaleRuntimeUtil/publish/files/trustStore.jks /config/trustStore.jks
 
 #Copy GarageSale User feature to /mytemp folder
-COPY --chown=1001:0 ./GarageSaleRuntimeUtil/publish/files/WASPersonaWebServicesHandlerFeature_1.0.0.202110181027.esa /mytemp
+COPY --chown=1001:0 ./GarageSaleRuntimeUtil/publish/files/WASPersonaWebServicesHandlerFeature-1.0.0-SNAPSHOT.esa /mytemp
 
 # Setting for the verbose option
 ARG VERBOSE=true
@@ -54,9 +54,8 @@ ARG OL=true
 # Only available in 'kernel-slim'. The 'full' tag already includes all features for convenience.
 
 #RUN if [[ -z "$FULL_IMAGE" ]] ; then echo Skip running features.sh for full image ; else  ; fi
-RUN if [[ "$FULL_IMAGE" == "false" && "$OL" == "true" ]] ; then features.sh ; else echo "Skip running features.sh for full image" ; fi \
-    && if [[ "$OL" == "false" ]]; then featureManager install /mytemp/WASPersonaWebServicesHandlerFeature_1.0.0.202110181027.esa --when-file-exists=replace --acceptLicense; fi
-
+RUN if [ "$FULL_IMAGE" = "false" ] && [ "$OL" == "true" ] ; then features.sh ; else echo "Skip running features.sh for full image" ; fi \
+    && if [ "$OL" = "false" ] ; then featureManager install  /mytemp/WASPersonaWebServicesHandlerFeature-1.0.0-SNAPSHOT.esa  --when-file-exists=replace --acceptLicense ; fi
 
 
 # Add interim fixes for WL/OL (optional)

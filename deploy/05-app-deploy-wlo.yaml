@@ -36,9 +36,27 @@ spec:
     annotations:
        haproxy.router.openshift.io/timeout: 3m
   probes:
-    readiness: {}
-    liveness: {}
-    startup: {}
+    startup:
+      httpGet:
+        path: /health/started
+        port: 9080
+        scheme: HTTP
+      initialDelaySeconds: 180
+      periodSeconds: 20
+      successThreshold: 1
+      failureThreshold: 50
+    readiness:
+      httpGet:
+        path: /health/ready
+        port: 9080
+        scheme: HTTP
+      initialDelaySeconds: 360
+    liveness:
+      httpGet:
+        path: /health/live
+        port: 9080
+        scheme: HTTP
+      initialDelaySeconds: 360
   env:
     - name: GSDB_SERVER_NAME
       value: 'gs-db2'
