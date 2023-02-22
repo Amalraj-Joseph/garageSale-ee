@@ -98,7 +98,7 @@ spec:
   - host: 
     http:
       paths:
-      - path: /GSjsf20LibertyWeb
+      - path: /GSjsf40LibertyWeb
         backend:
           serviceName: garagesale
           servicePort: 9443

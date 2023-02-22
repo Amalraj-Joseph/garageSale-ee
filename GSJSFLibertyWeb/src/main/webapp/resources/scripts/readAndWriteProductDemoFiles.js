@@ -3,7 +3,7 @@
 		var videoFileName;
 		//var paramFileName=document.getElementById("playProductDemoVideoForm:fileName").value;
 		var webSocket = new WebSocket(wsProtocol+'://' + window.document.location.host
-				+ '/GSjsf20LibertyWeb/garageSaleProductDemosWebSocketEndpoint/demoRequest');
+				+ '/GSjsf40LibertyWeb/garageSaleProductDemosWebSocketEndpoint/demoRequest');
 		
 		console.log = function() {}
 				

@@ -137,9 +137,9 @@
 	<applicationMonitor updateTrigger="mbean" />
 
 	<enterpriseApplication
-		id="GarageSaleLibertyEAR8-LooseConfig"
+		id="GarageSaleLibertyEAR10-LooseConfig"
 		location="${server.config.dir}/apps/GarageSaleLibertyEAR.ear"
-		name="GarageSaleLibertyEAR8-LooseConfig">
+		name="GarageSaleLibertyEAR10-LooseConfig">
 		<classloader commonLibraryRef="thirdPartyLib" />
 	</enterpriseApplication>
 

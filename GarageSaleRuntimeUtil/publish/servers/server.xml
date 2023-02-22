@@ -108,7 +108,7 @@
     <keyStore password=""/>
     -->
     <applicationMonitor updateTrigger="mbean"/>
-   <enterpriseApplication id="GarageSaleLibertyEAR8-LooseConfig" location="GarageSaleLibertyEAR.ear" name="GarageSaleLibertyEAR8-LooseConfig">
+   <enterpriseApplication id="GarageSaleLibertyEAR10-LooseConfig" location="GarageSaleLibertyEAR.ear" name="GarageSaleLibertyEAR10-LooseConfig">
            <classloader commonLibraryRef="thirdPartyLib" />
     </enterpriseApplication>
 

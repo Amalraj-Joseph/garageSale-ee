@@ -1,7 +1,7 @@
 		var httpProtocol= window.document.location.protocol;
 		var wsProtocol = getWSProtocol(httpProtocol);
 		var gsWebSocketsDashboard = new WebSocket(wsProtocol+'://'  + window.document.location.host
-				+ '/GSjsf20LibertyWeb/garageSaleDashboardEndPoint/webSocketsMetrics');
+				+ '/GSjsf40LibertyWeb/garageSaleDashboardEndPoint/webSocketsMetrics');
 				
 		gsWebSocketsDashboard.onerror = function(event) {
 			onWebSocketsDashboardError(event);

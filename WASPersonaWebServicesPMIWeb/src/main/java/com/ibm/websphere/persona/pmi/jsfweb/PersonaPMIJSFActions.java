@@ -127,7 +127,7 @@ public class PersonaPMIJSFActions implements Serializable{
     		FacesContext facesContext= FacesContext.getCurrentInstance();
     		ExternalContext externalContext = facesContext.getExternalContext();
     		ServletContext servletContext = (ServletContext) externalContext.getContext();
-    		ServletContext pmiWebAppContext = servletContext.getContext("/GSjsf20LibertyWeb");
+    		ServletContext pmiWebAppContext = servletContext.getContext("/GSjsf40LibertyWeb");
     		String uri = pmiWebAppContext.getContextPath();
     		return uri;
     }

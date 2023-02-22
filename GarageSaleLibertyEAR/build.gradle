@@ -12,7 +12,7 @@ dependencies {
   deploy project(':GarageSaleEJB')
   //deploy project(':ProdReviewTaxShipRateEJB')
   deploy project(path:':WASPersonaWebServicesPMIWeb', configuration:'archives')
-  deploy project(path:':GSjsf20LibertyWeb', configuration:'archives')
+  deploy project(path:':GSjsf40LibertyWeb', configuration:'archives')
 }
 
 archivesBaseName = 'GarageSaleLibertyEAR'

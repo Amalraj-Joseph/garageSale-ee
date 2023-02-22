@@ -18,14 +18,23 @@ script:
 #- chmod +x $TRAVIS_BUILD_DIR/install-jdk.sh
 #- export JAVA_HOME=$HOME/openjdk17
 #- $TRAVIS_BUILD_DIR/install-jdk.sh -F 17 --target $JAVA_HOME
-- mvn clean package
-- docker build -t garagesale-ee -f Containerfile --build-arg REG_USER=$REG_USER --build-arg REG_PASSWORD=$REG_PASSWORD --build-arg BASE_IMAGE=$BASE_IMAGE --build-arg OL=false  --build-arg FULL_IMAGE=true .
+- echo "JAVA_HOME=$JAVA_HOME"
+- echo "TRAVIS_JDK_VERSION=$TRAVIS_JDK_VERSION"
+- HYCSVT="$CONT_REGISTRY/hyc-wassvt-team-image-registry-docker-local"
+- echo "$REG_USER" > /tmp/.user
+- echo "$REG_PASSWORD" > /tmp/.token
+- docker login $CONT_REGISTRY -u $(cat /tmp/.user) -p $(cat /tmp/.token)
+- export DOCKER_BUILDKIT=1
+#- export BUILDKIT_COLORS=run=123,20,245:error=yellow:cancel=blue:warning=white
+- export BUILDKIT_PROGRESS=plain
+- mvn -q clean package
+- docker build -t garagesale-ee -f Containerfile --secret id=token,src=/tmp/.token --secret id=user,src=/tmp/.user --build-arg BASE_IMAGE=$BASE_IMAGE --build-arg OL=false  --build-arg FULL_IMAGE=true .
 - tag=`git log --pretty=format:"%h" -1`
-- docker tag garagesale-ee $CONT_REGISTRY/garagesale/garagesale-ee:$tag
-- docker tag garagesale-ee $CONT_REGISTRY/garagesale/garagesale-ee:ee10jdk17tol
-#- docker tag garagesale-ee $CONT_REGISTRY/garagesale/garagesale-ee:latest
-#- docker tag garagesale-ee $CONT_REGISTRY/garagesale/garagesale-ee:ga
-- docker push  $CONT_REGISTRY/garagesale/garagesale-ee:$tag
-#- docker push  $CONT_REGISTRY/garagesale/garagesale-ee:latest
-- docker push  $CONT_REGISTRY/garagesale/garagesale-ee:ee10jdk17tol
-#- docker push  $CONT_REGISTRY/garagesale/garagesale-ee:ga
+- docker tag garagesale-ee $HYCSVT/garagesale/garagesale-ee:$tag
+- docker tag garagesale-ee $HYCSVT/garagesale/garagesale-ee:ee10jdk17
+#- docker tag garagesale-ee $HYCSVT/garagesale/garagesale-ee:latest
+#- docker tag garagesale-ee $HYCSVT/garagesale/garagesale-ee:ga
+- docker push  $HYCSVT/garagesale/garagesale-ee:$tag
+#- docker push  $HYCSVT/garagesale/garagesale-ee:latest
+- docker push  $HYCSVT/garagesale/garagesale-ee:ee10jdk17
+#- docker push  $HYCSVT/garagesale/garagesale-ee:ga

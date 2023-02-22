@@ -3,6 +3,9 @@
  */
 package pagecode;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -54,6 +57,7 @@ public class Index extends PageCodeBase {
 	
 	private GarageSaleStoreManagerLocal localService=GarageSaleWSClientUtils.getStoreManager();
 	private SettingsWrapper settings = null;
+	private static ConcurrentHashMap<String, Object> cookieAtributes = new ConcurrentHashMap<String, Object>();
 	
 	public String login() {
 		String outcomeString = OUTCOME_FAILED;
@@ -117,6 +121,17 @@ public class Index extends PageCodeBase {
 			} else {
 				// seems nothing to be done
 				// may need to set up a login boolean here
+				
+				/*
+				 * Adding this new feature for faces 4.0 Jakarta EE10 release
+				 */
+				
+				if(fc.getExternalContext().isSecure()) {
+					cookieAtributes.put("maxAge", -1);
+					cookieAtributes.put("SameSite", "None; Secure");
+					fc.getExternalContext().addResponseCookie("currentUserLogin", userID, cookieAtributes);
+				}
+				
 				String customerName = localCustomer.getCustName();
 				int numberOfInvoices = localCustomer.getNumInvoicesCompleted();
 				logger.logp(Level.FINEST, className, methodName, "User " + customerName + " has " + numberOfInvoices + " invoices");

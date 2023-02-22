@@ -130,7 +130,11 @@ public class GarageSaleProductDemosWebSocketEndpoint {
     	ByteBuffer videoFile=null;
         try {
         	if(requestType !=null && requestType.equalsIgnoreCase("demoRequest")){
-            	Map<String,Object> userProperties=endpointConfig.getUserProperties();
+            	//Map<String,Object> userProperties=endpointConfig.getUserProperties();
+        		/*
+        		 * Getting UserProeprties from session object - New feature in WebSOckets 2.1 - Jakarta EE10
+        		 */
+        		Map<String,Object> userProperties=currentSession.getUserProperties();
             	String path=userProperties.get("filePath").toString();
             	//String filePath = path+System.getProperty("file.separator")+"2013_04_12_0907_April_12_Opportunity_Codes_Mp.mp4";
             	if(garageSaleProdctVideosCacheBean.getProductDemoVideosMap()==null || garageSaleProdctVideosCacheBean.getProductDemoVideosMap().size()==0){
