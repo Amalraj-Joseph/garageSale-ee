@@ -7,7 +7,7 @@
 		<artifactId>garageSale-ee10</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>GSjsf20LibertyWeb</artifactId>
+	<artifactId>GSjsf40LibertyWeb</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<build>

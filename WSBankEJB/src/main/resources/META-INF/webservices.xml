@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<webservices xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/javaee_web_services_1_4.xsd" version="1.4">
+<webservices xmlns="https://jakarta.ee/xml/ns/jakartaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/jakartaee_web_services_2_0.xsd"
+	version="2.0">
 	<webservice-description>
 		<webservice-description-name>GarageSaleBankManagerService</webservice-description-name>
 		<wsdl-file>META-INF/wsdl/GarageSaleBankManagerService.wsdl</wsdl-file>
 		<port-component>
 			<port-component-name>GarageSaleBankManagerLocal</port-component-name>
-			<wsdl-service xmlns:pfx="http://session.wsbankdb.gs.svt.websphere.ibm.com/">
-			pfx:GarageSaleBankManagerService</wsdl-service>
-			<wsdl-port xmlns:pfx="http://session.wsbankdb.gs.svt.websphere.ibm.com/">
-			pfx:GarageSaleBankManagerPort</wsdl-port>
+			<wsdl-service
+				xmlns:pfx="http://session.wsbankdb.gs.svt.websphere.ibm.com/">pfx:GarageSaleBankManagerService
+			</wsdl-service>
+			<wsdl-port
+				xmlns:pfx="http://session.wsbankdb.gs.svt.websphere.ibm.com/">pfx:GarageSaleBankManagerPort
+			</wsdl-port>
 			<enable-mtom>false</enable-mtom>
 			<service-endpoint-interface>com.ibm.websphere.svt.gs.wsbankdb.session.view.GarageSaleBankManagerLocal</service-endpoint-interface>
 			<service-impl-bean>
 				<servlet-link>
-				com.ibm.websphere.svt.gs.wsbankdb.session.GarageSaleBankManagerService</servlet-link>
+					com.ibm.websphere.svt.gs.wsbankdb.session.GarageSaleBankManagerService
+				</servlet-link>
 			</service-impl-bean>
 		</port-component>
 	</webservice-description>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<application xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/application_7.xsd" version="7">
+<application xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/application_10.xsd" version="10">
   <description>!!!EAR resources from the root directory need to be moved under src/main/application!!!</description>
   <display-name>GarageSaleLibertyEAR</display-name>
   <module>
@@ -22,8 +22,8 @@
   </module>
   <module>
     <web>
-      <web-uri>GSjsf20LibertyWeb.war</web-uri>
-      <context-root>/GSjsf20LibertyWeb</context-root>
+      <web-uri>GSjsf40LibertyWeb.war</web-uri>
+      <context-root>/GSjsf40LibertyWeb</context-root>
     </web>
   </module>
   <library-directory>lib</library-directory>

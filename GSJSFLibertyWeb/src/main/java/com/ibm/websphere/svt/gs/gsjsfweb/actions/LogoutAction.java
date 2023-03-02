@@ -2,6 +2,7 @@ package com.ibm.websphere.svt.gs.gsjsfweb.actions;
 
 import java.io.IOException;
 import java.io.Serializable;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -30,6 +31,8 @@ public class LogoutAction implements Serializable{
 	private static String componentName = "com.ibm.websphere.svt.gs.actions";
 	private static Logger logger = Logger.getLogger(componentName);
 	private static String className = LogoutAction.class.getName();
+	private static ConcurrentHashMap<String, Object> cookieAtributes = new ConcurrentHashMap<String, Object>();
+
 
 	public String logout() {
 		String methodName="logout";
@@ -39,6 +42,10 @@ public class LogoutAction implements Serializable{
 		HttpServletRequest request = (HttpServletRequest) exCtx.getRequest();
 		
 		HttpSession session = request.getSession(false);
+		/*
+		 * Adding this new feature for faces 4.0 Jakarta EE10 release
+		 */
+		cookieAtributes.put("maxAge",0);
 		if(GarageSaleLargeSessionUtil.LS_TEST_ENABLE!=null && (GarageSaleLargeSessionUtil.LS_TEST_ENABLE).equalsIgnoreCase("true")){
 			String customerName=(String)session.getAttribute("custID");
 			int maxUserSession=GarageSaleLargeSessionUtil.LS_TEST_USER_RANGE_MAX;
@@ -47,10 +54,23 @@ public class LogoutAction implements Serializable{
 				logger.logp(Level.FINEST, className, methodName, "Large Session Test Session is not invalidated");
 			}
 			else{
+				/*
+				 * Adding this new feature for faces 4.0 Jakarta EE10 release
+				 */
+				if(exCtx.isSecure()) {
+					exCtx.addResponseCookie("currentUserLogin", "", cookieAtributes);
+				}
 				session.invalidate();
+				
 			}
 		}
 		else{
+			/*
+			 * Adding this new feature for faces 4.0 Jakarta EE10 release
+			 */
+			if(exCtx.isSecure()) {
+				exCtx.addResponseCookie("currentUserLogin", "", cookieAtributes);
+			}
 			session.invalidate();
 		}
 		fc.responseComplete();

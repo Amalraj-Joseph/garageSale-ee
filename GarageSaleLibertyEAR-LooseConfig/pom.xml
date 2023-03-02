@@ -205,7 +205,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.ibm.ws.svt.gs.garagesale-ee10</groupId>
-			<artifactId>GSjsf20LibertyWeb</artifactId>
+			<artifactId>GSjsf40LibertyWeb</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<type>war</type>
 		</dependency>

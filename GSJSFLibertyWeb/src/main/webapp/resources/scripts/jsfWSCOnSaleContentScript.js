@@ -16,7 +16,7 @@
 		
 		function printTable(jsonArray) {
 			var protocolVar=window.document.location.protocol;
-			var videoRequestURL=protocolVar + '//' + window.document.location.host	+ '/GSjsf20LibertyWeb/facelets/jsfWSCPlayGarageSaleDemoVideoFile.jsf';
+			var videoRequestURL=protocolVar + '//' + window.document.location.host	+ '/GSjsf40LibertyWeb/facelets/jsfWSCPlayGarageSaleDemoVideoFile.jsf';
 			if(jsonArray.length > 0){
 				var htmlTable = '<table border="1" cellpadding="2" cellspacing="0" style="text-align: center" class="dataTable">';
 				htmlTable = htmlTable + '<tr class="rowClass1"><th class="headerClass" scope="col"><span id="name" class="outputText">Name</span></th> \

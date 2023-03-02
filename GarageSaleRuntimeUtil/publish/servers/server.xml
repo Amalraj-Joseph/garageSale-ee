@@ -5,26 +5,27 @@
 		<feature>jndi-1.0</feature>
 		<feature>localConnector-1.0</feature>
 		<feature>ssl-1.0</feature>
-		<feature>xmlWS-3.0</feature>
-		<feature>xmlBinding-3.0</feature>
+		<feature>xmlWS-4.0</feature>
+		<feature>xmlBinding-4.0</feature>
 		<feature>managedBeans-2.0</feature>
 		<feature>monitor-1.0</feature>
-		<feature>appSecurity-4.0</feature>
+		<feature>appSecurity-5.0</feature>
 		<feature>sessionDatabase-1.0</feature>
-        <feature>jdbc-4.2</feature>
-    	<feature>concurrent-2.0</feature>
+        <feature>jdbc-4.3</feature>
+    	<feature>concurrent-3.0</feature>
 		<!-- <feature>osgiConsole-1.0</feature> -->
 		<feature>usr:WASPersonaWebServicesHandlerFeature</feature>
-		<feature>websocket-2.0</feature>
-    	<feature>expressionLanguage-4.0</feature>
+		<feature>websocket-2.1</feature>
+    	<feature>expressionLanguage-5.0</feature>
 		<feature>beanValidation-3.0</feature>
-		<feature>cdi-3.0</feature>
-		<feature>faces-3.0</feature>
+		<feature>cdi-4.0</feature>
+		<feature>faces-4.0</feature>
 		<feature>enterpriseBeansLite-4.0</feature>
-		<feature>persistence-3.0</feature>
-		<feature>restfulWS-3.0</feature>
+		<feature>persistence-3.1</feature>
+		<feature>restfulWS-3.1</feature>
  		<!--  <feature>wsAtomicTransaction-1.2</feature>-->
     	<feature>json-1.0</feature>
+    	<feature>microProfile-6.0</feature>
 	</featureManager>
 
 
@@ -107,7 +108,7 @@
     <keyStore password=""/>
     -->
     <applicationMonitor updateTrigger="mbean"/>
-   <enterpriseApplication id="GarageSaleLibertyEAR8-LooseConfig" location="GarageSaleLibertyEAR.ear" name="GarageSaleLibertyEAR8-LooseConfig">
+   <enterpriseApplication id="GarageSaleLibertyEAR10-LooseConfig" location="GarageSaleLibertyEAR.ear" name="GarageSaleLibertyEAR10-LooseConfig">
            <classloader commonLibraryRef="thirdPartyLib" />
     </enterpriseApplication>
 

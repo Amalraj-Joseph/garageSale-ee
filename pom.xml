@@ -26,6 +26,9 @@
 		<module>WASPersonaWebServicesPMIWeb</module>
 		<module>GSJSFLibertyWeb</module>
 		<module>GarageSaleLibertyEAR</module>
+		<module>WASPersonaWebServicesHandler</module>
+		<module>WASPersonaWebServicesHandlerFeature</module>
+		<module>WASPersonaWebServicesBOM</module>
 		<module>GarageSaleRuntimeUtil</module>
 	</modules>
 </project>

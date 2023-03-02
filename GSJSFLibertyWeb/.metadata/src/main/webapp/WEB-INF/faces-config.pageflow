@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15125717524880" configfile="/GSjsf20LibertyWeb/src/main/webapp/WEB-INF/faces-config.xml">
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15125717524880" configfile="/GSjsf40LibertyWeb/src/main/webapp/WEB-INF/faces-config.xml">
   <nodes xsi:type="pageflow:PFPage" name="index.html" x="122" y="178" id="pf16668005201420" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf16668005201431" path="/index.html"/>
   <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="338" y="360" id="pf16668005201442" referenceLink="//@navigationRule.13/@navigationCase.1/@toViewId|" outlinks="pf16668005201443 pf16668005201444" inlinks="pf16668005201431 pf16668005201445" path="/index.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="facelets/welcomeUser.xhtml" x="554" y="562" id="pf16668005201446" referenceLink="//@navigationRule.13/@navigationCase.0/@toViewId|" outlinks="pf16668005201447 pf16668005201448 pf16668005201449" inlinks="pf16668005201443 pf166680052014410" path="/facelets/welcomeUser.xhtml"/>

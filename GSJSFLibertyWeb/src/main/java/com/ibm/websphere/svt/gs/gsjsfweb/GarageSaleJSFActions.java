@@ -30,7 +30,6 @@ import jakarta.el.ELContext;
 import jakarta.el.ExpressionFactory;
 import jakarta.el.ValueExpression;
 import jakarta.enterprise.context.RequestScoped;
-import jakarta.faces.annotation.ManagedProperty;
 import jakarta.faces.application.Application;
 import jakarta.faces.application.FacesMessage;
 import jakarta.faces.application.Resource;
