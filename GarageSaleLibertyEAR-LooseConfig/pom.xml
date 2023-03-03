@@ -2,8 +2,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.ibm.ws.svt.gs.garagesale-ee9</groupId>
-		<artifactId>garageSale-ee9</artifactId>
+		<groupId>com.ibm.ws.svt.gs.garagesale-ee10</groupId>
+		<artifactId>garageSale-ee10</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 	<artifactId>GarageSaleLibertyEAR-LooseConfig</artifactId>
@@ -149,63 +149,63 @@
 	</pluginRepositories>
 	<dependencies>
 		<dependency>
-			<groupId>com.ibm.ws.svt.gs.garagesale-ee9</groupId>
+			<groupId>com.ibm.ws.svt.gs.garagesale-ee10</groupId>
 			<artifactId>CreditCardDBJPA</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>com.ibm.ws.svt.gs.garagesale-ee9</groupId>
+			<groupId>com.ibm.ws.svt.gs.garagesale-ee10</groupId>
 			<artifactId>CreditCardEJB</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<type>ejb</type>
 		</dependency>
 		<dependency>
-			<groupId>com.ibm.ws.svt.gs.garagesale-ee9</groupId>
+			<groupId>com.ibm.ws.svt.gs.garagesale-ee10</groupId>
 			<artifactId>WSBankDBJPA</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>com.ibm.ws.svt.gs.garagesale-ee9</groupId>
+			<groupId>com.ibm.ws.svt.gs.garagesale-ee10</groupId>
 			<artifactId>WSBankEJB</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<type>ejb</type>
 		</dependency>
 		<dependency>
-			<groupId>com.ibm.ws.svt.gs.garagesale-ee9</groupId>
+			<groupId>com.ibm.ws.svt.gs.garagesale-ee10</groupId>
 			<artifactId>GarageSaleWSClient</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>com.ibm.ws.svt.gs.garagesale-ee9</groupId>
+			<groupId>com.ibm.ws.svt.gs.garagesale-ee10</groupId>
 			<artifactId>WASPersonaWebServicesHandlerAPI</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>com.ibm.ws.svt.gs.garagesale-ee9</groupId>
+			<groupId>com.ibm.ws.svt.gs.garagesale-ee10</groupId>
 			<artifactId>GarageSaleDBJPA</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>com.ibm.ws.svt.gs.garagesale-ee9</groupId>
+			<groupId>com.ibm.ws.svt.gs.garagesale-ee10</groupId>
 			<artifactId>GarageSaleEJB</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<type>ejb</type>
 		</dependency>
 		<dependency>
-			<groupId>com.ibm.ws.svt.gs.garagesale-ee9</groupId>
+			<groupId>com.ibm.ws.svt.gs.garagesale-ee10</groupId>
 			<artifactId>ProdReviewTaxShipRateEJB</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<type>ejb</type>
 		</dependency>
 		<dependency>
-			<groupId>com.ibm.ws.svt.gs.garagesale-ee9</groupId>
+			<groupId>com.ibm.ws.svt.gs.garagesale-ee10</groupId>
 			<artifactId>WASPersonaWebServicesPMIWeb</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<type>war</type>
 		</dependency>
 		<dependency>
-			<groupId>com.ibm.ws.svt.gs.garagesale-ee9</groupId>
-			<artifactId>GSjsf20LibertyWeb</artifactId>
+			<groupId>com.ibm.ws.svt.gs.garagesale-ee10</groupId>
+			<artifactId>GSjsf40LibertyWeb</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<type>war</type>
 		</dependency>

@@ -10,23 +10,6 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import jakarta.el.ELContext;
-import jakarta.el.ExpressionFactory;
-import jakarta.el.ValueExpression;
-import jakarta.faces.application.Application;
-import jakarta.faces.application.FacesMessage;
-import jakarta.faces.application.Resource;
-import jakarta.faces.application.ResourceHandler;
-import jakarta.faces.application.ViewExpiredException;
-import jakarta.faces.bean.ManagedBean;
-import jakarta.faces.bean.ManagedProperty;
-import jakarta.faces.bean.RequestScoped;
-import jakarta.faces.context.FacesContext;
-import jakarta.faces.model.DataModel;
-import jakarta.faces.model.ListDataModel;
-import jakarta.inject.Inject;
-import jakarta.xml.ws.WebServiceRef;
-
 import com.ibm.websphere.svt.gs.cart.beans.CartItemWrapper;
 import com.ibm.websphere.svt.gs.gsdb.jaxws.client.CartItem;
 import com.ibm.websphere.svt.gs.gsdb.jaxws.client.CategoryWrapper;
@@ -43,12 +26,28 @@ import com.ibm.websphere.svt.gs.gsjsfweb.utils.GarageSaleManagedBeanUtil;
 import com.ibm.websphere.svt.gs.tax.entity.ProdReview;
 import com.ibm.websphere.svt.gs.tax.entity.TaxRate;
 
+import jakarta.el.ELContext;
+import jakarta.el.ExpressionFactory;
+import jakarta.el.ValueExpression;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.faces.application.Application;
+import jakarta.faces.application.FacesMessage;
+import jakarta.faces.application.Resource;
+import jakarta.faces.application.ResourceHandler;
+import jakarta.faces.application.ViewExpiredException;
+import jakarta.faces.context.FacesContext;
+import jakarta.faces.model.DataModel;
+import jakarta.faces.model.ListDataModel;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
+import jakarta.xml.ws.WebServiceRef;
+
 
 /**
  * @author root
  *
  */
-@ManagedBean(name="garageSaleJSFActions")
+@Named("garageSaleJSFActions")
 @RequestScoped
 public class GarageSaleJSFActions implements Serializable{
 	
@@ -210,13 +209,16 @@ public class GarageSaleJSFActions implements Serializable{
 	private String checkOutMessage="";
 	
 	
-	@ManagedProperty(name="garageSaleSessionBean",value="#{garageSaleSessionBean}")
+	//@ManagedProperty(name="garageSaleSessionBean",value="#{garageSaleSessionBean}")
+	@Inject
 	private GarageSaleSessionBean garageSaleSessionBean;
 	
-	@ManagedProperty(name="garageSaleManagedBeanUtil",value="#{garageSaleManagedBeanUtil}")
+	//@ManagedProperty(name="garageSaleManagedBeanUtil",value="#{garageSaleManagedBeanUtil}")
+	@Inject
 	private GarageSaleManagedBeanUtil garageSaleManagedBeanUtil;
 	
-	@ManagedProperty(name="shoppingCartManagedBean",value="#{shoppingCartManagedBean}")
+	//@ManagedProperty(name="shoppingCartManagedBean",value="#{shoppingCartManagedBean}")
+	@Inject
 	private  ShoppingCartManagedBean shoppingCartManagedBean;
 
 	

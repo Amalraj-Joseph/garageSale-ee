@@ -3,14 +3,16 @@
  */
 package pagecode.resources.components;
 
-import pagecode.PageCodeBase;
-import jakarta.faces.component.html.HtmlOutputText;
 import jakarta.faces.component.html.HtmlForm;
+import jakarta.faces.component.html.HtmlOutputText;
+import jakarta.inject.Named;
+import pagecode.PageCodeBase;
 
 /**
  * @author JAGRAJ
  *
  */
+@Named("pc_OnSaleContent")
 public class OnSaleContent extends PageCodeBase {
 
 	protected HtmlOutputText text2;

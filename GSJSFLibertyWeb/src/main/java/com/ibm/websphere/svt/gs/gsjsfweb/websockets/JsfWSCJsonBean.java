@@ -5,14 +5,14 @@ package com.ibm.websphere.svt.gs.gsjsfweb.websockets;
 
 import java.io.Serializable;
 
-import jakarta.faces.bean.ManagedBean;
-import jakarta.faces.bean.RequestScoped;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Named;
 
 /**
  * @author JAGRAJ
  *
  */
-@ManagedBean(name="jsfWSCJsonBean")
+@Named("jsfWSCJsonBean")
 @RequestScoped
 public class JsfWSCJsonBean implements Serializable{
 

@@ -13,20 +13,6 @@ import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import jakarta.el.ELContext;
-import jakarta.el.ExpressionFactory;
-import jakarta.el.ValueExpression;
-import jakarta.faces.application.Application;
-import jakarta.faces.application.FacesMessage;
-import jakarta.faces.bean.ManagedBean;
-import jakarta.faces.bean.ManagedProperty;
-import jakarta.faces.bean.RequestScoped;
-import jakarta.faces.context.FacesContext;
-import jakarta.inject.Inject;
-import jakarta.ws.rs.core.HttpHeaders;
-import jakarta.ws.rs.core.MediaType;
-import jakarta.ws.rs.core.Response;
-
 import org.apache.wink.client.ClientConfig;
 import org.apache.wink.client.EntityType;
 import org.apache.wink.client.Resource;
@@ -41,11 +27,22 @@ import com.ibm.websphere.svt.gs.tax.entity.ProdReview;
 import com.ibm.websphere.svt.gs.tax.entity.ShipRate;
 import com.ibm.websphere.svt.gs.tax.entity.TaxRate;
 
+import jakarta.el.ELContext;
+import jakarta.el.ExpressionFactory;
+import jakarta.el.ValueExpression;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.faces.application.Application;
+import jakarta.faces.application.FacesMessage;
+import jakarta.faces.context.FacesContext;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
+import jakarta.ws.rs.core.MediaType;
+
 /**
  * @author root
  *
  */
-@ManagedBean(name="garageSaleManagedBeanUtil")
+@Named("garageSaleManagedBeanUtil")
 @RequestScoped
 public class GarageSaleManagedBeanUtil implements Serializable{
 	
@@ -56,7 +53,8 @@ public class GarageSaleManagedBeanUtil implements Serializable{
 	private static String componentName = "com.ibm.websphere.svt.gs.gsjsfweb.utils";
 	private static Logger logger = Logger.getLogger(componentName);
 	private static String className = GarageSaleManagedBeanUtil.class.getName();
-	@ManagedProperty(name="shoppingCartManagedBean",value="#{shoppingCartManagedBean}")
+	//@ManagedProperty(name="shoppingCartManagedBean",value="#{shoppingCartManagedBean}")
+	@Inject
 	private  ShoppingCartManagedBean shoppingCartManagedBean;
     @Inject
 	//@ManagedProperty(name="stateTaxShipRateBean",value="#{stateTaxShipRateBean}")	
@@ -82,7 +80,8 @@ public class GarageSaleManagedBeanUtil implements Serializable{
     public GarageSaleManagedBeanUtil() {
     }
     
-	@ManagedProperty(name="garageSaleSessionBean",value="#{garageSaleSessionBean}")
+	//@ManagedProperty(name="garageSaleSessionBean",value="#{garageSaleSessionBean}")
+    @Inject
 	private GarageSaleSessionBean garageSaleSessionBean;
 	
 	public GarageSaleSessionBean getGarageSaleSessionBean() {

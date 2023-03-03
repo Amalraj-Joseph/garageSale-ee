@@ -11,18 +11,6 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import jakarta.faces.bean.ManagedBean;
-import jakarta.faces.bean.ManagedProperty;
-import jakarta.faces.bean.RequestScoped;
-import jakarta.faces.context.ExternalContext;
-import jakarta.faces.context.FacesContext;
-import jakarta.inject.Inject;
-import jakarta.servlet.ServletContext;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.websocket.ContainerProvider;
-import jakarta.websocket.Session;
-import jakarta.websocket.WebSocketContainer;
-
 import com.ibm.websphere.svt.gs.gsjsfweb.websockets.DatabaseDashboardClientEndpoint;
 import com.ibm.websphere.svt.gs.gsjsfweb.websockets.GarageSaleDemoVideoClientEndpoint;
 import com.ibm.websphere.svt.gs.gsjsfweb.websockets.GarageSaleProdctVideosCacheBean;
@@ -36,11 +24,23 @@ import com.ibm.websphere.svt.gs.gsjsfweb.websockets.ProductUploadManagedBean;
 import com.ibm.websphere.svt.gs.gsjsfweb.websockets.WebSocketsDashboardClientEndpoint;
 import com.ibm.websphere.svt.gs.gsjsfweb.websockets.WebSocketsDataBean;
 
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.faces.annotation.ManagedProperty;
+import jakarta.faces.context.ExternalContext;
+import jakarta.faces.context.FacesContext;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.websocket.ContainerProvider;
+import jakarta.websocket.Session;
+import jakarta.websocket.WebSocketContainer;
+
 /**
  * @author JAGRAJ
  *
  */
-@ManagedBean(name="jsfWebSocketsClientActions")
+@Named("jsfWebSocketsClientActions")
 @RequestScoped
 public class JSFWebSocketsClientActions implements Serializable{
 
@@ -62,13 +62,16 @@ public class JSFWebSocketsClientActions implements Serializable{
 	@Inject
 	private GarageSaleProdctVideosCacheBean garageSaleProdctVideosCacheBean;
 	
-	@ManagedProperty(name="productUploadManagedBean",value="#{productUploadManagedBean}")
+	//@ManagedProperty(value="#{productUploadManagedBean}")
+	@Inject
 	private ProductUploadManagedBean productUploadManagedBean;
 	
-	@ManagedProperty(name="jsfWSCJsonBean",value="#{jsfWSCJsonBean}")
+	//@ManagedProperty(value="#{jsfWSCJsonBean}")
+	@Inject
 	private JsfWSCJsonBean jsfWSCJsonBean;
 	
-	@ManagedProperty(name="productDemoBean",value="#{productDemoBean}")
+	//@ManagedProperty(value="#{productDemoBean}")
+	@Inject
 	private ProductDemoBean productDemoBean;
 	
 	

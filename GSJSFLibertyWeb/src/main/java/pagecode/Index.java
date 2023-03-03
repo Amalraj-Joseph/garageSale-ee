@@ -3,22 +3,11 @@
  */
 package pagecode;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import jakarta.el.ELContext;
-import jakarta.el.ExpressionFactory;
-import jakarta.el.ValueExpression;
-import jakarta.faces.application.Application;
-import jakarta.faces.application.FacesMessage;
-import jakarta.faces.bean.ManagedBean;
-import jakarta.faces.bean.RequestScoped;
-import jakarta.faces.context.ExternalContext;
-import jakarta.faces.context.FacesContext;
-import jakarta.inject.Inject;
-import jakarta.servlet.ServletContext;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpSession;
 
 import com.ibm.websphere.svt.gs.gsdb.jaxws.client.CustomerInfoWrapper;
 import com.ibm.websphere.svt.gs.gsdb.jaxws.client.CustomerWrapper;
@@ -30,7 +19,21 @@ import com.ibm.websphere.svt.gs.gsjsfweb.utils.GarageSaleLargeSessionUtil;
 import com.ibm.websphere.svt.gs.gsjsfweb.utils.LargeSessionRangeBean;
 import com.ibm.websphere.svt.gs.ws.client.utils.GarageSaleWSClientUtils;
 
-@ManagedBean(name="pc_Index")
+import jakarta.el.ELContext;
+import jakarta.el.ExpressionFactory;
+import jakarta.el.ValueExpression;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.faces.application.Application;
+import jakarta.faces.application.FacesMessage;
+import jakarta.faces.context.ExternalContext;
+import jakarta.faces.context.FacesContext;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
+
+@Named("pc_Index")
 @RequestScoped
 /**
  * @author Administrator
@@ -54,6 +57,7 @@ public class Index extends PageCodeBase {
 	
 	private GarageSaleStoreManagerLocal localService=GarageSaleWSClientUtils.getStoreManager();
 	private SettingsWrapper settings = null;
+	private static ConcurrentHashMap<String, Object> cookieAtributes = new ConcurrentHashMap<String, Object>();
 	
 	public String login() {
 		String outcomeString = OUTCOME_FAILED;
@@ -117,6 +121,17 @@ public class Index extends PageCodeBase {
 			} else {
 				// seems nothing to be done
 				// may need to set up a login boolean here
+				
+				/*
+				 * Adding this new feature for faces 4.0 Jakarta EE10 release
+				 */
+				
+				if(fc.getExternalContext().isSecure()) {
+					cookieAtributes.put("maxAge", -1);
+					cookieAtributes.put("SameSite", "None; Secure");
+					fc.getExternalContext().addResponseCookie("currentUserLogin", userID, cookieAtributes);
+				}
+				
 				String customerName = localCustomer.getCustName();
 				int numberOfInvoices = localCustomer.getNumInvoicesCompleted();
 				logger.logp(Level.FINEST, className, methodName, "User " + customerName + " has " + numberOfInvoices + " invoices");

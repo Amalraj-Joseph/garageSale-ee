@@ -6,10 +6,6 @@ package com.ibm.websphere.svt.gs.gsdb.session.util;
 import java.util.Map;
 import java.util.logging.Logger;
 
-import jakarta.annotation.ManagedBean;
-import jakarta.xml.ws.BindingProvider;
-import jakarta.xml.ws.WebServiceRef;
-
 import com.ibm.websphere.svt.gs.ccdb.jaxws.client.GarageSaleCCManagerLocal;
 import com.ibm.websphere.svt.gs.ccdb.jaxws.client.GarageSaleCCManagerService;
 import com.ibm.websphere.svt.gs.gsdb.jaxws.client.GarageSaleStoreManagerLocal;
@@ -17,13 +13,19 @@ import com.ibm.websphere.svt.gs.gsdb.jaxws.client.GarageSaleStoreManagerService;
 import com.ibm.websphere.svt.gs.wsbankdb.jaxws.client.GarageSaleBankManagerLocal;
 import com.ibm.websphere.svt.gs.wsbankdb.jaxws.client.GarageSaleBankManagerService;
 
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Named;
+import jakarta.xml.ws.BindingProvider;
+import jakarta.xml.ws.WebServiceRef;
+
 
 
 /**
  * @author JAGRAJ
  *
  */
-@ManagedBean("GarageSaleEJBWSClientUtil")
+@Named("garageSaleEJBWSClientUtil")
+@ApplicationScoped
 public class GarageSaleEJBWSClientUtil {
 	
 	private static String componentName = "com.ibm.websphere.svt.gs.gsdb.session.util";

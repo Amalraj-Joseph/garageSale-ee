@@ -17,7 +17,7 @@ import jakarta.faces.render.Renderer;
 @FacesRenderer(rendererType = "cinfocc", componentFamily = "jakarta.faces.Input")
 @ResourceDependencies({
 	@ResourceDependency(name = "cinfo.css", library = "org.was.svt", target = "head"),
-    @ResourceDependency(name = "jsf.js", library = "jakarta.faces", target = "body")})
+    @ResourceDependency(name = "faces.js", library = "jakarta.faces", target = "body")})
 public class CInfoRenderer extends Renderer {
 	private static String componentName = "com.ibm.websphere.svt.gs.cinfocc";
 	private static Logger logger = Logger.getLogger(componentName);
@@ -113,7 +113,7 @@ public class CInfoRenderer extends Renderer {
         String render = cinfo.getClientId();
         writer.write("<th colspan=\"" + (r + 1) + "\">" +
                 "<a id=\"" + cinfo.getClientId() + "_update\""+ 
-                " href=\"#\" onclick=\"jsf.ajax.request(this,event,{execute:'" +
+                " href=\"#\" onclick=\"faces.ajax.request(this,event,{execute:'" +
                 execute +
                 "',render:'" +
                 render +

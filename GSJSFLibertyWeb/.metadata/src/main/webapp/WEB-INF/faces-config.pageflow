@@ -1,2 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15125717524880" configfile="/GSjsf20LibertyWeb/src/main/webapp/WEB-INF/faces-config.xml"/>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15125717524880" configfile="/GSjsf40LibertyWeb/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="index.html" x="122" y="178" id="pf16668005201420" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf16668005201431" path="/index.html"/>
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="338" y="360" id="pf16668005201442" referenceLink="//@navigationRule.13/@navigationCase.1/@toViewId|" outlinks="pf16668005201443 pf16668005201444" inlinks="pf16668005201431 pf16668005201445" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="facelets/welcomeUser.xhtml" x="554" y="562" id="pf16668005201446" referenceLink="//@navigationRule.13/@navigationCase.0/@toViewId|" outlinks="pf16668005201447 pf16668005201448 pf16668005201449" inlinks="pf16668005201443 pf166680052014410" path="/facelets/welcomeUser.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="facelets/loginError.xhtml" x="554" y="178" id="pf166680052014511" referenceLink="//@navigationRule.1/@navigationCase.1/@toViewId|" inlinks="pf16668005201444" path="/facelets/loginError.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="facelets/listMfgCategories.xhtml" x="986" y="1553" id="pf166680052014612" referenceLink="//@navigationRule.12/@navigationCase.0/@toViewId|" outlinks="pf166680052014613 pf166680052014614 pf166680052014615 pf166680052014616" inlinks="pf16668005201447 pf166680052014614 pf166680052014617 pf166680052014618 pf166680052014619 pf166680052014620 pf166680052014621 pf166680052014622 pf166680052014623 pf166680052014624" path="/facelets/listMfgCategories.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="facelets/checkOutResult.xhtml" x="770" y="1330" id="pf166680052014625" referenceLink="//@navigationRule.8/@fromViewId|" outlinks="pf166680052014621 pf166680052014626" inlinks="pf16668005201448 pf166680052014615 pf166680052014627 pf166680052014628" path="/facelets/checkOutResult.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="error.xhtml" x="770" y="1777" id="pf166680052014629" referenceLink="//@navigationRule.11/@navigationCase.8/@toViewId|" outlinks="pf166680052014623" inlinks="pf16668005201449 pf166680052014616 pf166680052014630 pf166680052014631 pf166680052014632 pf166680052014633 pf166680052014634 pf166680052014635 pf166680052014636" path="/error.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="facelets/showInventory.xhtml" x="554" y="1351" id="pf166680052014637" referenceLink="//@navigationRule.4/@fromViewId|" outlinks="pf166680052014638 pf166680052014617 pf166680052014627 pf166680052014630" inlinks="pf166680052014613" path="/facelets/showInventory.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="facelets/showItem.xhtml" x="338" y="1937" id="pf166680052014639" referenceLink="//@navigationRule.6/@fromViewId|" outlinks="pf166680052014640 pf166680052014641 pf166680052014631 pf166680052014619 pf166680052014628 pf166680052014632" inlinks="pf166680052014638" path="/facelets/showItem.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="facelets/customerInfoCC.xhtml" x="770" y="925" id="pf166680052014642" referenceLink="//@navigationRule.5/@fromViewId|" outlinks="pf166680052014618" path="/facelets/customerInfoCC.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="facelets/showShoppingCart.xhtml" x="554" y="1735" id="pf166680052014743" referenceLink="//@navigationRule.7/@fromViewId|" outlinks="pf166680052014744 pf166680052014633 pf166680052014620 pf166680052014745 pf166680052014634" inlinks="pf166680052014640 pf166680052014744 pf166680052014745" path="/facelets/showShoppingCart.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="facelets/reviewProduct.xhtml" x="554" y="946" id="pf166680052014746" referenceLink="//@navigationRule.6/@navigationCase.1/@toViewId|" inlinks="pf166680052014641" path="/facelets/reviewProduct.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="logout.html" x="986" y="2566" id="pf166680052014747" referenceLink="//@navigationRule.11/@navigationCase.0/@toViewId|" inlinks="pf166680052014626 pf166680052014748 pf166680052014749" path="/logout.html"/>
+  <nodes xsi:type="pageflow:PFPage" name="facelets/saveReviewSuccess.xhtml" x="770" y="2566" id="pf166680052014750" referenceLink="//@navigationRule.9/@fromViewId|" outlinks="pf166680052014622 pf166680052014748" path="/facelets/saveReviewSuccess.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="*" x="554" y="2971" id="pf166680052014751" outlinks="pf166680052014749 pf166680052014635 pf166680052014752 pf166680052014753 pf166680052014754 pf166680052014755 pf166680052014756 pf166680052014757 pf166680052014636" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="facelets/customerInfo.xhtml" x="770" y="2182" id="pf166680052014758" referenceLink="//@navigationRule.12/@navigationCase.1/@toViewId|" outlinks="pf166680052014624 pf166680052014759" inlinks="pf166680052014752 pf166680052014759" path="/facelets/customerInfo.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="facelets/ee8Info.xhtml" x="770" y="2971" id="pf166680052014760" referenceLink="//@navigationRule.11/@navigationCase.3/@toViewId|" inlinks="pf166680052014753" path="/facelets/ee8Info.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="facelets/ee8_bv20Info.xhtml" x="770" y="3355" id="pf166680052014861" referenceLink="//@navigationRule.11/@navigationCase.4/@toViewId|" inlinks="pf166680052014754" path="/facelets/ee8_bv20Info.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="facelets/ee8_cdi20Info.xhtml" x="770" y="3739" id="pf166680052014862" referenceLink="//@navigationRule.11/@navigationCase.5/@toViewId|" inlinks="pf166680052014755" path="/facelets/ee8_cdi20Info.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="facelets/ee8_jsf23Info.xhtml" x="770" y="4123" id="pf166680052014863" referenceLink="//@navigationRule.11/@navigationCase.6/@toViewId|" inlinks="pf166680052014756" path="/facelets/ee8_jsf23Info.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="facelets/ee8_servlet40Info.xhtml" x="770" y="4507" id="pf166680052014864" referenceLink="//@navigationRule.11/@navigationCase.7/@toViewId|" inlinks="pf166680052014757" path="/facelets/ee8_servlet40Info.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="logout.xhtml" x="122" y="562" id="pf166680052014865" referenceLink="//@navigationRule.13/@fromViewId|" outlinks="pf166680052014410 pf16668005201445" path="/logout.xhtml"/>
+  <links id="pf16668005201431" target="pf16668005201442" source="pf16668005201420" outcome="redirect"/>
+  <links id="pf16668005201443" target="pf16668005201446" source="pf16668005201442" outcome="login" fromaction="#{pc_Index.login}"/>
+  <links id="pf16668005201444" target="pf166680052014511" source="pf16668005201442" outcome="failed" fromaction="#{pc_Index.login}"/>
+  <links id="pf16668005201447" target="pf166680052014612" source="pf16668005201446" outcome="category_detail" fromaction="#{garageSaleJSFActions.detailSetup}"/>
+  <links id="pf16668005201448" target="pf166680052014625" source="pf16668005201446" outcome="checkOutSucceed" fromaction="#{garageSaleJSFActions.checkOut}"/>
+  <links id="pf16668005201449" target="pf166680052014629" source="pf16668005201446" outcome="checkOutFailed" fromaction="#{garageSaleJSFActions.checkOut}"/>
+  <links id="pf166680052014613" target="pf166680052014637" source="pf166680052014612" outcome="inventory_detail" fromaction="#{garageSaleJSFActions.goToInventory}"/>
+  <links id="pf166680052014615" target="pf166680052014625" source="pf166680052014612" outcome="checkOutSucceed" fromaction="#{garageSaleJSFActions.checkOut}"/>
+  <links id="pf166680052014616" target="pf166680052014629" source="pf166680052014612" outcome="checkOutFailed" fromaction="#{garageSaleJSFActions.checkOut}"/>
+  <links id="pf166680052014638" target="pf166680052014639" source="pf166680052014637" outcome="item_detail" fromaction="#{garageSaleJSFActions.goToItem}"/>
+  <links id="pf166680052014617" target="pf166680052014612" source="pf166680052014637" outcome="category_detail" fromaction="#{garageSaleJSFActions.detailSetup}"/>
+  <links id="pf166680052014627" target="pf166680052014625" source="pf166680052014637" outcome="checkOutSucceed" fromaction="#{garageSaleJSFActions.checkOut}"/>
+  <links id="pf166680052014630" target="pf166680052014629" source="pf166680052014637" outcome="checkOutFailed" fromaction="#{garageSaleJSFActions.checkOut}"/>
+  <links id="pf166680052014618" target="pf166680052014612" source="pf166680052014642" outcome="category_detail" fromaction="#{garageSaleJSFActions.detailSetup}"/>
+  <links id="pf166680052014640" target="pf166680052014743" source="pf166680052014639" outcome="addToCart" fromaction="#{garageSaleJSFActions.addToCart}"/>
+  <links id="pf166680052014641" target="pf166680052014746" source="pf166680052014639" outcome="reviewProduct" fromaction="#{garageSaleJSFActions.productReview}"/>
+  <links id="pf166680052014631" target="pf166680052014629" source="pf166680052014639" outcome="notadded"/>
+  <links id="pf166680052014619" target="pf166680052014612" source="pf166680052014639" outcome="category_detail" fromaction="#{garageSaleJSFActions.detailSetup}"/>
+  <links id="pf166680052014628" target="pf166680052014625" source="pf166680052014639" outcome="checkOutSucceed" fromaction="#{garageSaleJSFActions.checkOut}"/>
+  <links id="pf166680052014632" target="pf166680052014629" source="pf166680052014639" outcome="checkOutFailed" fromaction="#{garageSaleJSFActions.checkOut}"/>
+  <links id="pf166680052014633" target="pf166680052014629" source="pf166680052014743" outcome="checkOutFailed" fromaction="#{garageSaleJSFActions.checkOut}"/>
+  <links id="pf166680052014620" target="pf166680052014612" source="pf166680052014743" outcome="category_detail" fromaction="#{garageSaleJSFActions.detailSetup}"/>
+  <links id="pf166680052014634" target="pf166680052014629" source="pf166680052014743" outcome="updateFailed" fromaction="#{garageSaleJSFActions.updateCart}"/>
+  <links id="pf166680052014621" target="pf166680052014612" source="pf166680052014625" outcome="category_detail"/>
+  <links id="pf166680052014626" target="pf166680052014747" source="pf166680052014625" outcome="logout" fromaction="#{logout.logout}"/>
+  <links id="pf166680052014622" target="pf166680052014612" source="pf166680052014750" outcome="category_detail"/>
+  <links id="pf166680052014748" target="pf166680052014747" source="pf166680052014750" outcome="logout" fromaction="#{logout.logout}"/>
+  <links id="pf166680052014623" target="pf166680052014612" source="pf166680052014629" outcome="category_detail"/>
+  <links id="pf166680052014749" target="pf166680052014747" source="pf166680052014751" outcome="logout" fromaction="#{logout.logout}"/>
+  <links id="pf166680052014635" target="pf166680052014629" source="pf166680052014751" outcome="foundNull"/>
+  <links id="pf166680052014752" target="pf166680052014758" source="pf166680052014751" outcome="gotocustomer" fromaction="#{customerInfo.gotoCustomerInfo}"/>
+  <links id="pf166680052014753" target="pf166680052014760" source="pf166680052014751" outcome="gotoee8" fromaction="#{ee8Info.gotoee8Info}"/>
+  <links id="pf166680052014754" target="pf166680052014861" source="pf166680052014751" outcome="gotoee8_bv20" fromaction="#{ee8_bv20Info.gotoee8_bv20Info}"/>
+  <links id="pf166680052014755" target="pf166680052014862" source="pf166680052014751" outcome="gotoee8_cdi20" fromaction="#{ee8_cdi20Info.gotoee8_cdi20Info}"/>
+  <links id="pf166680052014756" target="pf166680052014863" source="pf166680052014751" outcome="gotoee8_jsf23" fromaction="#{ee8_jsf23Info.gotoee8_jsf23Info}"/>
+  <links id="pf166680052014757" target="pf166680052014864" source="pf166680052014751" outcome="gotoee8_servlet40" fromaction="#{ee8_servlet40Info.gotoee8_servlet40Info}"/>
+  <links id="pf166680052014636" target="pf166680052014629" source="pf166680052014751" outcome="error" redirect="true"/>
+  <links id="pf166680052014624" target="pf166680052014612" source="pf166680052014758" outcome="category_detail" fromaction="#{garageSaleJSFActions.detailSetup}"/>
+  <links id="pf166680052014410" target="pf16668005201446" source="pf166680052014865" outcome="login"/>
+  <links id="pf16668005201445" target="pf16668005201442" source="pf166680052014865" outcome="failed" fromaction="#{pc_Logout.login}"/>
+  <links id="pf166680052014614" target="pf166680052014612" source="pf166680052014612" outcome="category_detail" fromaction="#{garageSaleJSFActions.detailSetup}">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf166680052014744" target="pf166680052014743" source="pf166680052014743" outcome="checkOutSucceed" fromaction="#{garageSaleJSFActions.checkOut}">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf166680052014745" target="pf166680052014743" source="pf166680052014743" outcome="updateSuccess" fromaction="#{garageSaleJSFActions.updateCart}">
+    <bendPoints d1Height="-66" d2Height="-66"/>
+    <bendPoints d1Width="-94" d1Height="-66" d2Width="-94" d2Height="-66"/>
+    <bendPoints d1Width="-94" d2Width="-94"/>
+  </links>
+  <links id="pf166680052014759" target="pf166680052014758" source="pf166680052014758" outcome="changeCustomerInfo" fromaction="#{customerInfo.changeCustomerInfo}">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+</pageflow:Pageflow>

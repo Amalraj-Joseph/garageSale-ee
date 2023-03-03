@@ -17,14 +17,15 @@ ARG REG_PASSWORD
 
 User root
 
-RUN mkdir -p /mytemp && cd /mytemp && mkdir -p /opt/ibm/wlp/usr/shared/resources/db2drivers && mkdir -p /opt/ibm/wlp/usr/shared/resources/jaxrsThirdPartyJars \
+RUN --mount=type=secret,id=token --mount=type=secret,id=user \
+	  mkdir -p /mytemp && cd /mytemp && mkdir -p /opt/ibm/wlp/usr/shared/resources/db2drivers && mkdir -p /opt/ibm/wlp/usr/shared/resources/jaxrsThirdPartyJars \
       && chown -R 1001:0 /opt/ibm/wlp/usr/shared/resources/db2drivers \
       && chown -R 1001:0 /opt/ibm/wlp/usr/shared/resources/jaxrsThirdPartyJars \
-      && curl --retry 7 -sSf -u "$REG_USER:$REG_PASSWORD" \
+      && curl --retry 7 -sSf -u $(cat /run/secrets/user):$(cat /run/secrets/token) \
       -O 'https://na.artifactory.swg-devops.com/artifactory/hyc-wassvt-team-maven-virtual/svtMessageApp/svtMessageApp/2.0.2/svtMessageApp-2.0.2.war' \
-      && curl --retry 7 -sSf -u "$REG_USER:$REG_PASSWORD" \
+      && curl --retry 7 -sSf -u $(cat /run/secrets/user):$(cat /run/secrets/token) \
       -O 'https://na.artifactory.swg-devops.com/artifactory/hyc-wassvt-team-maven-virtual/microwebapp/microwebapp/2.0.1/microwebapp-2.0.1.war' \
-      && curl --retry 7 -sSf -u "$REG_USER:$REG_PASSWORD" \
+      && curl --retry 7 -sSf -u $(cat /run/secrets/user):$(cat /run/secrets/token) \
       -O 'https://na.artifactory.swg-devops.com/artifactory/hyc-wassvt-team-maven-virtual/com/ibm/ws/lumberjack/badapp/2.0.1/badapp-2.0.1.war' \
       && chown -R 1001:0 /mytemp/*.war  && mv /mytemp/*.war /config/dropins
       
@@ -43,7 +44,7 @@ COPY  --chown=1001:0 ./GarageSaleRuntimeUtil/publish/jaxrsThirdPartyJars /opt/ib
 COPY  --chown=1001:0  ./GarageSaleRuntimeUtil/publish/files/trustStore.jks /config/trustStore.jks
 
 #Copy GarageSale User feature to /mytemp folder
-COPY --chown=1001:0 ./GarageSaleRuntimeUtil/publish/files/WASPersonaWebServicesHandlerFeature_1.0.0.202110181027.esa /mytemp
+COPY --chown=1001:0 ./GarageSaleRuntimeUtil/publish/files/WASPersonaWebServicesHandlerFeature-1.0.0-SNAPSHOT.esa /mytemp
 
 # Setting for the verbose option
 ARG VERBOSE=true
@@ -55,9 +56,8 @@ ARG OL=true
 # Only available in 'kernel-slim'. The 'full' tag already includes all features for convenience.
 
 #RUN if [[ -z "$FULL_IMAGE" ]] ; then echo Skip running features.sh for full image ; else  ; fi
-RUN if [[ "$FULL_IMAGE" == "false" && "$OL" == "true" ]] ; then features.sh ; else echo "Skip running features.sh for full image" ; fi \
-    && if [[ "$OL" == "false" ]]; then featureManager install /mytemp/WASPersonaWebServicesHandlerFeature_1.0.0.202110181027.esa --when-file-exists=replace --acceptLicense; fi
-
+RUN if [ "$FULL_IMAGE" = "false" ] && [ "$OL" == "true" ] ; then features.sh ; else echo "Skip running features.sh for full image" ; fi \
+    && if [ "$OL" = "false" ] ; then featureManager install  /mytemp/WASPersonaWebServicesHandlerFeature-1.0.0-SNAPSHOT.esa  --when-file-exists=replace --acceptLicense ; fi
 
 
 # Add interim fixes for WL/OL (optional)

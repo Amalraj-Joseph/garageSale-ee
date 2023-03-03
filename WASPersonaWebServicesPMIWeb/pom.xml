@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.ibm.ws.svt.gs.garagesale-ee9</groupId>
-		<artifactId>garageSale-ee9</artifactId>
+		<groupId>com.ibm.ws.svt.gs.garagesale-ee10</groupId>
+		<artifactId>garageSale-ee10</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 	<artifactId>WASPersonaWebServicesPMIWeb</artifactId>
@@ -25,7 +25,7 @@
 		<dependency>
 			<groupId>jakarta.faces</groupId>
 			<artifactId>jakarta.faces-api</artifactId>
-			<version>3.0.0</version>
+			<version>4.0.1</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -37,20 +37,20 @@
 		<dependency>
 			<groupId>jakarta.websocket</groupId>
 			<artifactId>jakarta.websocket-all</artifactId>
-			<version>2.0.0</version>
+			<version>2.1.0</version>
 			<type>pom</type>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>jakarta.websocket</groupId>
 			<artifactId>jakarta.websocket-client-api</artifactId>
-			<version>2.0.0</version>
+			<version>2.1.0</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>jakarta.websocket</groupId>
 			<artifactId>jakarta.websocket-api</artifactId>
-			<version>2.0.0</version>
+			<version>2.1.0</version>
 			<scope>provided</scope>
 		</dependency>
 		<!-- <dependency> <groupId>org.eclipse.jetty.websocket</groupId> <artifactId>javax-websocket-server-impl</artifactId> 
@@ -59,17 +59,17 @@
 		<dependency>
 			<groupId>jakarta.enterprise.concurrent</groupId>
 			<artifactId>jakarta.enterprise.concurrent-api</artifactId>
-			<version>2.0.0</version>
+			<version>3.0.2</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>jakarta.annotation</groupId>
 			<artifactId>jakarta.annotation-api</artifactId>
-			<version>2.0.0</version>
+			<version>2.1.1</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.ibm.ws.svt.gs.garagesale-ee9</groupId>
+			<groupId>com.ibm.ws.svt.gs.garagesale-ee10</groupId>
 			<artifactId>WASPersonaWebServicesHandlerAPI</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<scope>provided</scope>
@@ -77,7 +77,13 @@
 		<dependency>
 			<groupId>jakarta.servlet</groupId>
 			<artifactId>jakarta.servlet-api</artifactId>
-			<version>5.0.0</version>
+			<version>6.0.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>jakarta.enterprise</groupId>
+			<artifactId>jakarta.enterprise.cdi-api</artifactId>
+			<version>4.0.1</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>

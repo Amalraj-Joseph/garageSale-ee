@@ -7,24 +7,23 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.net.URI;
 
-import jakarta.faces.bean.ManagedBean;
-import jakarta.faces.bean.ManagedProperty;
-import jakarta.faces.bean.RequestScoped;
+import com.ibm.websphere.persona.pmi.websockets.PersonaWebServicesPMIWebSocketClientEndpoint;
+
+import jakarta.enterprise.context.RequestScoped;
 import jakarta.faces.context.ExternalContext;
 import jakarta.faces.context.FacesContext;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 import jakarta.servlet.ServletContext;
-import jakarta.servlet.http.HttpServletResponse;
 import jakarta.websocket.ContainerProvider;
 import jakarta.websocket.Session;
 import jakarta.websocket.WebSocketContainer;
-
-import com.ibm.websphere.persona.pmi.websockets.PersonaWebServicesPMIWebSocketClientEndpoint;
 
 /**
  * @author JAGRAJ
  *
  */
-@ManagedBean(name="personaPMIJSFActions")
+@Named("personaPMIJSFActions")
 @RequestScoped
 public class PersonaPMIJSFActions implements Serializable{
 	
@@ -33,7 +32,9 @@ public class PersonaPMIJSFActions implements Serializable{
 	 */
 	private static final long serialVersionUID = -6381630971575764398L;
 	
-	@ManagedProperty(name="personaPMIJSFJsonBean",value="#{personaPMIJSFJsonBean}")
+	//@ManagedProperty(name="personaPMIJSFJsonBean",value="#{personaPMIJSFJsonBean}")
+	@Inject
+	//@ManagedProperty(value="#{personaPMIJSFJsonBean}")
 	private PersonaPMIJSFJsonBean personaPMIJSFJsonBean;
 	
 	
@@ -126,7 +127,7 @@ public class PersonaPMIJSFActions implements Serializable{
     		FacesContext facesContext= FacesContext.getCurrentInstance();
     		ExternalContext externalContext = facesContext.getExternalContext();
     		ServletContext servletContext = (ServletContext) externalContext.getContext();
-    		ServletContext pmiWebAppContext = servletContext.getContext("/GSjsf20LibertyWeb");
+    		ServletContext pmiWebAppContext = servletContext.getContext("/GSjsf40LibertyWeb");
     		String uri = pmiWebAppContext.getContextPath();
     		return uri;
     }

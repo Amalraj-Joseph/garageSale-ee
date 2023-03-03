@@ -7,7 +7,7 @@ metadata:
 spec:
   license:
     accept: true
-  applicationImage: hyc-wassvt-team-image-registry-docker-local.artifactory.swg-devops.com/garagesale/garagesale-ee:latest
+  applicationImage: docker-na-public.artifactory.swg-devops.com/hyc-wassvt-team-image-registry-docker-local/garagesale/garagesale-ee:ee10jdk17
   statefulSet: 
     storage:
       size: 2Gi
@@ -20,25 +20,43 @@ spec:
   autoscaling:
     minReplicas: 1
     maxReplicas: 20
-    targetCPUUtilizationPercentage: 80
+    targetCPUUtilizationPercentage: 70
   pullPolicy: Always
   service:
     type: ClusterIP
     port: 9443
   resources:
     limits:
-      cpu: 512m
-      memory: 1536Mi
+      cpu: 1024m
+      memory: 2048Mi
     requests:
-      cpu: 256m
-      memory: 768Mi
+      cpu: 512m
+      memory: 1024Mi
   route:
     annotations:
        haproxy.router.openshift.io/timeout: 3m
   probes:
-    readiness: {}
-    liveness: {}
-    startup: {}
+    startup:
+      httpGet:
+        path: /health/started
+        port: 9080
+        scheme: HTTP
+      initialDelaySeconds: 60
+      periodSeconds: 5
+      successThreshold: 1
+      failureThreshold: 20
+    readiness:
+      httpGet:
+        path: /health/ready
+        port: 9080
+        scheme: HTTP
+      initialDelaySeconds: 120
+    liveness:
+      httpGet:
+        path: /health/live
+        port: 9080
+        scheme: HTTP
+      initialDelaySeconds: 120
   env:
     - name: GSDB_SERVER_NAME
       value: 'gs-db2'

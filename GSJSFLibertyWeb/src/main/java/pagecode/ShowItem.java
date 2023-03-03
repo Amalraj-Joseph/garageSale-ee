@@ -3,11 +3,11 @@
  */
 package pagecode;
 
+import jakarta.enterprise.context.RequestScoped;
 import jakarta.faces.component.html.HtmlOutputText;
-import jakarta.faces.bean.ManagedBean;
-import jakarta.faces.bean.RequestScoped;
+import jakarta.inject.Named;
 
-@ManagedBean(name="pc_ShowItem")
+@Named("pc_ShowItem")
 @RequestScoped
 
 /**

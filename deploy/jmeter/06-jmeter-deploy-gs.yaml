@@ -16,9 +16,9 @@ spec:
     spec:
       initContainers:
       - name: delay-jmeter
-        image: hyc-wassvt-team-image-registry-docker-local.artifactory.swg-devops.com/jmeterstress/jmeter
+        image: docker-na-public.artifactory.swg-devops.com/hyc-wassvt-team-image-registry-docker-local/jmeterstress/jmeter
         imagePullPolicy: IfNotPresent
-        command: ['sh', '-c', 'echo Jmeter sleeping for 180s before starting stress run && sleep 180'] # sleep for 3 minutes 
+        command: ['sh', '-c', 'echo Jmeter sleeping for 180s before starting stress run && sleep 300'] # sleep for 3 minutes 
       containers:
         - resources: {}
           terminationMessagePath: /dev/termination-log
@@ -32,14 +32,14 @@ spec:
                 configMapKeyRef:
                   name: jmeter-route
                   key: app-route
-          image: hyc-wassvt-team-image-registry-docker-local.artifactory.swg-devops.com/jmeterstress/jmeter
+          image: docker-na-public.artifactory.swg-devops.com/hyc-wassvt-team-image-registry-docker-local/jmeterstress/jmeter
           imagePullPolicy: Always
           args: [-script,
                   Liberty/GarageSale9,
                  -host,
                   $(HOST),
                  -appUrl,
-                  /GSjsf20LibertyWeb,
+                  GSjsf40LibertyWeb,
                  -port,
                   '443',
                  -protocol,

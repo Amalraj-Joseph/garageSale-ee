@@ -21,7 +21,7 @@ import jakarta.faces.event.PostAddToViewEvent;
 
 @FacesComponent(value = "cinfocc")
 @ListenerFor(systemEventClass = PostAddToViewEvent.class)
-@ResourceDependency(name = "jsf.js", library = "jakarta.faces", target = "body")
+@ResourceDependency(name = "faces.js", library = "jakarta.faces", target = "body")
 public class CInfoUI extends UIInput {
 	
 	
@@ -96,7 +96,7 @@ public class CInfoUI extends UIInput {
             in.setValueExpression("value", el);
             in.setLocalValueSet(false);
             
-            in.setOnkeyup("jsf.ajax.request(this,event);");
+            in.setOnkeyup("faces.ajax.request(this,event);");
             
             getChildren().add(in);
         }

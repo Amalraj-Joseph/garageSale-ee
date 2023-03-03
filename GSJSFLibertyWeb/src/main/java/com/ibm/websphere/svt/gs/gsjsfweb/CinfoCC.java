@@ -4,18 +4,20 @@ import java.io.Serializable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import jakarta.faces.bean.ManagedBean;
-import jakarta.faces.bean.SessionScoped;
-import jakarta.faces.context.FacesContext;
-
 import com.ibm.websphere.svt.gs.cinfocc.CInfo;
 import com.ibm.websphere.svt.gs.gsdb.jaxws.client.CustomerInfoWrapper;
 import com.ibm.websphere.svt.gs.gsjsfweb.utils.GSJSFWebUtil;
 
+import jakarta.enterprise.context.SessionScoped;
+import jakarta.faces.context.FacesContext;
+import jakarta.inject.Named;
 
 
 
-@ManagedBean(name="cinfocc")
+
+//@Named(name="cinfocc")
+//@SessionScoped
+@Named("cinfocc")
 @SessionScoped
 public class CinfoCC implements Serializable {
 

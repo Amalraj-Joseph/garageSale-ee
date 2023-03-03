@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
-	<display-name>GSjsf20LibertyWeb</display-name>
-	<distributable/>
+<web-app version="5.0"
+	xmlns="https://jakarta.ee/xml/ns/jakartaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd">
+	<display-name>GSjsf40LibertyWeb</display-name>
+	<distributable />
 	<context-param>
 		<param-name>jakarta.faces.FACELETS_LIBRARIES</param-name>
 		<param-value>/WEB-INF/cinfo.taglib.xml</param-value>
@@ -16,13 +19,13 @@ Default is server.</description>
 		<param-value>server</param-value>
 	</context-param>
 	<context-param>
-     <param-name>jakarta.faces.ENABLE_CDI_RESOLVER_CHAIN</param-name>
-     <param-value>true</param-value>
-    </context-param>   
-    <context-param>
-     <param-name>jakarta.faces.ENABLE_WEBSOCKET_ENDPOINT</param-name>
-     <param-value>true</param-value>
-    </context-param>
+		<param-name>jakarta.faces.ENABLE_CDI_RESOLVER_CHAIN</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	<context-param>
+		<param-name>jakarta.faces.ENABLE_WEBSOCKET_ENDPOINT</param-name>
+		<param-value>true</param-value>
+	</context-param>
 	<context-param>
 		<param-name>org.apache.myfaces.NUMBER_OF_VIEWS_IN_SESSION</param-name>
 		<param-value>250</param-value>
@@ -31,7 +34,7 @@ Default is server.</description>
 		<param-name>org.apache.myfaces.LOG_WEB_CONTEXT_PARAMS</param-name>
 		<param-value>false</param-value>
 	</context-param>
-	
+
 	<context-param>
 		<description>
 		The default suffix for extension-mapped resources that contain JSF components.
@@ -72,52 +75,56 @@ This may disable custom JSF extensions, such as factories defined in the project
 		<param-name>org.apache.myfaces.USE_ENCRYPTION</param-name>
 		<param-value>false</param-value>
 	</context-param>
+	<context-param>
+		<param-name>jakarta.faces.AUTOMATIC_EXTENSIONLESS_MAPPING</param-name>
+		<param-value>true</param-value>
+	</context-param>
 	<servlet>
 		<servlet-name>Faces Servlet</servlet-name>
 		<servlet-class>jakarta.faces.webapp.FacesServlet</servlet-class>
 		<load-on-startup>-1</load-on-startup>
 		<enabled>true</enabled>
 		<!-- This false is the default, but we are to disable it for now -->
-		<!--  <async-supported>false</async-supported> -->
+		<!-- <async-supported>false</async-supported> -->
 	</servlet>
 	<servlet-mapping>
-    	<servlet-name>Faces Servlet</servlet-name>
-    	<url-pattern>*.jsf</url-pattern>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.jsf</url-pattern>
 	</servlet-mapping>
 	<!-- Define an error handler for 404 pages -->
-        <error-page>
-                <error-code>404</error-code>
-                <location>/error.xhtml</location>
-        </error-page>
- 		<error-page>
-        	<exception-type>jakarta.faces.application.ViewExpiredException</exception-type>
-        	<location>/error.xhtml</location>
-    	</error-page>
-        <!-- Define an error handler for java.lang.Throwable -->
-        <error-page>
-                <exception-type>java.lang.Throwable</exception-type>
-                <location>/error.xhtml</location>
-        </error-page>
-        
-    <resource-ref id="ResourceRef_1">
+	<error-page>
+		<error-code>404</error-code>
+		<location>/error.xhtml</location>
+	</error-page>
+	<error-page>
+		<exception-type>jakarta.faces.application.ViewExpiredException</exception-type>
+		<location>/error.xhtml</location>
+	</error-page>
+	<!-- Define an error handler for java.lang.Throwable -->
+	<error-page>
+		<exception-type>java.lang.Throwable</exception-type>
+		<location>/error.xhtml</location>
+	</error-page>
+
+	<resource-ref id="ResourceRef_1">
 		<res-ref-name>jdbc/gsdb</res-ref-name>
 		<res-type>javax.sql.DataSource</res-type>
 		<res-auth>Container</res-auth>
 		<res-sharing-scope>Shareable</res-sharing-scope>
 	</resource-ref>
-    <resource-ref id="ResourceRef_2">
+	<resource-ref id="ResourceRef_2">
 		<res-ref-name>jdbc/ccdb</res-ref-name>
 		<res-type>javax.sql.DataSource</res-type>
 		<res-auth>Container</res-auth>
 		<res-sharing-scope>Shareable</res-sharing-scope>
 	</resource-ref>
-    <resource-ref id="ResourceRef_3">
+	<resource-ref id="ResourceRef_3">
 		<res-ref-name>jdbc/wsbankdb</res-ref-name>
 		<res-type>javax.sql.DataSource</res-type>
 		<res-auth>Container</res-auth>
 		<res-sharing-scope>Shareable</res-sharing-scope>
 	</resource-ref>
-	
+
 	<persistence-unit-ref>
 		<persistence-unit-ref-name>GarageSaleDBJPA/emf</persistence-unit-ref-name>
 		<persistence-unit-name>GarageSaleDBJPA</persistence-unit-name>
@@ -130,7 +137,7 @@ This may disable custom JSF extensions, such as factories defined in the project
 		<persistence-unit-ref-name>WSBankDBJPA/emf</persistence-unit-ref-name>
 		<persistence-unit-name>WSBankDBJPA</persistence-unit-name>
 	</persistence-unit-ref>
-        
+
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.htm</welcome-file>
@@ -139,4 +146,5 @@ This may disable custom JSF extensions, such as factories defined in the project
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
- </web-app>
+
+</web-app>

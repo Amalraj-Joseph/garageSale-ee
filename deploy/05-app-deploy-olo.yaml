@@ -5,7 +5,7 @@ metadata:
     annotations:
       argocd.argoproj.io/sync-wave: "5"
 spec:
-  applicationImage: hyc-wassvt-team-image-registry-docker-local.artifactory.swg-devops.com/garagesale/garagesale-ee:latest
+  applicationImage: docker-na-public.artifactory.swg-devops.com/hyc-wassvt-team-image-registry-docker-local/garagesale/garagesale-ee:ee10jdk17
   statefulSet: {}
   createKnativeService: false
   expose: true
@@ -24,26 +24,36 @@ spec:
     termination: passthrough
   resources:
     limits:
-      cpu: 256m
-      memory: 600Mi
+      cpu: 1024m
+      memory: 2048Mi
     requests:
-      cpu: 128m
-      memory: 400Mi
+      cpu: 512m
+      memory: 1024Mi
+  route:
+    annotations:
+       haproxy.router.openshift.io/timeout: 3m
   probes:
+    startup:
+      httpGet:
+        path: /health/started
+        port: 9080
+        scheme: HTTP
+      initialDelaySeconds: 60
+      periodSeconds: 5
+      successThreshold: 1
+      failureThreshold: 20
     readiness:
-      failureThreshold: 12
       httpGet:
         path: /health/ready
         port: 9080
-      initialDelaySeconds: 5
-      periodSeconds: 10
+        scheme: HTTP
+      initialDelaySeconds: 120
     liveness:
-      failureThreshold: 12
       httpGet:
         path: /health/live
         port: 9080
-      initialDelaySeconds: 15
-      periodSeconds: 20
+        scheme: HTTP
+      initialDelaySeconds: 120
   env:
     - name: GSDB_SERVER_NAME
       value: 'gs-db2'

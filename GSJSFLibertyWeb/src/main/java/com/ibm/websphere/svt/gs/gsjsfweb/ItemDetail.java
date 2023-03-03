@@ -20,7 +20,7 @@ import com.ibm.websphere.svt.gs.gsjsfweb.utils.GarageSaleJSFWSClientUtil;
 
 @Named
 @RequestScoped
-//@ManagedBean(name="itemDetail")
+//@Named(name="itemDetail")
 //@RequestScoped
 public class ItemDetail implements java.io.Serializable {
 

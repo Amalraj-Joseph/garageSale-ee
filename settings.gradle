@@ -1,4 +1,4 @@
-rootProject.name = 'garageSale-ee9'
+rootProject.name = 'garageSale-ee10'
 include ':WSBankDBJPA'
 include ':WSBankEJB'
 include ':CreditCardDBJPA'
@@ -9,7 +9,7 @@ include ':GarageSaleDBJPA'
 include ':GarageSaleEJB'
 include ':ProdReviewTaxShipRateEJB'
 include ':WASPersonaWebServicesPMIWeb'
-include ':GSjsf20LibertyWeb'
+include ':GSjsf40LibertyWeb'
 include ':GarageSaleLibertyEAR'
 include ':GarageSaleRuntimeUtil'
 
@@ -23,6 +23,6 @@ project(':GarageSaleDBJPA').projectDir = "$rootDir/GarageSaleDBJPA" as File
 project(':GarageSaleEJB').projectDir = "$rootDir/GarageSaleEJB" as File
 project(':ProdReviewTaxShipRateEJB').projectDir = "$rootDir/ProdReviewTaxShipRateEJB" as File
 project(':WASPersonaWebServicesPMIWeb').projectDir = "$rootDir/WASPersonaWebServicesPMIWeb" as File
-project(':GSjsf20LibertyWeb').projectDir = "$rootDir/GSJSFLibertyWeb" as File
+project(':GSjsf40LibertyWeb').projectDir = "$rootDir/GSJSFLibertyWeb" as File
 project(':GarageSaleLibertyEAR').projectDir = "$rootDir/GarageSaleLibertyEAR" as File
 project(':GarageSaleRuntimeUtil').projectDir = "$rootDir/GarageSaleRuntimeUtil" as File

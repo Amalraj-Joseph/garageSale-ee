@@ -25,8 +25,8 @@
 -DGarageSaleCCManagerService.endPoint.Address=https://localhost:9443/CreditCardEJB/GarageSaleCCManagerService
 -DGarageSaleStoreManagerService.endPoint.Address=https://localhost:9443/GarageSaleEJB/GarageSaleStoreManagerService
 -DGarageSaleBankManagerService.endPoint.Address=https://localhost:9443/WSBankEJB/GarageSaleBankManagerService
--DGarageSaleProductShipService.endPoint.Address=https://localhost:9443/GSjsf20LibertyWeb
--DGarageSaleWebSocket.endPoint.Address=wss://localhost:9443/GSjsf20LibertyWeb
+-DGarageSaleProductShipService.endPoint.Address=https://localhost:9443/GSjsf40LibertyWeb
+-DGarageSaleWebSocket.endPoint.Address=wss://localhost:9443/GSjsf40LibertyWeb
 -DPersonaPMIMetrics.endPoint.Address=wss://localhost:9443/WASPersonaWebServicesPMIWeb
 -DGarageSale.Product.Videos.Cache.Size=20
 -DGarageSale.Product.Videos.Dir.Location=c:\\opt\\videos

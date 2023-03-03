@@ -12,18 +12,7 @@ import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import jakarta.annotation.Resource;
-import jakarta.ejb.EJB;
-import jakarta.ejb.Local;
-import jakarta.ejb.LocalBean;
-import jakarta.ejb.SessionContext;
-import jakarta.ejb.Stateless;
-import jakarta.ejb.TransactionManagement;
-import jakarta.ejb.TransactionManagementType;
-import jakarta.jws.WebService;
 import javax.sql.DataSource;
-import jakarta.transaction.Status;
-import jakarta.transaction.UserTransaction;
 
 import com.ibm.websphere.svt.gs.cart.CartItem;
 import com.ibm.websphere.svt.gs.ccdb.jaxws.client.CCInfoWrapper;
@@ -54,6 +43,19 @@ import com.ibm.websphere.svt.gs.wrapper.PaymentInfoWrapper;
 import com.ibm.websphere.svt.gs.wrapper.SettingsWrapper;
 import com.ibm.websphere.svt.gs.wsbankdb.jaxws.client.GarageSaleBankManagerLocal;
 
+import jakarta.annotation.Resource;
+import jakarta.ejb.EJB;
+import jakarta.ejb.Local;
+import jakarta.ejb.LocalBean;
+import jakarta.ejb.SessionContext;
+import jakarta.ejb.Stateless;
+import jakarta.ejb.TransactionManagement;
+import jakarta.ejb.TransactionManagementType;
+import jakarta.inject.Inject;
+import jakarta.jws.WebService;
+import jakarta.transaction.Status;
+import jakarta.transaction.UserTransaction;
+
 
 /**
  * @author JAGRAJ
@@ -78,7 +80,8 @@ public class GarageSaleStoreManager {
 	@Resource
 	private SessionContext mySessionCtx;
 	
-	@jakarta.annotation.Resource(lookup="java:module/GarageSaleEJBWSClientUtil")
+	//@jakarta.annotation.Resource(lookup="java:module/GarageSaleEJBWSClientUtil")
+	@Inject
 	private GarageSaleEJBWSClientUtil garageSaleEJBWSClientUtil;
 	
 	private UserTransaction ut;
