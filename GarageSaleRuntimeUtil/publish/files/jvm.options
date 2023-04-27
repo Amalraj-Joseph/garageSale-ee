@@ -11,13 +11,11 @@
 # Uncomment the following line to enable verbose output for class loading
 #-verbose:class
 
--Xms1024m
--Xmx1024m
 #-Dcom.sun.jndi.ldap.object.disableEndpointIdentification=true
-#-verbose:gc
-#-Xdump:heap
-#-Xaggressive
-#-Xverbosegclog:/logs/verbosegc.log,1,1000000
+-verbose:gc
+-Xdump:heap
+-Xaggressive
+-Xverbosegclog:/logs/verbosegc.%seq.log,5,300000
 #-verbose:sizes
 
 #GarageSale WebServices Endpoint addresses.
