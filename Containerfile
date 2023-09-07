@@ -41,7 +41,7 @@ COPY  --chown=1001:0 ./GarageSaleRuntimeUtil/publish/databaseDrivers/db2V9Driver
 COPY  --chown=1001:0 ./GarageSaleRuntimeUtil/publish/jaxrsThirdPartyJars /opt/ibm/wlp/usr/shared/resources/jaxrsThirdPartyJars/
 
 #truststore for LDAP
-COPY  --chown=1001:0  ./GarageSaleRuntimeUtil/publish/files/trustStore.jks /config/trustStore.jks
+COPY  --chown=1001:0  ./GarageSaleRuntimeUtil/publish/files/openldap.p12 /config/openldap.p12
 
 #Copy GarageSale User feature to /mytemp folder
 COPY --chown=1001:0 ./GarageSaleRuntimeUtil/publish/files/WASPersonaWebServicesHandlerFeature-1.0.0-SNAPSHOT.esa /mytemp

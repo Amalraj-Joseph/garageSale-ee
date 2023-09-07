@@ -98,4 +98,12 @@ spec:
       value: db2inst1
     - name: SESSIONDB_PASSWORD
       value: db2passwd
-      
+    - name: ldapHost
+      value: 'openldap'
+    - name: ldapPort
+      value: "9636"
+    - name: ldapSSL
+      value: 'true'
+    - name: WLP_LOGGING_CONSOLE_FORMAT
+      value: 'simple'      
+
