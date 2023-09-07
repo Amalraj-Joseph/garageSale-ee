@@ -7,9 +7,11 @@ git:
   submodules: false
 
 before_install:
-- docker login $CONT_REGISTRY -u $REG_USER -p $REG_PASSWORD
-
-# - sudo apt-get -y install maven
+- sudo apt -y install python3 python3-pip
+- sudo pip3 install setuptools
+- sudo pip3 install --upgrade pip
+- sudo pip3 install --upgrade setuptools
+- sudo pip3 install ansible
 
 script:
 #- jdk_switcher use openjdk17
@@ -18,12 +20,16 @@ script:
 #- chmod +x $TRAVIS_BUILD_DIR/install-jdk.sh
 #- export JAVA_HOME=$HOME/openjdk17
 #- $TRAVIS_BUILD_DIR/install-jdk.sh -F 17 --target $JAVA_HOME
+- |
+  git clone https://$GITHUB_TOKEN@github.ibm.com/was-svt/configs.git --branch main -q
+  echo "$pw" > /tmp/.pw
+  configs/bin/decryptme.sh /tmp/.pw
+  # env vars from the configs repo CONT_REGISTRY HYCSVT and the user / token
+  . /tmp/.registry
+  docker login $CONT_REGISTRY -u $(cat /tmp/.user) -p $(cat /tmp/.token)
+
 - echo "JAVA_HOME=$JAVA_HOME"
 - echo "TRAVIS_JDK_VERSION=$TRAVIS_JDK_VERSION"
-- HYCSVT="$CONT_REGISTRY/hyc-wassvt-team-image-registry-docker-local"
-- echo "$REG_USER" > /tmp/.user
-- echo "$REG_PASSWORD" > /tmp/.token
-- docker login $CONT_REGISTRY -u $(cat /tmp/.user) -p $(cat /tmp/.token)
 - export DOCKER_BUILDKIT=1
 #- export BUILDKIT_COLORS=run=123,20,245:error=yellow:cancel=blue:warning=white
 - export BUILDKIT_PROGRESS=plain
