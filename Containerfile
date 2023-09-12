@@ -1,20 +1,7 @@
 ARG BASE_IMAGE=icr.io/appcafe/websphere-liberty:kernel-java17-openj9-ubi
-
 FROM $BASE_IMAGE
 
-
-# It was decided not to use submodules for getting utility apps but using curl commands to get released versions
-# COPY  --chown=1001:0  sharedApps/badapp.war /config/dropins
-# COPY  --chown=1001:0  sharedApps/microwebapp.war /config/dropins
-# COPY  --chown=1001:0  sharedApps/svtMessageApp.war /config/dropins
-#COPY  --chown=1001:0 ltpa.keys /output/resources/security/ltpa.keys
-
-ARG REG_USER
-ARG REG_PASSWORD
-
 # Getting war files for utility applications
-
-
 User root
 
 RUN --mount=type=secret,id=token --mount=type=secret,id=user \
@@ -35,6 +22,7 @@ User 1001
 COPY  --chown=1001:0  ./GarageSaleLibertyEAR/target/GarageSaleLibertyEAR.ear /config/apps/
 COPY  --chown=1001:0 ./GarageSaleRuntimeUtil/publish/servers/server-containers.xml /config/server.xml
 COPY  --chown=1001:0  ./GarageSaleRuntimeUtil/publish/files/jvm.options /config/jvm.options
+COPY  --chown=1001:0 ./GarageSaleRuntimeUtil/publish/servers/ldap-config.xml /config/configDropins/defaults/
 
 #Copy DB2 and JaxRS Third Party libs
 COPY  --chown=1001:0 ./GarageSaleRuntimeUtil/publish/databaseDrivers/db2V9Drivers /opt/ibm/wlp/usr/shared/resources/db2drivers/
