@@ -13,9 +13,9 @@
 
 #-Dcom.sun.jndi.ldap.object.disableEndpointIdentification=true
 -verbose:gc
--Xdump:heap
--Xaggressive
--Xverbosegclog:/logs/verbosegc.%seq.log,5,300000
+#-Xdump:heap
+#-Xaggressive
+#-Xverbosegclog:/logs/verbosegc.%seq.log,5,300000
 #-verbose:sizes
 
 #GarageSale WebServices Endpoint addresses.
@@ -32,3 +32,4 @@
 -DGarageSale.Enable.WebSockets.Concurrency=true
 -DWSAT_ROLLBACK_CC=false
 -DWSAT_ROLLBACK_WSBANK=false
+

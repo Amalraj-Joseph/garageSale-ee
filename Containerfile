@@ -1,4 +1,5 @@
-ARG BASE_IMAGE=icr.io/appcafe/websphere-liberty:kernel-java17-openj9-ubi
+# Using full image V3
+ARG BASE_IMAGE=icr.io/appcafe/websphere-liberty:full-java17-openj9-ubi
 FROM $BASE_IMAGE
 
 # Getting war files for utility applications
