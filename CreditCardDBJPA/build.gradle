@@ -1,7 +1,7 @@
 
 description = ''
 dependencies {
-    compileOnly group: 'org.datanucleus', name: 'jakarta.persistence', version:'3.0.0'
+    compileOnly group: 'org.datanucleus', name: 'jakarta.persistence', version:'3.1.0'
 }
 
 jar{

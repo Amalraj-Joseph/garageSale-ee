@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1698149504243
+Bnd-LastModified: 1700061906519
 Build-Jdk: 17.0.7
 Built-By: Administrator
 Bundle-Activator: com.ibm.wsspi.webservices.persona.handler.WASPersonaWe

@@ -1,10 +1,10 @@
 description = ''
 dependencies {
-    compileOnly group: 'jakarta.ejb', name: 'jakarta.ejb-api', version:'4.0.0'
-    compileOnly group: 'jakarta.persistence', name: 'jakarta.persistence-api', version:'3.0.0'
-    compileOnly group: 'jakarta.annotation', name: 'jakarta.annotation-api', version:'2.0.0'
+    compileOnly group: 'jakarta.ejb', name: 'jakarta.ejb-api', version:'4.0.1'
+    compileOnly group: 'jakarta.persistence', name: 'jakarta.persistence-api', version:'3.1.0'
+    compileOnly group: 'jakarta.annotation', name: 'jakarta.annotation-api', version:'2.1.1'
     compileOnly group: 'jakarta.jws', name: 'jakarta.jws-api', version:'3.0.0'
-    compileOnly group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version:'3.0.1'
+    compileOnly group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version:'4.0.0'
 	compileOnly project(':CreditCardDBJPA')
 }
 

@@ -4,6 +4,7 @@ include ':WSBankEJB'
 include ':CreditCardDBJPA'
 include ':CreditCardEJB'
 include ':GarageSaleWSClient'
+include ':GarageSaleCDIExtensions'
 include ':WASPersonaWebServicesHandlerAPI'
 include ':GarageSaleDBJPA'
 include ':GarageSaleEJB'
@@ -18,6 +19,7 @@ project(':WSBankEJB').projectDir = "$rootDir/WSBankEJB" as File
 project(':CreditCardDBJPA').projectDir = "$rootDir/CreditCardDBJPA" as File
 project(':CreditCardEJB').projectDir = "$rootDir/CreditCardEJB" as File
 project(':GarageSaleWSClient').projectDir = "$rootDir/GarageSaleWSClient" as File
+project(':GarageSaleCDIExtensions').projectDir = "$rootDir/GarageSaleCDIExtensions" as File
 project(':WASPersonaWebServicesHandlerAPI').projectDir = "$rootDir/WASPersonaWebServicesHandlerAPI" as File
 project(':GarageSaleDBJPA').projectDir = "$rootDir/GarageSaleDBJPA" as File
 project(':GarageSaleEJB').projectDir = "$rootDir/GarageSaleEJB" as File
