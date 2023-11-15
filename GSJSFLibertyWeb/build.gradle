@@ -3,24 +3,26 @@ apply plugin: 'war'
 description = ''
 dependencies {
   implementation project(':ProdReviewTaxShipRateEJB')
+  implementation project(':GarageSaleCDIExtensions')
   providedCompile project(':GarageSaleEJB')
-    providedCompile group: 'org.apache.myfaces.core', name: 'myfaces-api', version:'2.2.12'
-    providedCompile group: 'jakarta.el', name: 'jakarta.el-api', version:'4.0.0'
-    providedCompile group: 'jakarta.enterprise', name: 'jakarta.enterprise.cdi-api', version:'3.0.0'
-    providedCompile group: 'jakarta.interceptor', name: 'jakarta.interceptor-api', version:'2.0.0'
+    providedCompile group: 'org.apache.myfaces.core', name: 'myfaces-api', version:'4.0.0-RC1'
+    providedCompile group: 'jakarta.el', name: 'jakarta.el-api', version:'5.0.1'
+    providedCompile group: 'jakarta.enterprise', name: 'jakarta.enterprise.cdi-api', version:'4.0.1'
+    providedCompile group: 'jakarta.interceptor', name: 'jakarta.interceptor-api', version:'2.1.0'
   providedCompile project(':GarageSaleWSClient')
     providedCompile group: 'org.apache.wink', name: 'wink-client-apache-httpclient', version:'1.1.3-incubating'
-    providedCompile group: 'jakarta.enterprise.concurrent', name: 'jakarta.enterprise.concurrent-api', version:'2.0.0'
-    providedCompile group: 'jakarta.faces', name: 'jakarta.faces-api', version:'3.0.0'
-    providedCompile group: 'jakarta.websocket', name: 'jakarta.websocket-api', version:'2.0.0'
-    providedCompile group: 'jakarta.servlet', name: 'jakarta.servlet-api', version:'5.0.0'
-    providedCompile group: 'jakarta.websocket', name: 'jakarta.websocket-api', version:'2.0.0'
-    providedCompile group: 'jakarta.validation', name: 'jakarta.validation-api', version:'3.0.0'
+    providedCompile group: 'jakarta.enterprise.concurrent', name: 'jakarta.enterprise.concurrent-api', version:'3.0.2'
+    providedCompile group: 'jakarta.faces', name: 'jakarta.faces-api', version:'4.0.1'
+    providedCompile group: 'jakarta.websocket', name: 'jakarta.websocket-api', version:'2.1.0'
+    providedCompile group: 'jakarta.servlet', name: 'jakarta.servlet-api', version:'6.0.0'
+    providedCompile group: 'jakarta.websocket', name: 'jakarta.websocket-all', version:'2.1.0'
+    providedCompile group: 'jakarta.websocket', name: 'jakarta.websocket-client-api', version:'2.1.0'
+    providedCompile group: 'jakarta.validation', name: 'jakarta.validation-api', version:'3.0.2'
     providedCompile group: 'com.ibm.websphere.appserver.api', name: 'com.ibm.websphere.appserver.api.json', version:'1.0.16'
-    providedCompile group: 'jakarta.ws.rs', name: 'jakarta.ws.rs-api', version:'3.0.0'
-    providedCompile group: 'jakarta.ejb', name: 'jakarta.ejb-api', version:'4.0.0'
-    providedCompile group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version:'3.0.1'
-    providedCompile group: 'jakarta.xml.ws', name: 'jakarta.xml.ws-api', version:'3.0.1'
+    providedCompile group: 'jakarta.ws.rs', name: 'jakarta.ws.rs-api', version:'3.1.0'
+    providedCompile group: 'jakarta.ejb', name: 'jakarta.ejb-api', version:'4.0.1'
+    providedCompile group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version:'4.0.0'
+    providedCompile group: 'jakarta.xml.ws', name: 'jakarta.xml.ws-api', version:'4.0.0'
 }
 
 war{
