@@ -86,7 +86,6 @@
 							<runtimeArtifact>
 								<groupId>io.openliberty.beta</groupId>
 								<artifactId>openliberty-runtime</artifactId>
-								<version>23.0.0.1-beta</version>
 								<type>zip</type>
 							</runtimeArtifact>
 							<!--<runtimeArtifact> <groupId>com.ibm.websphere.appserver.runtime</groupId> 

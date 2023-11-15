@@ -9,3 +9,4 @@
 .*.swp
 .DS_Store
 /.apt_generated_tests/
+/pom.xmlcom/

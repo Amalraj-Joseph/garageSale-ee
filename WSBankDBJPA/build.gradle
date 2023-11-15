@@ -1,7 +1,7 @@
 
 description = ''
 dependencies {
-    compileOnly group: 'jakarta.persistence', name: 'jakarta.persistence-api', version:'3.0.0'
+    compileOnly group: 'jakarta.persistence', name: 'jakarta.persistence-api', version:'3.1.0'
 }
 
 jar{
