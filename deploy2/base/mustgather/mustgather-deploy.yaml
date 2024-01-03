@@ -16,7 +16,7 @@ spec:
       labels:
         app: mustgather
     spec:
-      serviceAccountName: gather-rb
+      serviceAccountName: gather-sa
       containers:
         - resources: {}
           name: mustgather
