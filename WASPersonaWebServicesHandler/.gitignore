@@ -9,3 +9,4 @@
 .*.swp
 .DS_Store
 /.apt_generated_tests/
+/WASPersonaWebServicesHandler/src/main/resources/META-INF/MANIFEST.MF
