@@ -20,7 +20,7 @@ archivesBaseName = 'GarageSaleLibertyEAR'
 ear {
   
    manifest {
-      attributes 'Implementation-Title': 'GarageSaleLibertyEAR 9'
+      attributes 'Implementation-Title': 'GarageSaleLibertyEAR 10'
    }
    appDirName 'src/main/app'
    libDirName 'lib'

@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1704298431598
+Build-Jdk: 17.0.9
+Built-By: Administrator
+Bundle-Activator: com.ibm.wsspi.webservices.persona.handler.WASPersonaWe
+ bServicesHandlerActivator
+Bundle-Description: WASPersonaWebServicesHandler
+Bundle-License: https://raw.github.com/WASdev/ci.maven.parent/master/LIC
+ ENSE
+Bundle-ManifestVersion: 2
+Bundle-Name: WASPersonaWebServicesHandler
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-SymbolicName: com.ibm.ws.svt.gs.garagesale-ee10.WASPersonaWebServ
+ icesHandler
+Bundle-Vendor: WASPersonaWebServicesHandler
+Bundle-Version: 1.0.0
+Created-By: Apache Maven Bundle Plugin
+Export-Package: com.ibm.wsspi.webservices.persona.api;version="1.0.0";us
+ es:="com.ibm.json.java",com.ibm.wsspi.webservices.persona.handler;versi
+ on="1.0.0";uses:="com.ibm.wsspi.webservices.handler,com.ibm.wsspi.webse
+ rvices.persona.api,org.osgi.framework"
+Import-Package: com.ibm.json.java;version="[1.0,2)",com.ibm.wsspi.webser
+ vices.handler;version="[10.0,11)",com.ibm.wsspi.webservices.persona.api
+ ;version="[1.0,2)",jakarta.servlet.http;version="[6.0,7)",org.osgi.fram
+ ework;version="[1.10,2)"
+Originally-Created-By: Apache Maven Bundle Plugin
+Tool: Bnd-5.1.1.202006162103

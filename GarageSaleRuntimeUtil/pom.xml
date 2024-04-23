@@ -86,7 +86,6 @@
 							<runtimeArtifact>
 								<groupId>io.openliberty.beta</groupId>
 								<artifactId>openliberty-runtime</artifactId>
-								<version>23.0.0.1-beta</version>
 								<type>zip</type>
 							</runtimeArtifact>
 							<!--<runtimeArtifact> <groupId>com.ibm.websphere.appserver.runtime</groupId> 
@@ -198,7 +197,7 @@
 							<!-- <installDirectory>${project.build.directory}</installDirectory> -->
 							<serverXmlFile>publish/servers/server.xml</serverXmlFile>
 							<deployPackages>dependencies</deployPackages>
-							<jvmOptionsFile>publish/files/jvm.options</jvmOptionsFile>
+							<jvmOptionsFile>publish/files/dev/jvm.options</jvmOptionsFile>
 							<configDirectory>publish/config</configDirectory>
 							<skipTestServer>true</skipTestServer>
 							<!-- <runtimeInstallDirectory>${project.build.directory}</runtimeInstallDirectory> -->
@@ -302,7 +301,7 @@
 							<!-- <installDirectory>${project.build.directory}</installDirectory> -->
 							<serverXmlFile>publish/servers/server.xml</serverXmlFile>
 							<deployPackages>dependencies</deployPackages>
-							<jvmOptionsFile>publish/files/jvm.options</jvmOptionsFile>
+							<jvmOptionsFile>publish/files/dev/jvm.options</jvmOptionsFile>
 							<configDirectory>publish/config</configDirectory>
 							<skipTestServer>true</skipTestServer>
 							<!-- <runtimeInstallDirectory>${project.build.directory}</runtimeInstallDirectory> -->
