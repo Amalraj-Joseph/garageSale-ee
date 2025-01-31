@@ -7,7 +7,7 @@ metadata:
     labels:
       app: garagesale-ee_olo
 spec:
-  applicationImage: docker-na-public.artifactory.swg-devops.com/hyc-wassvt-team-image-registry-docker-local/garagesale/garagesale-ee:ee10jdk17
+  applicationImage: docker-na-public.artifactory.swg-devops.com/hyc-wassvt-team-image-registry-docker-local/garagesale/garagesale-ee:ee11jdk17tol
   statefulSet: {}
   createKnativeService: false
   expose: true
