@@ -1,0 +1,4 @@
+pipelineIncludes:
+- gitRepo: git@github.ibm.com:was-svt/wassvt-common
+  gitBranch: dev
+  filePattern: ".ci-orchestrator/garageSale-ee10.yml" # file name found in this repo was-svt/wassvt-common/.ci-orchestrator/
