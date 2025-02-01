@@ -15,7 +15,7 @@
 		<!--<liberty.install.dir>C:\MyData\OpenLibertyInstalls\wlp</liberty.install.dir> -->
 		<!--<liberty.install.dir>C:\MyData\LibertyInstalls\JakartaEE10\wlp</liberty.install.dir> -->
 		<liberty.install.dir>C:\MyData\LibertyInstalls\wlp</liberty.install.dir>
-		<liberty.mvn.version>3.10.4-SNAPSHOT</liberty.mvn.version>
+		<liberty.mvn.version>3.11.2</liberty.mvn.version>
 	</properties>
 	<pluginRepositories>
 		<!-- Configure Sonatype OSS Maven snapshots repository (for liberty-maven-plugin 
