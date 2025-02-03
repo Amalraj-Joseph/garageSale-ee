@@ -10,11 +10,10 @@ rootDir=`pwd`
 echo "rootDir=$rootDir"
 
 # remove any maven if installed by default
-# remove any maven if installed by default
 sudo dnf erase -yq maven-openjdk*
 sudo dnf erase -yq java-*-openjdk*
-if [ ! -z ${custom_maven+x} ]; then 
-    ./custom_maven.sh
+if [ ! -z ${wassvt-common/custom_maven+x} ]; then 
+    ./wassvt-common/custom_maven.sh
     # pick a java version
     # sudo dnf install java-1.8.0-openjdk-headless
     # sudo dnf install java-11-openjdk-headless
