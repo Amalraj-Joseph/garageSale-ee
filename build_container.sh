@@ -10,10 +10,20 @@ rootDir=`pwd`
 echo "rootDir=$rootDir"
 
 # remove any maven if installed by default
+# remove any maven if installed by default
 sudo dnf erase -yq maven-openjdk*
 sudo dnf erase -yq java-*-openjdk*
-sudo dnf -yq module enable maven:3.8
-sudo dnf install -yq maven-openjdk17
+if [ ! -z ${custom_maven+x} ]; then 
+    ./custom_maven.sh
+    # pick a java version
+    # sudo dnf install java-1.8.0-openjdk-headless
+    # sudo dnf install java-11-openjdk-headless
+    sudo dnf install java-17-openjdk-headless
+    # sudo dnf install java-21-openjdk-headless
+else
+    sudo dnf -yq module enable maven:3.8
+    sudo dnf install -yq maven-openjdk17
+fi
 echo "JAVA_HOME=$JAVA_HOME"
 unset JAVA_HOME
 echo 'mvn version:' `mvn -v`
