@@ -17,7 +17,7 @@ if [ ! -z ${custom_maven+x} ]; then
     # pick a java version
     # sudo dnf install java-1.8.0-openjdk-headless
     # sudo dnf install java-11-openjdk-headless
-    sudo dnf install java-17-openjdk-headless
+    sudo dnf install -yq java-17-openjdk-headless
     # sudo dnf install java-21-openjdk-headless
 else
     sudo dnf -yq module enable maven:3.8
