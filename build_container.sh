@@ -32,7 +32,7 @@ echo 'mvn version:' `mvn -v`
 cd $(dirname $(readlink -f $0))
 
 # build the application
-mvn -q clean package
+mvn clean package
 
 # adjust the tags below to match your application
 # example is based on GarageSale single-Arch
