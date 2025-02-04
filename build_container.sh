@@ -15,10 +15,10 @@ sudo dnf erase -yq 'maven-openjdk*' 'java-*-openjdk*'
 if [ ! -z ${custom_maven+x} ]; then 
     wassvt-common/custom_maven.sh
     # pick a java version
-    # sudo dnf install -yq java-1.8.0-openjdk-headless
-    # sudo dnf install -yq java-11-openjdk-headless
-    sudo dnf install -yq java-17-openjdk-headless
-    # sudo dnf install -yq java-21-openjdk-headless
+    # sudo dnf install -yq java-1.8.0-openjdk
+    # sudo dnf install -yq java-11-openjdk
+    sudo dnf install -yq java-17-openjdk
+    # sudo dnf install -yq java-21-openjdk
     [ -f source_maven_path.sh ] && source source_maven_path.sh || false
 else
     sudo dnf -yq module enable maven:3.8
