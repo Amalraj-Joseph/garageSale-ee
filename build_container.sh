@@ -13,12 +13,13 @@ echo "rootDir=$rootDir"
 sudo dnf erase -yq 'maven-openjdk*' 'java-*-openjdk*'
 
 if [ ! -z ${custom_maven+x} ]; then 
-    ./wassvt-common/custom_maven.sh
+    wassvt-common/custom_maven.sh
     # pick a java version
     # sudo dnf install -yq java-1.8.0-openjdk-headless
     # sudo dnf install -yq java-11-openjdk-headless
     sudo dnf install -yq java-17-openjdk-headless
     # sudo dnf install -yq java-21-openjdk-headless
+    [ -f source_maven_path.sh ] && source source_maven_path.sh || false
 else
     sudo dnf -yq module enable maven:3.8
     sudo dnf install -yq maven-openjdk17
