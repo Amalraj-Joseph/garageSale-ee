@@ -15,6 +15,7 @@
 		<!--<liberty.install.dir>C:\MyData\OpenLibertyInstalls\wlp</liberty.install.dir> -->
 		<!--<liberty.install.dir>C:\MyData\LibertyInstalls\JakartaEE10\wlp</liberty.install.dir> -->
 		<liberty.install.dir>C:\MyData\LibertyInstalls\wlp</liberty.install.dir>
+		<liberty.mvn.version>3.11.2</liberty.mvn.version>
 	</properties>
 	<pluginRepositories>
 		<!-- Configure Sonatype OSS Maven snapshots repository (for liberty-maven-plugin 
@@ -70,7 +71,7 @@
 					<plugin>
 						<groupId>io.openliberty.tools</groupId>
 						<artifactId>liberty-maven-plugin</artifactId>
-						<version>3.7.1</version>
+						<version>${liberty.mvn.version}</version>
 						<extensions>true</extensions>
 						<!-- Specify configuration, executions for liberty-maven-plugin -->
 
@@ -172,7 +173,7 @@
 					<plugin>
 						<groupId>io.openliberty.tools</groupId>
 						<artifactId>liberty-maven-plugin</artifactId>
-						<version>3.7.1</version>
+						<version>${liberty.mvn.version}</version>
 						<extensions>true</extensions>
 						<!-- Specify configuration, executions for liberty-maven-plugin -->
 
@@ -276,7 +277,7 @@
 					<plugin>
 						<groupId>io.openliberty.tools</groupId>
 						<artifactId>liberty-maven-plugin</artifactId>
-						<version>3.7.1</version>
+						<version>${liberty.mvn.version}</version>
 						<extensions>true</extensions>
 						<!-- Specify configuration, executions for liberty-maven-plugin -->
 

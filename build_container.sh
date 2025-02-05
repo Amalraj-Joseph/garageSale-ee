@@ -10,10 +10,20 @@ rootDir=`pwd`
 echo "rootDir=$rootDir"
 
 # remove any maven if installed by default
-sudo dnf erase -yq maven-openjdk*
-sudo dnf erase -yq java-*-openjdk*
-sudo dnf -yq module enable maven:3.8
-sudo dnf install -yq maven-openjdk17
+sudo dnf erase -yq 'maven-openjdk*' 'java-*-openjdk*'
+
+if [ ! -z ${custom_maven+x} ]; then 
+    wassvt-common/custom_maven.sh
+    # pick a java version
+    # sudo dnf install -yq java-1.8.0-openjdk-devel
+    # sudo dnf install -yq java-11-openjdk-devel
+    sudo dnf install -yq java-17-openjdk-devel
+    # sudo dnf install -yq java-21-openjdk-devel
+    [ -f source_maven_path.sh ] && source source_maven_path.sh || false
+else
+    sudo dnf -yq module enable maven:3.8
+    sudo dnf install -yq maven-openjdk17
+fi
 echo "JAVA_HOME=$JAVA_HOME"
 unset JAVA_HOME
 echo 'mvn version:' `mvn -v`
@@ -31,7 +41,7 @@ appImage='garagesale/garagesale-ee10jdk17'
 baseImage="icr.io/appcafe/websphere-liberty:full-java17-openj9-ubi"
 [ "${container_branch}" == 'main' ] && branch_tag='' || branch_tag="${container_branch}-"
 
-podman build -t tmpimage -f Containerfile --secret id=token,src=/tmp/.token --secret id=user,src=/tmp/.user --build-arg FULL_IMAGE=true  --build-arg BASE_IMAGE="${baseImage}" .
+podman build -t tmpimage -f Containerfile --secret id=token,src=/tmp/.token --secret id=user,src=/tmp/.user --build-arg FULL_IMAGE=true  --build-arg BASE_IMAGE="${baseImage}" --build-arg OL=false .
 podman tag tmpimage $HYCSVT/${appImage}:${branch_tag}${tag}
 podman push $HYCSVT/${appImage}:${branch_tag}${tag}
 
