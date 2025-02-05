@@ -41,7 +41,7 @@ appImage='garagesale/garagesale-ee10jdk17'
 baseImage="icr.io/appcafe/websphere-liberty:full-java17-openj9-ubi"
 [ "${container_branch}" == 'main' ] && branch_tag='' || branch_tag="${container_branch}-"
 
-podman build -t tmpimage -f Containerfile --secret id=token,src=/tmp/.token --secret id=user,src=/tmp/.user --build-arg FULL_IMAGE=true  --build-arg BASE_IMAGE="${baseImage}" .
+podman build -t tmpimage -f Containerfile --secret id=token,src=/tmp/.token --secret id=user,src=/tmp/.user --build-arg FULL_IMAGE=true  --build-arg BASE_IMAGE="${baseImage}" --build-arg OL=false .
 podman tag tmpimage $HYCSVT/${appImage}:${branch_tag}${tag}
 podman push $HYCSVT/${appImage}:${branch_tag}${tag}
 
