@@ -15,10 +15,10 @@ sudo dnf erase -yq 'maven-openjdk*' 'java-*-openjdk*'
 if [ ! -z ${custom_maven+x} ]; then 
     wassvt-common/custom_maven.sh
     # pick a java version
-    # sudo dnf install -yq java-1.8.0-openjdk
-    # sudo dnf install -yq java-11-openjdk
-    sudo dnf install -yq java-17-openjdk
-    # sudo dnf install -yq java-21-openjdk
+    # sudo dnf install -yq java-1.8.0-openjdk-devel
+    # sudo dnf install -yq java-11-openjdk-devel
+    sudo dnf install -yq java-17-openjdk-devel
+    # sudo dnf install -yq java-21-openjdk-devel
     [ -f source_maven_path.sh ] && source source_maven_path.sh || false
 else
     sudo dnf -yq module enable maven:3.8
@@ -32,7 +32,7 @@ echo 'mvn version:' `mvn -v`
 cd $(dirname $(readlink -f $0))
 
 # build the application
-mvn clean package
+mvn -q clean package
 
 # adjust the tags below to match your application
 # example is based on GarageSale single-Arch
