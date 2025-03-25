@@ -40,7 +40,7 @@ spec:
               protocol: TCP
           imagePullPolicy: Always
           terminationMessagePolicy: File
-          image: docker-na-public.artifactory.swg-devops.com/hyc-wassvt-team-image-registry-docker-local/db2/svt-db2:latest
+          image: libr-proxy1.fyre.ibm.com:5003/docker-registry-svt/v2/db2/svt-db2:latest
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
       dnsPolicy: ClusterFirst
