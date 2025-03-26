@@ -2,27 +2,29 @@
 
     <!-- Enable features -->
     <featureManager>
-		<feature>xmlWS-4.0</feature>
-		<feature>xmlBinding-4.0</feature>
-		<!-- <feature>managedBeans-2.0</feature> -->
-		<feature>appSecurity-6.0</feature>
-        <feature>jdbc-4.3</feature>
-    	<feature>concurrent-3.1</feature>
+    	<platform>jakartaee-10.0</platform>
+    	<platform>microProfile-6.0</platform>
+		<feature>xmlWS</feature>
+		<feature>xmlBinding</feature>
+		<feature>managedBeans</feature>
+		<feature>appSecurity</feature>
+        <feature>jdbc</feature>
+    	<feature>concurrent</feature>
 		<!-- <feature>osgiConsole-1.0</feature> -->
-		 <feature>usr:WASPersonaWebServicesHandlerFeature</feature>
-		<feature>websocket-2.2</feature>
-    	<feature>expressionLanguage-6.0</feature>
-		<feature>validation-3.1</feature>
-		<feature>cdi-4.1</feature>
-		<feature>faces-4.1</feature>
-		<feature>enterpriseBeansLite-4.0</feature>
-		<feature>persistence-3.2</feature>
-		<feature>restfulWS-4.0</feature>
- 		<!--  <feature>wsAtomicTransaction-1.2</feature>--> 		
-    	<feature>mpHealth-4.0</feature>
-    	<feature>mpMetrics-5.1</feature>
-    	<feature>mpConfig-3.1</feature>
-    	<feature>mpTelemetry-2.0</feature>
+		<feature>usr:WASPersonaWebServicesHandlerFeature</feature>
+		<feature>websocket</feature>
+    	<feature>expressionLanguage</feature>
+		<feature>beanValidation</feature>
+		<feature>cdi</feature>
+		<feature>faces</feature>
+		<feature>enterpriseBeansLite</feature>
+		<feature>persistence</feature>
+		<feature>restfulWS</feature>
+ 		<!--  <feature>wsAtomicTransaction-1.2</feature>-->
+    	<feature>mpHealth</feature>
+    	<feature>mpMetrics</feature>
+    	<feature>mpConfig</feature>
+    	<feature>mpTelemetry</feature>
 		<!-- Features with the versions -->
     	<feature>jndi-1.0</feature>
 		<feature>localConnector-1.0</feature>
