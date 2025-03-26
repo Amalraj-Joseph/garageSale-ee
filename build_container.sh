@@ -10,19 +10,18 @@ rootDir=`pwd`
 echo "rootDir=$rootDir"
 
 # remove any maven if installed by default
-sudo dnf erase -yq 'maven-openjdk*' 'java-*-openjdk*'
-
-if [ ! -z ${custom_maven+x} ]; then 
+sudo dnf erase -yq maven-openjdk* java-*-openjdk*
+if [ ! -z ${custom_maven+x} ] ; then 
     wassvt-common/custom_maven.sh
     # pick a java version
-    # sudo dnf install -yq java-1.8.0-openjdk-devel
-    # sudo dnf install -yq java-11-openjdk-devel
-    sudo dnf install -yq java-17-openjdk-devel
-    # sudo dnf install -yq java-21-openjdk-devel
+    # sudo dnf -yq install java-1.8.0-openjdk-devel
+    # sudo dnf -yq install java-11-openjdk-devel
+    sudo dnf -yq install java-17-openjdk-devel
+    # sudo dnf -yq install java-21-openjdk-devel
     [ -f source_maven_path.sh ] && source source_maven_path.sh || false
 else
     sudo dnf -yq module enable maven:3.8
-    sudo dnf install -yq maven-openjdk17
+    sudo dnf install -yq maven-openjdk11
 fi
 echo "JAVA_HOME=$JAVA_HOME"
 unset JAVA_HOME
@@ -37,7 +36,7 @@ mvn -q clean package
 # adjust the tags below to match your application
 # example is based on GarageSale single-Arch
 # Travis -> EBC migration, look at the .travis file to see how / what is being built / pushed
-appImage='garagesale/garagesale-ee10jdk17'
+appImage='garagesale/garagesale-ee11jdk17tol'
 baseImage="icr.io/appcafe/websphere-liberty:full-java17-openj9-ubi"
 [ "${container_branch}" == 'main' ] && branch_tag='' || branch_tag="${container_branch}-"
 

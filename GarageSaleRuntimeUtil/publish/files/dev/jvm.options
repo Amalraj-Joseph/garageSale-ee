@@ -12,7 +12,7 @@
 #-verbose:class
 
 #-Dcom.sun.jndi.ldap.object.disableEndpointIdentification=true
--verbose:gc
+#-verbose:gc
 #-Xdump:heap
 #-Xaggressive
 #-Xverbosegclog:/logs/verbosegc.%seq.log,5,300000
