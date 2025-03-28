@@ -15,6 +15,7 @@ buildscript {
 
 description = 'GarageSaleRuntime'
 def libertyInstallDir = "C:\\MyData\\LibertyInstalls\\wlp"
+def serverConfigProject = "${project.rootDir}/GarageSaleRuntimeUtil"
 
 dependencies {
   //libertyApp project(':GarageSaleLibertyEAR')
@@ -27,14 +28,17 @@ liberty {
     //installDir="${libertyInstallDir}"
     server {
         name = "garageSaleServer"
-        serverXmlFile = file('publish/servers/server.xml')
-        jvmOptionsFile = file('publish/files/dev/jvm.options')
-        configDirectory = file('publish/config')
-        looseApplication = false
-        stripVersion = true
+        serverXmlFile = file("${serverConfigProject}/publish/servers/server.xml")
+        jvmOptionsFile = file("${serverConfigProject}/publish/files/dev/jvm.options")
+        configDirectory = file("${serverConfigProject}/publish/config")
+        deploy {
+            //assuming ear application is already configured in the server.xml
+            apps = [ear]
+        }            
+        looseApplication = true
         stripVersion = true
         	features {
-            	name = ["${projectDir}/publish/files/WASPersonaWebServicesHandlerFeature-1.0.0-SNAPSHOT.esa"]
+            	name = ["${serverConfigProject}/publish/files/WASPersonaWebServicesHandlerFeature-1.0.0-SNAPSHOT.esa"]
             	acceptLicense = true
         	}
     }
