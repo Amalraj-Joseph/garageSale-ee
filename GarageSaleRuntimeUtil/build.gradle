@@ -1,4 +1,5 @@
 apply plugin: 'liberty'
+apply plugin: 'ear'
 
 buildscript {
     repositories {
@@ -19,7 +20,7 @@ def serverConfigProject = "${project.rootDir}/GarageSaleRuntimeUtil"
 
 dependencies {
   //libertyApp project(':GarageSaleLibertyEAR')
-  libertyApp project(path: ':GarageSaleLibertyEAR', configuration: 'archives')
+  //libertyApp project(path: ':GarageSaleLibertyEAR', configuration: 'archives')
   //featuresBom 'com.ibm.ws.svt.gs.garagesale-ee10:WASPersonaWebServicesBOM:0.0.1-SNAPSHOT'
   libertyRuntime group: 'com.ibm.websphere.appserver.runtime', name: 'wlp-jakartaee10', version: '25.0.0.3'
 }
@@ -28,7 +29,7 @@ liberty {
     //installDir="${libertyInstallDir}"
     server {
         name = "garageSaleServer"
-        serverXmlFile = file("${serverConfigProject}/publish/servers/server.xml")
+        serverXmlFile = file("${serverConfigProject}/publish/servers/server-gradle.xml")
         jvmOptionsFile = file("${serverConfigProject}/publish/files/dev/jvm.options")
         configDirectory = file("${serverConfigProject}/publish/config")
         deploy {
