@@ -33,7 +33,8 @@ liberty {
         configDirectory = file("${serverConfigProject}/publish/config")
         deploy {
             //assuming ear application is already configured in the server.xml
-            apps = [ear]
+            //apps = [ear]
+			apps = [tasks.getByPath(':GarageSaleLibertyEAR:ear')]
         }            
         looseApplication = true
         stripVersion = true
