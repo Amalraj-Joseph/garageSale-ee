@@ -1,4 +1,5 @@
 apply plugin: 'liberty'
+apply plugin: 'ear'
 
 buildscript {
     repositories {
@@ -9,32 +10,37 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'io.openliberty.tools:liberty-gradle-plugin:3.7'
+        classpath 'io.openliberty.tools:liberty-gradle-plugin:3.9.3'
     }
 }
 
 description = 'GarageSaleRuntime'
 def libertyInstallDir = "C:\\MyData\\LibertyInstalls\\wlp"
+def serverConfigProject = "${project.rootDir}/GarageSaleRuntimeUtil"
 
 dependencies {
   //libertyApp project(':GarageSaleLibertyEAR')
-  libertyApp project(path: ':GarageSaleLibertyEAR', configuration: 'archives')
+  //libertyApp project(path: ':GarageSaleLibertyEAR', configuration: 'archives')
   //featuresBom 'com.ibm.ws.svt.gs.garagesale-ee10:WASPersonaWebServicesBOM:0.0.1-SNAPSHOT'
-  libertyRuntime group: 'com.ibm.websphere.appserver.runtime', name: 'wlp-jakartaee10', version: '23.0.0.10'
+  libertyRuntime group: 'com.ibm.websphere.appserver.runtime', name: 'wlp-jakartaee10', version: '25.0.0.3'
 }
 
 liberty {
     //installDir="${libertyInstallDir}"
     server {
         name = "garageSaleServer"
-        serverXmlFile = file('publish/servers/server.xml')
-        jvmOptionsFile = file('publish/files/dev/jvm.options')
-        configDirectory = file('publish/config')
-        looseApplication = false
-        stripVersion = true
+        serverXmlFile = file("${serverConfigProject}/publish/servers/server-gradle.xml")
+        jvmOptionsFile = file("${serverConfigProject}/publish/files/dev/jvm.options")
+        configDirectory = file("${serverConfigProject}/publish/config")
+        deploy {
+            //assuming ear application is already configured in the server.xml
+            //apps = [ear]
+			apps = [tasks.getByPath(':GarageSaleLibertyEAR:ear')]
+        }            
+        looseApplication = true
         stripVersion = true
         	features {
-            	name = ["${projectDir}/publish/files/WASPersonaWebServicesHandlerFeature-1.0.0-SNAPSHOT.esa"]
+            	name = ["${serverConfigProject}/publish/files/WASPersonaWebServicesHandlerFeature-1.0.0-SNAPSHOT.esa"]
             	acceptLicense = true
         	}
     }
