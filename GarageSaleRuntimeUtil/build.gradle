@@ -20,7 +20,7 @@ dependencies {
   //libertyApp project(':GarageSaleLibertyEAR')
   libertyApp project(path: ':GarageSaleLibertyEAR', configuration: 'archives')
   //featuresBom 'com.ibm.ws.svt.gs.garagesale-ee10:WASPersonaWebServicesBOM:0.0.1-SNAPSHOT'
-  libertyRuntime group: 'com.ibm.websphere.appserver.runtime', name: 'wlp-jakartaee10', version: '23.0.0.10'
+  libertyRuntime group: 'com.ibm.websphere.appserver.runtime', name: 'wlp-jakartaee10', version: '25.0.0.3'
 }
 
 liberty {
