@@ -64,3 +64,19 @@ liberty {
         	}
     }
 }
+
+task copyDB2Jars(type: Copy) {
+    from "${serverConfigProject}/publish/databaseDrivers/db2V9Drivers"
+    into "${buildDir}/wlp/usr/shared/resources/db2drivers"
+} 
+
+task copyJaxRSThirdPartyJars(type: Copy) {
+    from "${serverConfigProject}/publish/jaxrsThirdPartyJars"
+    into "${buildDir}/wlp/usr/shared/resources/jaxrsThirdPartyJars"
+}
+
+task copyMyEAR(type: Copy) {
+	from "../GarageSaleLibertyEAR/build/libs/GarageSaleLibertyEAR.ear"
+	into "${buildDir}/wlp/usr/servers/garageSaleServer/apps"
+}
+
