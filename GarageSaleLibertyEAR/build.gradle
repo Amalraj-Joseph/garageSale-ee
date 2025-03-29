@@ -1,4 +1,21 @@
 apply plugin: 'ear'
+apply plugin: 'liberty'
+
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            name = 'Sonatype Nexus Snapshots'
+            url = 'https://oss.sonatype.org/content/repositories/snapshots/'
+        }
+    }
+    dependencies {
+        classpath 'io.openliberty.tools:liberty-gradle-plugin:3.9.3'
+    }
+}
+
+def libertyInstallDir = "C:\\MyData\\LibertyInstalls\\wlp"
+def serverConfigProject = "${project.rootDir}/GarageSaleRuntimeUtil"
 
 description = ''
 dependencies {
