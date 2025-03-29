@@ -80,3 +80,11 @@ task copyMyEAR(type: Copy) {
 	into "${buildDir}/wlp/usr/servers/garageSaleServer/apps"
 }
 
+//task debugLog { project.logger.lifecycle("${serverConfigProject}") }
+//deploy.dependsOn tasks.debugLog 
+//libertyCreate.finalizedBy 'copyMyEAR', 'copyDB2Jars', 'copyJaxRSThirdPartyJars'
+libertyCreate.finalizedBy 'copyDB2Jars', 'copyJaxRSThirdPartyJars'
+//installFeature.dependsOn 'libertyCreate'
+//deploy.dependsOn ':GarageSaleLibertyEAR:ear'
+deploy.dependsOn 'ear'
+build.dependsOn 'deploy'
