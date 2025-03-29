@@ -30,6 +30,7 @@ dependencies {
   //deploy project(':ProdReviewTaxShipRateEJB')
   deploy project(path:':WASPersonaWebServicesPMIWeb', configuration:'archives')
   deploy project(path:':GSjsf40LibertyWeb', configuration:'archives')
+  libertyRuntime group: 'com.ibm.websphere.appserver.runtime', name: 'wlp-jakartaee10', version: '25.0.0.3'
 }
 
 archivesBaseName = 'GarageSaleLibertyEAR'
@@ -42,4 +43,24 @@ ear {
    appDirName 'src/main/app'
    libDirName 'lib'
    archiveName="$baseName.$extension"
+}
+
+liberty {
+    //installDir="${libertyInstallDir}"
+    server {
+        name = "garageSaleServer"
+        serverXmlFile = file("${serverConfigProject}/publish/servers/server.xml")
+        jvmOptionsFile = file("${serverConfigProject}/publish/files/dev/jvm.options")
+        configDirectory = file("${serverConfigProject}/publish/config")
+        deploy {
+            //assuming ear application is already configured in the server.xml
+            apps = [ear]
+        }        
+        looseApplication = true
+        stripVersion = true
+        	features {
+            	name = ["${serverConfigProject}/publish/files/WASPersonaWebServicesHandlerFeature-1.0.0-SNAPSHOT.esa"]
+            	acceptLicense = true
+        	}
+    }
 }
