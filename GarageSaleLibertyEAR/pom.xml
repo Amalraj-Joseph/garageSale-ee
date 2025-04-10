@@ -16,7 +16,7 @@
 				<version>3.2.0</version>
 				<configuration>
 					<!--<Name>${project.artifactId}</fileName>-->
-					<finalName>${project.artifactId}</finalName>
+					<!-- <finalName>${project.artifactId}</finalName> -->
 					<!-- This property is dprecated-->
 					<!--<fileNameMapping>no-version</filefileNameMapping>-->
 					<outputFileNameMapping>@{artifactId}@.@{extension}@</outputFileNameMapping>
